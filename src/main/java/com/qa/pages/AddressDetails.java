@@ -83,5 +83,11 @@ public class AddressDetails extends Testbase {
 			}
 			
 		}
+		public void fullJourney() throws Throwable
+		{
+			validateRibbon();
+			validateSpecialNote();
+			validateNextButton();		
+		}
 
 }

@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="validateWrongCredentialsTest"/>
+          <include name="validateCheckPlanTest"/>
         </methods>
       </class> <!-- com.qa.testcase.PopUpPageTest -->
     </classes>

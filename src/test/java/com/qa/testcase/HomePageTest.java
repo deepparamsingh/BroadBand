@@ -111,6 +111,7 @@ public class HomePageTest extends Testbase {
 	@Test(priority=1)
 	public void validateEnterAddressTest() throws Throwable
 	{
+		Thread.sleep(3000);
 		addressDetails=homepage.validateEnterAddress();
 	}
 	

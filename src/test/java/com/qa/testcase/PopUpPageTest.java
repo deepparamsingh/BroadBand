@@ -17,6 +17,7 @@ public class PopUpPageTest extends Testbase {
 	HomePage homepage;
 	PopUpPage popupPage;
 	AddressDetails addressDetails;
+	AddOnsPage addOnPage;
 	
 
 	public PopUpPageTest()
@@ -30,6 +31,7 @@ public class PopUpPageTest extends Testbase {
 		   initialization();
 		   homepage= new HomePage();
 		   popupPage = new PopUpPage();
+		   addOnPage = new AddOnsPage();
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
 		   
@@ -57,12 +59,31 @@ public class PopUpPageTest extends Testbase {
 		
 	}
 
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateTopBarFeaturesTest() throws Throwable
 	{
 		popupPage.validateTopBarFeatures();
 		
 	}
+	
+	@Test(priority = 1)
+	public void validateCheckPlanTest() throws Throwable
+	{
+		try {
+			popupPage.validateCredentials();
+			popupPage.validateCheckPlanSpecial();
+			addOnPage= popupPage.validateApplyButton();
+		}catch (Exception e) {
+			// TODO: handle exception
+			popupPage.validateCheckPlan();
+			addOnPage= popupPage.validateApplyButton();
+		}
+		
+		
+		
+	}
+	
+	
 			
 	@AfterMethod
 	public void tearDown()

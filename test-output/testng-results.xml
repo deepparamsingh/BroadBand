@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-05T18:46:56Z" name="Default suite" finished-at="2021-08-05T18:47:37Z" duration-ms="41350">
+  <suite started-at="2021-08-06T18:36:39Z" name="Default suite" finished-at="2021-08-06T18:37:27Z" duration-ms="48138">
     <groups>
     </groups>
-    <test started-at="2021-08-05T18:46:56Z" name="Default test" finished-at="2021-08-05T18:47:37Z" duration-ms="41350">
+    <test started-at="2021-08-06T18:36:39Z" name="Default test" finished-at="2021-08-06T18:37:27Z" duration-ms="48138">
       <class name="com.qa.testcase.PopUpPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.PopUpPageTest@2a3888c1]" started-at="2021-08-05T18:46:56Z" name="setup" finished-at="2021-08-05T18:47:25Z" duration-ms="28735" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:36:39Z" name="setup" finished-at="2021-08-06T18:37:10Z" duration-ms="31006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateTopBarFeaturesTest()[pri:1, instance:com.qa.testcase.PopUpPageTest@2a3888c1]" started-at="2021-08-05T18:47:25Z" name="validateTopBarFeaturesTest" finished-at="2021-08-05T18:47:36Z" duration-ms="11492" status="PASS">
+        <test-method signature="validateCheckPlanTest()[pri:1, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:37:10Z" name="validateCheckPlanTest" finished-at="2021-08-06T18:37:26Z" duration-ms="16025" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateTopBarFeaturesTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.PopUpPageTest@2a3888c1]" started-at="2021-08-05T18:47:36Z" name="tearDown" finished-at="2021-08-05T18:47:37Z" duration-ms="1081" status="PASS">
+        </test-method> <!-- validateCheckPlanTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:37:26Z" name="tearDown" finished-at="2021-08-06T18:37:27Z" duration-ms="1058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

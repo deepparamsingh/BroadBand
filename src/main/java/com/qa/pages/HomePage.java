@@ -183,9 +183,11 @@ public class HomePage extends Testbase {
 		if(selectAddress.isDisplayed())
 		{
 		selectAddress.click();
+		Thread.sleep(3000);
 		}
 		if(compareButton.isDisplayed())
 		{
+			
 			compareButton.click();
 			return new AddressDetails();
 		}
@@ -193,18 +195,23 @@ public class HomePage extends Testbase {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
 			System.out.println(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
 			return null;
-		}
-		
-		
-		
-		
-		
+		}		
 
 	}
 
-	
-	
-	
+	public void fullJourney() throws Throwable
+	{
+		validateHomePageTitle();
+		validateh1Heading();
+		validateBelowh1Heading();
+		validateNavBar();	
+		validatehomePageImage();
+		validatehomeLOGO();
+		validateEmptyAddress();
+		validateWrongAddress();
+		validateEnterAddress();		
+		
+	}
 	
 	
 
