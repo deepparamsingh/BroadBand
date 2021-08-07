@@ -48,14 +48,40 @@ public class BasicInfoPageTest extends Testbase {
 		addOnPage.validateAddOntitle();
 		
 	}
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateErrorMessagesTest() throws Throwable
 	{
 		basicInfoPage.validateErrorMessages();
 		
 	}
 	
+	@Test(enabled = false)
+	public void validateYourDetailsSectionTest() throws Throwable
+	{
+		basicInfoPage.validateYourDetailsSection();
+		
+	}
 	
+	@Test(enabled = false)
+	public void validateconnectionDetailsSectionTest() throws Throwable
+	{
+		basicInfoPage.validateconnectionDetailsSection();
+		
+	}
+	
+	@Test(enabled = false)
+	public void validateIdentificationDetailsSectionTest() throws Throwable
+	{
+		basicInfoPage.validateIdentificationDetailsSection();
+		
+	}
+	
+	@Test(priority = 1)
+	public void validateEmploymentdetailsSectionTest() throws Throwable
+	{
+		basicInfoPage.validateEmploymentdetailsSection();
+		
+	}
 	
 	
 			

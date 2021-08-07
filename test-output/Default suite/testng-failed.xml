@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.testcase.BasicInfoPageTest">
         <methods>
-          <include name="validateErrorMessagesTest"/>
+          <include name="validateEmploymentdetailsSectionTest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.qa.testcase.BasicInfoPageTest -->
