@@ -9,49 +9,15 @@ import com.qa.base.Testbase;
 
 public class AddOnsPage extends Testbase {
 	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
+	//JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	@FindBy(xpath = "//div[@class='sub-wrap dotted-area address-screen-adrs-area']")
-	WebElement homeCall;
+	@FindBy(xpath = "//a[normalize-space()='Identification Details']")
+	WebElement identificationSubmitButton;
 	
-	@FindBy(xpath = "//div[@class='ques-wrap dotted-area modem-part']")
-	WebElement needAmodem;
 	
-	@FindBy(xpath = "//div[@class='ques-wrap dotted-area addon-part']")
-	WebElement otherAddon;
+	String actualTitle="Econnex - Mobile Comparison | Compare Mobile Plans";
 	
-	@FindBy(xpath = "//input[@data-name='NEW HD ELITE']")
-	WebElement homecallPlanSelect;
 	
-	@FindBy(xpath = "//label[@for='NeedModem']")
-	WebElement needAmodemCheckBox;
-	
-	@FindBy(xpath = "//span[contains(text(),'ADSL Modem 3')]")
-	WebElement modemPlanSelect;
-	
-	@FindBy(xpath = "//div[@class='inner-right']")
-	WebElement yourOrder;
-	
-	@FindBy(xpath = "//label[@for='BYOModem']")
-	WebElement byoCheck;
-	
-	@FindBy(xpath = "//label[contains(text(),'Home Entertainment')]")
-	WebElement homeEntertainment;
-	
-	@FindBy(xpath = "//label[contains(text(),'Game Path')]")
-	WebElement gamePath;
-	
-	@FindBy(xpath = "//label[contains(text(),'Fetch Mini')]")
-	WebElement fetchMini;	
-	
-	@FindBy(xpath = "//label[contains(text(),'Static IP')]")
-	WebElement staticIp;
-	
-	@FindBy(xpath = "//label[contains(text(),'Fetch Mighty')]")
-	WebElement fetchMighty;
-	
-	@FindBy(xpath = "//a[@class='btn main-btn addon_next']")
-	WebElement submitButton;
 	
 	
 	//Intilizing The Page Objects
@@ -61,64 +27,36 @@ public class AddOnsPage extends Testbase {
 			}
 			
 			//Actions
-			public boolean validatehomeCallBox() throws Throwable
+			public void validateAddOntitle() throws Throwable
 			{
-				return homeCall.isDisplayed();
-			}
-			
-			public boolean validateNeedModemBox()
-			{
-				return needAmodem.isDisplayed();
+				Thread.sleep(3000);
+				String Title=driver.getTitle();
+				if(Title.contentEquals(actualTitle))
+				{
+					System.out.println("Title of addOn Page is -->"+Title);
+				}
+				else
+				{
+					System.out.println("Title MISS-Match");
+				}
 				
 			}
-			
-			public boolean validateOtherAddonBox()
+			public BasicInfoPage validateIdentificationButton() throws Throwable
 			{
-				return otherAddon.isDisplayed();
-			}
-			
-			public boolean validateyourOrderBox()
-			{
-				return yourOrder.isDisplayed();
-			}
-			
-			public void validateHomeCallPlanSelect()
-			{
-				homecallPlanSelect.click();
-			}
-			
-			public void validateNeedModemCheckBoxChecked()
-			{
-				js.executeScript("arguments[0].scrollIntoView();", needAmodemCheckBox);
-				needAmodemCheckBox.click();
-				modemPlanSelect.click();
-			}
-			public void validateBYOCheckBoxChecked()
-			{
-				byoCheck.click();
+				Thread.sleep(3000);
+				if(identificationSubmitButton.isDisplayed())
+				{
+					identificationSubmitButton.click();
+					System.out.println("Identification Button Clicked !!");
+					return new BasicInfoPage();
+				}
+				else
+				{
+					System.out.println("Identification Button MISSING");
+				}	return null;
 			}
 			
 			
-			public void validateOtherAddonChecks()
-			{
-				//homeEntertainment.click();
-				//gamePath.click();
-				js.executeScript("arguments[0].scrollIntoView();", fetchMini);
-				fetchMini.click();
-				staticIp.click();
-				fetchMighty.click();
-			}
-			
-			public YourDetails validatesubmitAddons() throws Throwable
-			{
-				validateHomeCallPlanSelect();
-				validateNeedModemCheckBoxChecked();
-				validateOtherAddonChecks();
-				submitButton.click();
-				return new YourDetails(); 
-				
-			}
-	
 	
 	
 	

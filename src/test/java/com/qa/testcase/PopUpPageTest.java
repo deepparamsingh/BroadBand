@@ -15,8 +15,8 @@ public class PopUpPageTest extends Testbase {
 	
 	
 	HomePage homepage;
-	PopUpPage popupPage;
 	AddressDetails addressDetails;
+	PopUpPage popupPage;	
 	AddOnsPage addOnPage;
 	
 

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-06T18:36:39Z" name="Default suite" finished-at="2021-08-06T18:37:27Z" duration-ms="48138">
+  <suite started-at="2021-08-07T09:02:10Z" name="Default suite" finished-at="2021-08-07T09:03:19Z" duration-ms="68497">
     <groups>
     </groups>
-    <test started-at="2021-08-06T18:36:39Z" name="Default test" finished-at="2021-08-06T18:37:27Z" duration-ms="48138">
-      <class name="com.qa.testcase.PopUpPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:36:39Z" name="setup" finished-at="2021-08-06T18:37:10Z" duration-ms="31006" status="PASS">
+    <test started-at="2021-08-07T09:02:10Z" name="Default test" finished-at="2021-08-07T09:03:19Z" duration-ms="68497">
+      <class name="com.qa.testcase.BasicInfoPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.BasicInfoPageTest@518caac3]" started-at="2021-08-07T09:02:10Z" name="setup" finished-at="2021-08-07T09:03:13Z" duration-ms="63111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateCheckPlanTest()[pri:1, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:37:10Z" name="validateCheckPlanTest" finished-at="2021-08-06T18:37:26Z" duration-ms="16025" status="PASS">
+        <test-method signature="validateErrorMessagesTest()[pri:1, instance:com.qa.testcase.BasicInfoPageTest@518caac3]" started-at="2021-08-07T09:03:13Z" name="validateErrorMessagesTest" finished-at="2021-08-07T09:03:19Z" duration-ms="5267" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateCheckPlanTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.PopUpPageTest@4167d97b]" started-at="2021-08-06T18:37:26Z" name="tearDown" finished-at="2021-08-06T18:37:27Z" duration-ms="1058" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.testcase.PopUpPageTest -->
+        </test-method> <!-- validateErrorMessagesTest -->
+      </class> <!-- com.qa.testcase.BasicInfoPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

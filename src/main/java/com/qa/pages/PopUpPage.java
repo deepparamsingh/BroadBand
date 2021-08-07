@@ -106,6 +106,9 @@ public class PopUpPage extends Testbase {
 		WebElement planCostSpecial;
 		
 		
+		
+		
+		
 		//special offer additional parameters which comes only under this special offer case
 		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/p[1]/span[3]/strike[1]")
 		WebElement planActualCostSpecial;
@@ -118,6 +121,15 @@ public class PopUpPage extends Testbase {
 		
 		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/a[1]")
 		WebElement applyPlan;	
+		
+		
+		@FindBy(xpath = "//button[contains(text(),'Email Plan Details')]")
+		WebElement viewPlanEmailButtons;
+		
+		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/i[1]")
+		WebElement crossViewDetails;
+		
+		
 		
 		
 		
@@ -308,6 +320,18 @@ public class PopUpPage extends Testbase {
 			if(planViewDetails.isDisplayed())
 			{
 				System.out.println("View plan Link Displayed");
+				planViewDetails.click();
+				if(viewPlanEmailButtons.isDisplayed())
+				{
+					Thread.sleep(2000);
+					viewPlanEmailButtons.click();
+					Thread.sleep(4000);
+					crossViewDetails.click();
+				}
+				else
+				{
+					System.out.println("Send Email Button is MISSING!!!!");
+				}
 			}
 			else
 			{
@@ -416,6 +440,18 @@ public class PopUpPage extends Testbase {
 			if(planViewDetailsSpecial.isDisplayed())
 			{
 				System.out.println("View plan Link Displayed");
+				planViewDetailsSpecial.click();
+				if(viewPlanEmailButtons.isDisplayed())
+				{
+					Thread.sleep(2000);
+					viewPlanEmailButtons.click();
+					Thread.sleep(4000);
+					crossViewDetails.click();
+				}
+				else
+				{
+					System.out.println("Send Email Button is MISSING!!!!");
+				}
 			}
 			else
 			{
@@ -480,10 +516,11 @@ public class PopUpPage extends Testbase {
 		}
 		
 		
-		public AddOnsPage validateApplyButton() 
+		public AddOnsPage validateApplyButton() throws Throwable 
 		{
 			if(applyPlan.isDisplayed())
 			{
+				Thread.sleep(2000);
 				applyPlan.click();
 				System.out.println("Plan Applied !!");
 				return new AddOnsPage();

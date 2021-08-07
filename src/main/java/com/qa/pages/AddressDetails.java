@@ -15,12 +15,12 @@ public class AddressDetails extends Testbase {
 		
 		@FindBy(xpath = "//div[@class='noty_body']")
 		WebElement holidayDate;
-		 String offdaysMessage= "We'd love to get you connected as soon as possible";
+		String offdaysMessage= "We'd love to get you connected as soon as possible";
 		 
 		
 		 
 		 @FindBy(xpath = "//label[@for='moven']")
-			WebElement moveInNo;
+		WebElement moveInNo;
 		 
 		@FindBy(xpath = "//a[@id='home_page_next']")
 		WebElement nextButton;

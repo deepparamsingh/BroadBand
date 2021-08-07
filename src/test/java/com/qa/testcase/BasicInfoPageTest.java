@@ -5,69 +5,63 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.qa.base.Testbase;
+import com.qa.pages.AddOnsPage;
+import com.qa.pages.AddressDetails;
 import com.qa.pages.BasicInfoPage;
 import com.qa.pages.HomePage;
 import com.qa.pages.PopUpPage;
 
 public class BasicInfoPageTest extends Testbase {
 
-	 
-		HomePage homepage;
-		BasicInfoPage basicInfoPage;
-		PopUpPage popupPage;
-		
-		public  BasicInfoPageTest() {
-				
-			super();
-			
-		}
-		
-		@BeforeMethod
-	   public void setup()
+	HomePage homepage;
+	AddressDetails addressDetails;
+	PopUpPage popupPage;	
+	AddOnsPage addOnPage;
+	BasicInfoPage basicInfoPage;
+	
+
+	public BasicInfoPageTest()
+	{
+		super();
+	}
+	
+	@BeforeMethod
+	   public void setup() throws Throwable
 	   {
 		   initialization();
 		   homepage= new HomePage();
-		   basicInfoPage= new BasicInfoPage();
 		   popupPage = new PopUpPage();
-		   basicInfoPage=homepage.clickBroadbandButton();
+		   addOnPage = new AddOnsPage();
+		   basicInfoPage = new BasicInfoPage();
+		   addressDetails= homepage.validateEnterAddress();
+		   popupPage= addressDetails.validateNextButton();
+		   popupPage= popupPage.validateCredentials();
+		   addOnPage= popupPage.validateApplyButton();
+		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   
+		 
 	   }
+	
+	@Test(enabled = false)
+	public void validateAddOntitleTest() throws Throwable
+	{
+		addOnPage.validateAddOntitle();
 		
+	}
+	@Test(priority = 1)
+	public void validateErrorMessagesTest() throws Throwable
+	{
+		basicInfoPage.validateErrorMessages();
 		
-		@Test(enabled=false)
-		public void validateAddressApiTest() throws Throwable
-		{
-			basicInfoPage.validateAddressAPI();
-		}
-		
-		@Test(enabled=false)
-		public void validateconnectionTypeTest() throws Throwable
-		{
-			basicInfoPage.validateAddressAPI();
-			basicInfoPage.validateConnectionType();
+	}
+	
+	
+	
+	
 			
-		}
-		
-		@Test(enabled=false)
-		public void validatemoveInTest() throws Throwable
-		{
-		
-			basicInfoPage.validateMovecalander();
-			
-		}
-		
-		@Test(priority=1)
-		public void validatenextButtonTest() throws Throwable
-		{
-
-			popupPage = basicInfoPage.validateNextButton();
-			
-		}
-		
-		@AfterMethod
-		public void tearDown()
-		{
-			driver.quit();
-		}
-		
-		
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 }
