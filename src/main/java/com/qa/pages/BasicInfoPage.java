@@ -116,6 +116,12 @@ public class BasicInfoPage extends Testbase {
 	
 	@FindBy(xpath = "//a[normalize-space()='Connection Details']")
 	WebElement connectionDetailsButton;
+	
+	
+	
+	
+	
+	
 
 	
 	//Intilizing The Page Objects
@@ -184,6 +190,7 @@ public class BasicInfoPage extends Testbase {
 		{
 			AustralianPassport.click();
 			passport_number.sendKeys("56566655515");
+			Thread.sleep(1000);
 			passport_exp.sendKeys("15 05 2025");
 			
 		}
@@ -193,7 +200,7 @@ public class BasicInfoPage extends Testbase {
 		
 	}
 	
-	public void validateEmploymentdetailsSection() throws Throwable
+	public ConnectionAddress validateEmploymentdetailsSection() throws Throwable
 	{
 		
 		validateIdentificationDetailsSection();
@@ -212,11 +219,15 @@ public class BasicInfoPage extends Testbase {
 			SelectTOCEmonth.click();
 			doYouHaveCreditCardYES.click();
 			connectionDetailsButton.click();
+			connectionDetailsButton.click();
+			Thread.sleep(4000);
+			return new ConnectionAddress();
 			
 			
 		}
 		else {
 			System.out.println("Employment Details section is Missing !!");
+			return null;
 		}
 		
 	}

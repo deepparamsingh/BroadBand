@@ -17,13 +17,12 @@ import com.qa.pages.YourDetails;
 public class ConnectionAddressTest extends Testbase {
 	
 	HomePage homepage;
-	BasicInfoPage basicInfoPage;
-	PopUpPage popupPage;
-	AddOnsPage addOnPage;
-	YourDetails yourDetails;
 	AddressDetails addressDetails;
+	PopUpPage popupPage;	
+	AddOnsPage addOnPage;
+	BasicInfoPage basicInfoPage;
 	ConnectionAddress connectionAddress;
-	OtpPage otpPage;
+	
 
 	public ConnectionAddressTest()
 	{
@@ -35,37 +34,38 @@ public class ConnectionAddressTest extends Testbase {
 	   {
 		   initialization();
 		   homepage= new HomePage();
-		   basicInfoPage= new BasicInfoPage();
 		   popupPage = new PopUpPage();
-		   addressDetails= new AddressDetails();
-		   yourDetails=new YourDetails();
-		   connectionAddress= new ConnectionAddress();
-		   otpPage= new OtpPage();
-		   basicInfoPage=homepage.clickBroadbandButton();
-		   popupPage=basicInfoPage.validateNextButton();
-		   popupPage=popupPage.validateCredentials();
-		   addOnPage=popupPage.validateApplyButton();
-		   yourDetails=addOnPage.validatesubmitAddons();
-		   connectionAddress=yourDetails.validateConnectionAddressBTN();
-		   
-		   
+		   addOnPage = new AddOnsPage();
+		   basicInfoPage = new BasicInfoPage();
+		   connectionAddress = new ConnectionAddress();
+		   addressDetails= homepage.validateEnterAddress();
+		   popupPage= addressDetails.validateNextButton();
+		   popupPage= popupPage.validateCredentials();
+		   addOnPage= popupPage.validateApplyButton();
+		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   connectionAddress= basicInfoPage.validateEmploymentdetailsSection();	   	   
 		 
 	   }
 	
-	
-	@Test(priority=1)
-	public void validateOtpTest() throws Throwable
+	@Test(enabled = false)
+	public void validateConnectionDetailsSectionTest() throws Throwable
 	{
+		connectionAddress.validateConnectionDetailsSection();
 		
-	otpPage=connectionAddress.validateStatusTest();
-	  
 	}
 	
-	@AfterMethod
-	public void tearDown()
+	@Test(priority = 1)
+	public void validateBillingdeliveryAddressTest() throws Throwable
 	{
-		driver.quit();
+		connectionAddress.validateBillingdeliveryAddress();
+		
 	}
+	
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 	
 
 }

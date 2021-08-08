@@ -8,6 +8,7 @@ import com.qa.base.Testbase;
 import com.qa.pages.AddOnsPage;
 import com.qa.pages.AddressDetails;
 import com.qa.pages.BasicInfoPage;
+import com.qa.pages.ConnectionAddress;
 import com.qa.pages.HomePage;
 import com.qa.pages.PopUpPage;
 
@@ -18,6 +19,7 @@ public class BasicInfoPageTest extends Testbase {
 	PopUpPage popupPage;	
 	AddOnsPage addOnPage;
 	BasicInfoPage basicInfoPage;
+	ConnectionAddress connectionAddress;
 	
 
 	public BasicInfoPageTest()
@@ -33,12 +35,13 @@ public class BasicInfoPageTest extends Testbase {
 		   popupPage = new PopUpPage();
 		   addOnPage = new AddOnsPage();
 		   basicInfoPage = new BasicInfoPage();
+		   connectionAddress = new ConnectionAddress();
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
 		   popupPage= popupPage.validateCredentials();
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateIdentificationButton();
-		   
+		   	   
 		 
 	   }
 	
@@ -79,7 +82,7 @@ public class BasicInfoPageTest extends Testbase {
 	@Test(priority = 1)
 	public void validateEmploymentdetailsSectionTest() throws Throwable
 	{
-		basicInfoPage.validateEmploymentdetailsSection();
+		connectionAddress=basicInfoPage.validateEmploymentdetailsSection();
 		
 	}
 	

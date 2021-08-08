@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-07T19:47:23Z" name="Default suite" finished-at="2021-08-07T19:48:34Z" duration-ms="71124">
+  <suite started-at="2021-08-08T17:44:44Z" name="Default suite" finished-at="2021-08-08T17:45:58Z" duration-ms="73903">
     <groups>
     </groups>
-    <test started-at="2021-08-07T19:47:23Z" name="Default test" finished-at="2021-08-07T19:48:34Z" duration-ms="71124">
-      <class name="com.qa.testcase.BasicInfoPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.BasicInfoPageTest@58594a11]" started-at="2021-08-07T19:47:23Z" name="setup" finished-at="2021-08-07T19:48:18Z" duration-ms="54513" status="PASS">
+    <test started-at="2021-08-08T17:44:44Z" name="Default test" finished-at="2021-08-08T17:45:58Z" duration-ms="73903">
+      <class name="com.qa.testcase.ConnectionAddressTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T17:44:44Z" name="setup" finished-at="2021-08-08T17:45:47Z" duration-ms="63036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateEmploymentdetailsSectionTest()[pri:1, instance:com.qa.testcase.BasicInfoPageTest@58594a11]" started-at="2021-08-07T19:48:18Z" name="validateEmploymentdetailsSectionTest" finished-at="2021-08-07T19:48:34Z" duration-ms="16515" status="PASS">
+        <test-method signature="validateBillingdeliveryAddressTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T17:45:47Z" name="validateBillingdeliveryAddressTest" finished-at="2021-08-08T17:45:58Z" duration-ms="10814" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEmploymentdetailsSectionTest -->
-      </class> <!-- com.qa.testcase.BasicInfoPageTest -->
+        </test-method> <!-- validateBillingdeliveryAddressTest -->
+      </class> <!-- com.qa.testcase.ConnectionAddressTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
