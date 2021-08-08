@@ -99,9 +99,7 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("User Bill will be sent to this email:"+userBillemail);
 			String userbillAddress=BillingAddress.getText();
 			System.out.println("User Bill will be deliver to this address: "+userbillAddress);
-			BillingEmail.click();
-			 
-			
+			BillingEmail.click();			
 		}
 		else
 		{
@@ -117,7 +115,11 @@ public class ConnectionAddress extends Testbase {
 		{
 			System.out.println("Delivery Section is MISSING!!");
 		}
-		
+	}
+	
+	public OtpPage validateDebitcardSection() throws Throwable
+	{
+		validateBillingdeliveryAddress();
 		if(debitCardSection.isDisplayed())
 		{
 			debitCardName.sendKeys("Param-deep");
@@ -131,6 +133,12 @@ public class ConnectionAddress extends Testbase {
 			String securevalue=secureText.getText();
 			System.out.println("Secure text is :"+securevalue);
 			ReviewDetailsButton.click();
+			return new OtpPage();
+		}
+		else
+		{
+			System.out.println("Debit Card session is MISSING !!");
+			return null;
 		}
 	}
 	       

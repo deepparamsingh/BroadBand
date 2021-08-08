@@ -2,16 +2,16 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-08T17:44:44Z" name="Default suite" finished-at="2021-08-08T17:45:58Z" duration-ms="73903">
+  <suite started-at="2021-08-08T18:03:27Z" name="Default suite" finished-at="2021-08-08T18:04:46Z" duration-ms="78868">
     <groups>
     </groups>
-    <test started-at="2021-08-08T17:44:44Z" name="Default test" finished-at="2021-08-08T17:45:58Z" duration-ms="73903">
+    <test started-at="2021-08-08T18:03:27Z" name="Default test" finished-at="2021-08-08T18:04:46Z" duration-ms="78868">
       <class name="com.qa.testcase.ConnectionAddressTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T17:44:44Z" name="setup" finished-at="2021-08-08T17:45:47Z" duration-ms="63036" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T18:03:27Z" name="setup" finished-at="2021-08-08T18:04:36Z" duration-ms="68088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateBillingdeliveryAddressTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T17:45:47Z" name="validateBillingdeliveryAddressTest" finished-at="2021-08-08T17:45:58Z" duration-ms="10814" status="PASS">
+        <test-method signature="validateBillingdeliveryAddressTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@518caac3]" started-at="2021-08-08T18:04:36Z" name="validateBillingdeliveryAddressTest" finished-at="2021-08-08T18:04:46Z" duration-ms="10734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateBillingdeliveryAddressTest -->

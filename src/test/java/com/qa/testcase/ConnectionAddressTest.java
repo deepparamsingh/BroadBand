@@ -22,6 +22,7 @@ public class ConnectionAddressTest extends Testbase {
 	AddOnsPage addOnPage;
 	BasicInfoPage basicInfoPage;
 	ConnectionAddress connectionAddress;
+	OtpPage otpPage;
 	
 
 	public ConnectionAddressTest()
@@ -38,6 +39,7 @@ public class ConnectionAddressTest extends Testbase {
 		   addOnPage = new AddOnsPage();
 		   basicInfoPage = new BasicInfoPage();
 		   connectionAddress = new ConnectionAddress();
+		   otpPage= new OtpPage();
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
 		   popupPage= popupPage.validateCredentials();
@@ -57,7 +59,7 @@ public class ConnectionAddressTest extends Testbase {
 	@Test(priority = 1)
 	public void validateBillingdeliveryAddressTest() throws Throwable
 	{
-		connectionAddress.validateBillingdeliveryAddress();
+		otpPage=connectionAddress.validateDebitcardSection();
 		
 	}
 	
