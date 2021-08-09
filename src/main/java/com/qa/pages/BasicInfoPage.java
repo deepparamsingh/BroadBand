@@ -143,7 +143,7 @@ public class BasicInfoPage extends Testbase {
 	
 	public void validateYourDetailsSection() throws Throwable 
 	{
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		if(yourDetailssection.isDisplayed())
 		{
 			titleDropdown.click();
