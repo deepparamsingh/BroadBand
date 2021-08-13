@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.qa.base.Testbase;
 
-public class YourDetails extends Testbase {
+public class SaleCreatedPage extends Testbase {
 	
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
@@ -89,7 +89,7 @@ public class YourDetails extends Testbase {
 			
 			
 			//Intilizing The Page Objects
-			public YourDetails() {
+			public SaleCreatedPage() {
 				// TODO Auto-generated constructor stub
 				PageFactory.initElements(driver, this);
 			}

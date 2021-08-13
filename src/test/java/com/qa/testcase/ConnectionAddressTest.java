@@ -35,6 +35,7 @@ public class ConnectionAddressTest extends Testbase {
 	   {
 		   initialization();
 		   homepage= new HomePage();
+		   addressDetails = new AddressDetails();
 		   popupPage = new PopUpPage();
 		   addOnPage = new AddOnsPage();
 		   basicInfoPage = new BasicInfoPage();

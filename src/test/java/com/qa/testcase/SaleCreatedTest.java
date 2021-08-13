@@ -13,17 +13,17 @@ import com.qa.pages.HomePage;
 import com.qa.pages.PopUpPage;
 import com.qa.pages.YourDetails;
 
-public class YourDetailsTest extends Testbase {
+public class SaleCreatedTest extends Testbase {
 	
 	HomePage homepage;
 	BasicInfoPage basicInfoPage;
 	PopUpPage popupPage;
 	AddOnsPage addOnPage;
-	YourDetails yourDetails;
+	//YourDetails yourDetails;
 	AddressDetails addressDetails;
 	ConnectionAddress connectionAddress;
 
-	public YourDetailsTest()
+	public SaleCreatedTest()
 	{
 		super();
 	}

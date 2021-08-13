@@ -34,7 +34,7 @@ public class HomePage extends Testbase {
 	WebElement homePageLogo;
 	
 	
-	@FindBy(xpath = "//li[normalize-space()='Unit 30 50 Walker St, RHODES NSW']")
+	@FindBy(xpath = "//li[@class='ui-menu-item retrievepostcodeAddressApi']")
 	WebElement selectAddress;
 	
 	
@@ -178,7 +178,7 @@ public class HomePage extends Testbase {
 	
 	public AddressDetails validateEnterAddress() throws Throwable
 	{
-		addressInputBar.sendKeys("unit 30 50 walker");
+		addressInputBar.sendKeys(prop.getProperty("address"));
 		Thread.sleep(3000);
 		if(selectAddress.isDisplayed())
 		{

@@ -69,8 +69,8 @@ public class PopUpPageTest extends Testbase {
 	@Test(priority = 1)
 	public void validateCheckPlanTest() throws Throwable
 	{
-		try {
-			popupPage.validateCredentials();
+		popupPage.validateCredentials();
+		try {			
 			popupPage.validateCheckPlanSpecial();
 			addOnPage= popupPage.validateApplyButton();
 		}catch (Exception e) {

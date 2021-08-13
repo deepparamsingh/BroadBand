@@ -12,18 +12,21 @@ import com.qa.pages.ConnectionAddress;
 import com.qa.pages.HomePage;
 import com.qa.pages.OtpPage;
 import com.qa.pages.PopUpPage;
-import com.qa.pages.YourDetails;
+import com.qa.pages.SaleCreatedPage;
+
 
 public class OtpTest extends Testbase {
 	
+
 	HomePage homepage;
-	BasicInfoPage basicInfoPage;
-	PopUpPage popupPage;
-	AddOnsPage addOnPage;
-	YourDetails yourDetails;
 	AddressDetails addressDetails;
+	PopUpPage popupPage;	
+	AddOnsPage addOnPage;
+	BasicInfoPage basicInfoPage;
 	ConnectionAddress connectionAddress;
 	OtpPage otpPage;
+	SaleCreatedPage saleCreatedPage;
+	
 
 	public OtpTest()
 	{
@@ -35,33 +38,31 @@ public class OtpTest extends Testbase {
 	   {
 		   initialization();
 		   homepage= new HomePage();
-		   basicInfoPage= new BasicInfoPage();
+		   addressDetails = new AddressDetails();
 		   popupPage = new PopUpPage();
-		   addressDetails= new AddressDetails();
-		   yourDetails=new YourDetails();
-		   connectionAddress= new ConnectionAddress();
+		   addOnPage = new AddOnsPage();
+		   basicInfoPage = new BasicInfoPage();
+		   connectionAddress = new ConnectionAddress();
 		   otpPage= new OtpPage();
-		   basicInfoPage=homepage.clickBroadbandButton();
-		   popupPage=basicInfoPage.validateNextButton();
-		   popupPage=popupPage.validateCredentials();
-		   addOnPage=popupPage.validateApplyButton();
-		   yourDetails=addOnPage.validatesubmitAddons();
-		   connectionAddress=yourDetails.validateConnectionAddressBTN();
-		   otpPage=connectionAddress.validateStatusTest();
-		   
-		   
+		   saleCreatedPage= new SaleCreatedPage();
+		   addressDetails= homepage.validateEnterAddress();
+		   popupPage= addressDetails.validateNextButton();
+		   popupPage= popupPage.validateCredentials();
+		   addOnPage= popupPage.validateApplyButton();
+		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   connectionAddress= basicInfoPage.validateEmploymentdetailsSection();	  
+		   otpPage= connectionAddress.validateDebitcardSection();
 		 
 	   }
 	
-	
-	@Test(priority=1)
-	public void validateConnectionAddressTest() throws Throwable
+	@Test(priority = 1)
+	public void validateOTPTest() throws Throwable
 	{
-		
-	
+		otpPage.validateOTPpageContent();
+		otpPage.validateCheckBox();
 		otpPage.validateOtp();
-		otpPage=otpPage.submitSale();
-	  
+		saleCreatedPage= otpPage.validateSubmitSale();
+		
 	}
 	
 	@AfterMethod

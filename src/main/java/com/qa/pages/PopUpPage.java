@@ -119,10 +119,16 @@ public class PopUpPage extends Testbase {
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/ul[1]")
 		List<WebElement> specialOfferBarDetailsSpecial;	
 		
-		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/a[1]")
+		
+		
+		
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/a[1]")	 
 		WebElement applyPlan;	
 		
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/a[1]")	 
+		WebElement applyPlanSpecial;
 		
+		//Comman parameters in both special and non-special plans
 		@FindBy(xpath = "//button[contains(text(),'Email Plan Details')]")
 		WebElement viewPlanEmailButtons;
 		
@@ -321,10 +327,11 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("View plan Link Displayed");
 				planViewDetails.click();
+				Thread.sleep(3000);
 				if(viewPlanEmailButtons.isDisplayed())
 				{
-					Thread.sleep(2000);
 					viewPlanEmailButtons.click();
+					System.out.println("Mail Sent");
 					Thread.sleep(4000);
 					crossViewDetails.click();
 				}
@@ -377,11 +384,11 @@ public class PopUpPage extends Testbase {
 			if(typicalEveningspeed.isDisplayed())
 			{
 				String typicaleveningSpeed1=typicalEveningspeed.getText();
-				System.out.println("typicalEveningspeed of plan is :"+typicaleveningSpeed1+"/Mbps");
+				System.out.println("Typical Evening Speed of plan is :"+typicaleveningSpeed1+"/Mbps");
 			}
 			else
 			{
-				System.out.println("TypicalEveningspeed of plan  is MISSING!!");
+				System.out.println("Typical Evening speed of plan  is MISSING!!");
 			}
 			
 		}
@@ -441,10 +448,12 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("View plan Link Displayed");
 				planViewDetailsSpecial.click();
+				Thread.sleep(3000);
 				if(viewPlanEmailButtons.isDisplayed())
 				{
-					Thread.sleep(2000);
+					//Thread.sleep(2000);
 					viewPlanEmailButtons.click();
+					System.out.println("Mail Sent");
 					Thread.sleep(4000);
 					crossViewDetails.click();
 				}
@@ -518,6 +527,7 @@ public class PopUpPage extends Testbase {
 		
 		public AddOnsPage validateApplyButton() throws Throwable 
 		{
+			try {
 			if(applyPlan.isDisplayed())
 			{
 				Thread.sleep(2000);
@@ -529,6 +539,22 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Apply button Is MISSING!!!");
 				return null;
+			}
+				}
+			catch(Exception e)
+			{
+				if(applyPlanSpecial.isDisplayed())
+				{
+					Thread.sleep(2000);
+					applyPlanSpecial.click();
+					System.out.println("Plan Applied !!");
+					return new AddOnsPage();
+				}
+				else
+				{
+					System.out.println("Apply button Is MISSING!!!");
+					return null;
+				}
 			}
 			
 		}

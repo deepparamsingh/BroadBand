@@ -155,7 +155,7 @@ public class BasicInfoPage extends Testbase {
 			System.out.println("Email of User is :"+userEmail);
 			String userPhon=pNum.getText();
 			System.out.println("User Phone Number is :"+userPhon);
-			altpNum.sendKeys("0455555555");
+			altpNum.sendKeys(prop.getProperty("altnumber"));
 			dB.sendKeys("02 02 1995");
 		}
 		else
