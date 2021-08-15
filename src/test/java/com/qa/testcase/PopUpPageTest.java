@@ -77,6 +77,7 @@ public class PopUpPageTest extends Testbase {
 			// TODO: handle exception
 			popupPage.validateCheckPlan();
 			addOnPage= popupPage.validateApplyButton();
+			//System.out.println("");
 		}
 		
 		
