@@ -11,7 +11,7 @@ import com.qa.pages.AddressDetails;
 import com.qa.pages.BasicInfoPage;
 import com.qa.pages.HomePage;
 import com.qa.pages.PopUpPage;
-import com.qa.pages.YourDetails;
+
 
 public class AddOnPageTest extends Testbase {
 	
@@ -38,6 +38,12 @@ public class AddOnPageTest extends Testbase {
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
 		   popupPage= popupPage.validateCredentials();
+		   try{
+			   addOnPage= popupPage.validateCheckPlanSpecial();			   
+		   }catch (Exception e) 
+		   {			   
+			   addOnPage= popupPage.validateCheckPlan();
+		   }	
 		   addOnPage= popupPage.validateApplyButton();
 		   
 		 

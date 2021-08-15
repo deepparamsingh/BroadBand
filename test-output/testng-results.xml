@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-15T11:39:32Z" name="Default suite" finished-at="2021-08-15T11:42:09Z" duration-ms="157506">
+  <suite started-at="2021-08-15T19:08:20Z" name="Command line suite" finished-at="2021-08-15T19:11:01Z" duration-ms="160589">
     <groups>
     </groups>
-    <test started-at="2021-08-15T11:39:32Z" name="Default test" finished-at="2021-08-15T11:42:09Z" duration-ms="157506">
+    <test started-at="2021-08-15T19:08:20Z" name="Command line test" finished-at="2021-08-15T19:11:01Z" duration-ms="160589">
       <class name="com.qa.testcase.OtpTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.OtpTest@4f74980d]" started-at="2021-08-15T11:39:32Z" name="setup" finished-at="2021-08-15T11:41:54Z" duration-ms="142119" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.OtpTest@365c30cc]" started-at="2021-08-15T19:08:21Z" name="setup" finished-at="2021-08-15T19:10:47Z" duration-ms="146240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateOTPTest()[pri:1, instance:com.qa.testcase.OtpTest@4f74980d]" started-at="2021-08-15T11:41:54Z" name="validateOTPTest" finished-at="2021-08-15T11:42:07Z" duration-ms="13324" status="PASS">
+        <test-method signature="validateOTPTest()[pri:1, instance:com.qa.testcase.OtpTest@365c30cc]" started-at="2021-08-15T19:10:47Z" name="validateOTPTest" finished-at="2021-08-15T19:10:59Z" duration-ms="12454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateOTPTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.OtpTest@4f74980d]" started-at="2021-08-15T11:42:07Z" name="tearDown" finished-at="2021-08-15T11:42:09Z" duration-ms="1972" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.OtpTest@365c30cc]" started-at="2021-08-15T19:10:59Z" name="tearDown" finished-at="2021-08-15T19:11:01Z" duration-ms="1783" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.testcase.OtpTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
 </testng-results>

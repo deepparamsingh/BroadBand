@@ -20,6 +20,7 @@ public class BasicInfoPageTest extends Testbase {
 	AddOnsPage addOnPage;
 	BasicInfoPage basicInfoPage;
 	ConnectionAddress connectionAddress;
+	PopUpPageTest popUpPageTest;
 	
 
 	public BasicInfoPageTest()
@@ -38,7 +39,14 @@ public class BasicInfoPageTest extends Testbase {
 		   connectionAddress = new ConnectionAddress();
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
+		  // popUpPageTest.validateCheckPlanTest();
 		   popupPage= popupPage.validateCredentials();
+		   try{
+			   addOnPage= popupPage.validateCheckPlanSpecial();			   
+		   }catch (Exception e) 
+		   {			   
+			   addOnPage= popupPage.validateCheckPlan();
+		   }		   
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateIdentificationButton();
 		   	   

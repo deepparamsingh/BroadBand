@@ -293,7 +293,7 @@ public class PopUpPage extends Testbase {
 			}
 		}
 		
-		public void validateCheckPlan() throws Throwable
+		public AddOnsPage validateCheckPlan() throws Throwable
 		{
 			//validateCredentials();
 			Thread.sleep(2000);
@@ -390,12 +390,12 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Typical Evening speed of plan  is MISSING!!");
 			}
-			
+			return new AddOnsPage();
 		}
 		
 		
 		
-		public void validateCheckPlanSpecial() throws Throwable
+		public AddOnsPage validateCheckPlanSpecial() throws Throwable
 		{
 			//validateCredentials();
 			Thread.sleep(2000);
@@ -521,6 +521,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Special Cost of Plan is MISSING!!");
 			}
+			return new AddOnsPage();
 						
 		}
 		
