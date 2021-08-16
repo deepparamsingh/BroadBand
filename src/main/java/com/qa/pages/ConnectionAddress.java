@@ -38,10 +38,41 @@ public class ConnectionAddress extends Testbase {
 		@FindBy(xpath = "//label[@for='billing_addr']//span[@class='current_complete_address']")
 		WebElement BillingAddress;
 		
+		//-----------other address--------------------
+		@FindBy(xpath = "//label[normalize-space()='Other address']")
+		WebElement otherAddressBilling;
+		@FindBy(xpath = "//input[@id='bill_address_search']")
+		WebElement inputOtherAddressBilling;
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]")
+		WebElement selectOtherAddressBilling;
+		@FindBy(xpath = "//label[@for='mannual_billing_addr_check']")
+		WebElement checkBoxBilling;
+		
+		//-------------------------------
+		
 		@FindBy(xpath = "//div[@id='deliver_detail_opt']//div[@class='panel-body']")
 		WebElement deliverySection;
 		@FindBy(xpath = "//label[@for='cuurent_delivery_addr']//span[@class='current_complete_address']")
 		WebElement DeliveryAddress;
+		
+		//----------------other address for delivery equipment-----------
+		@FindBy(xpath = "//label[contains(text(),\"Other address (can't be a Post Box, Locked Bag or \")]")
+		WebElement otherAddressDelivery;
+		@FindBy(xpath = "//input[@id='delivery_address_search']")
+		WebElement inputOtherAddressDelivery;
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]")
+		WebElement selectOtherAddressDelivery;
+		@FindBy(xpath = "//label[@for='delivery_mannual_addr_check']")
+		WebElement checkBoxAddress;
+		
+		
+		//--------------------------------------
+		
+		
+		
+		
+		
+		
 		
 		//Credit card Details
 		@FindBy(xpath = "//div[@class='ques-wrap dotted-area credit_card_section']")
@@ -109,6 +140,13 @@ public class ConnectionAddress extends Testbase {
 				String userbillAddress=BillingAddress.getText();
 				System.out.println("User Bill will be deliver to this address: "+userbillAddress);
 			}
+			else if(otherAddressBilling.isDisplayed())
+			{
+				otherAddressBilling.click();
+				inputOtherAddressBilling.sendKeys("barangaroo  ");
+				selectOtherAddressBilling.click();
+				checkBoxBilling.click();
+			}
 									
 		}
 		else
@@ -122,6 +160,14 @@ public class ConnectionAddress extends Testbase {
 			String deliveryAddress=DeliveryAddress.getText();
 			System.out.println("Equiptments will be deliver to Address :"+deliveryAddress);
 			DeliveryAddress.click();
+		}
+		else if(otherAddressDelivery.isDisplayed())
+		{
+			Thread.sleep(3000);
+			otherAddressDelivery.click();
+			inputOtherAddressDelivery.sendKeys("barangaroo  ");
+			selectOtherAddressDelivery.click();
+			checkBoxAddress.click();
 		}
 		else
 		{
