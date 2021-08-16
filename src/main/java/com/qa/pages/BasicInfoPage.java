@@ -160,13 +160,13 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("Your Details section is Missing !!");
+			System.out.println("Your Details section is Not their or Missing !!");
 		}
 		
 	}
 	public void validateconnectionDetailsSection() throws Throwable
 	{
-		validateYourDetailsSection();
+		//validateYourDetailsSection();
 		if(connectionDetailsSection.isDisplayed())
 		{
 			alreadyaccountyes.click();
@@ -178,14 +178,14 @@ public class BasicInfoPage extends Testbase {
 			
 		}
 		else {
-			System.out.println("Connection Details section is Missing !!");
+			System.out.println("Connection Details section is Not their or Missing !!");
 		}
 	}
 	
 	public void validateIdentificationDetailsSection() throws Throwable
 	{
 		
-		validateconnectionDetailsSection();
+		//validateconnectionDetailsSection();
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			AustralianPassport.click();
@@ -195,15 +195,15 @@ public class BasicInfoPage extends Testbase {
 			
 		}
 		else {
-			System.out.println("Identification Details section is Missing !!");
+			System.out.println("Identification Details section is Not their or Missing !!");
 		}
 		
 	}
 	
-	public ConnectionAddress validateEmploymentdetailsSection() throws Throwable
+	public void validateEmploymentdetailsSection() throws Throwable
 	{
 		
-		validateIdentificationDetailsSection();
+		//validateIdentificationDetailsSection();
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			industry.click();
@@ -221,14 +221,26 @@ public class BasicInfoPage extends Testbase {
 			connectionDetailsButton.click();
 			connectionDetailsButton.click();
 			Thread.sleep(4000);
-			return new ConnectionAddress();
+			//return new ConnectionAddress();
 			
 			
 		}
 		else {
-			System.out.println("Employment Details section is Missing !!");
-			return null;
+			System.out.println("Employment Details section is Not their or  Missing !!");
+			//return null;
 		}
 		
 	}
+	
+	
+	public ConnectionAddress validateAllSectionBasicInfoPage() throws Throwable 
+	{
+		validateYourDetailsSection();
+		validateconnectionDetailsSection();
+		validateIdentificationDetailsSection();
+		validateEmploymentdetailsSection();
+		return new ConnectionAddress();
+		
+	}
+	
 }

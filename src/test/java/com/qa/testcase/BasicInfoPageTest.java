@@ -90,7 +90,7 @@ public class BasicInfoPageTest extends Testbase {
 	@Test(priority = 1)
 	public void validateEmploymentdetailsSectionTest() throws Throwable
 	{
-		connectionAddress=basicInfoPage.validateEmploymentdetailsSection();
+		connectionAddress=basicInfoPage.validateAllSectionBasicInfoPage();
 		
 	}
 	

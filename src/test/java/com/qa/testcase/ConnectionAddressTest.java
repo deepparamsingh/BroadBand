@@ -12,7 +12,6 @@ import com.qa.pages.ConnectionAddress;
 import com.qa.pages.HomePage;
 import com.qa.pages.OtpPage;
 import com.qa.pages.PopUpPage;
-import com.qa.pages.YourDetails;
 
 public class ConnectionAddressTest extends Testbase {
 	
@@ -44,9 +43,15 @@ public class ConnectionAddressTest extends Testbase {
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateNextButton();
 		   popupPage= popupPage.validateCredentials();
+		   try{
+			   addOnPage= popupPage.validateCheckPlanSpecial();			   
+		   }catch (Exception e) 
+		   {			   
+			   addOnPage= popupPage.validateCheckPlan();
+		   }	
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateIdentificationButton();
-		   connectionAddress= basicInfoPage.validateEmploymentdetailsSection();	   	   
+		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	   	   
 		 
 	   }
 	
@@ -60,7 +65,7 @@ public class ConnectionAddressTest extends Testbase {
 	@Test(priority = 1)
 	public void validateBillingdeliveryAddressTest() throws Throwable
 	{
-		otpPage=connectionAddress.validateDebitcardSection();
+		otpPage=connectionAddress.validateAllSectionConnectionAddressPage();
 		
 	}
 	

@@ -29,16 +29,18 @@ public class ConnectionAddress extends Testbase {
 		WebElement ASAP;
 		
 		//Billing And Delivery Address
+//		@FindBy(xpath = "//div[@id='billing_and_delivery_address_section']")
+//		WebElement BillingAndDeliverySection;			
 		@FindBy(xpath = "//div[@id='bill_detail_opt']//div[@class='panel-body']")
 		WebElement BillingSection;	
 		@FindBy(xpath = "//span[@id='billing_email_disp']")
 		WebElement BillingEmail;
-		@FindBy(xpath = "//label[@for='billing_addr']//span[@class='current_complete_address'][normalize-space()='Unit 30 50 Walker St, RHODES NSW, 2138']")
+		@FindBy(xpath = "//label[@for='billing_addr']//span[@class='current_complete_address']")
 		WebElement BillingAddress;
 		
 		@FindBy(xpath = "//div[@id='deliver_detail_opt']//div[@class='panel-body']")
 		WebElement deliverySection;
-		@FindBy(xpath = "//label[@for='cuurent_delivery_addr']//span[@class='current_complete_address'][normalize-space()='Unit 30 50 Walker St, RHODES NSW, 2138']")
+		@FindBy(xpath = "//label[@for='cuurent_delivery_addr']//span[@class='current_complete_address']")
 		WebElement DeliveryAddress;
 		
 		//Credit card Details
@@ -70,7 +72,7 @@ public class ConnectionAddress extends Testbase {
 
 	public void validateConnectionDetailsSection() throws Throwable
 	{
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		if(connectionAddressSection.isDisplayed())
 		{
 			String existingAddress= fetchaddess.getText();
@@ -85,26 +87,36 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
-			System.out.println("Connection Address Section is MISSING!!");
+			System.out.println("Connection Address Section is not their OR  MISSING!!");
 		}
 		
 	}
 	
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
-		validateConnectionDetailsSection();
+		//validateConnectionDetailsSection();
 		if(BillingSection.isDisplayed())
 		{
-			String userBillemail= BillingEmail.getText();
-			System.out.println("User Bill will be sent to this email:"+userBillemail);
-			String userbillAddress=BillingAddress.getText();
-			System.out.println("User Bill will be deliver to this address: "+userbillAddress);
-			BillingEmail.click();			
+			if(BillingEmail.isDisplayed()) 
+			{
+				BillingEmail.click();
+				String userBillemail= BillingEmail.getText();
+				System.out.println("User Bill will be sent to this email:"+userBillemail);
+			}
+			else if(BillingAddress.isDisplayed())
+			{
+				BillingAddress.click();
+				String userbillAddress=BillingAddress.getText();
+				System.out.println("User Bill will be deliver to this address: "+userbillAddress);
+			}
+									
 		}
 		else
 		{
-			System.out.println("Billing Section is MISSING !!");
+			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
+		
+		
 		if(deliverySection.isDisplayed())
 		{
 			String deliveryAddress=DeliveryAddress.getText();
@@ -113,13 +125,13 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
-			System.out.println("Delivery Section is MISSING!!");
+			System.out.println("Delivery Section is not their OR  MISSING!!");
 		}
 	}
 	
-	public OtpPage validateDebitcardSection() throws Throwable
+	public void validateDebitcardSection() throws Throwable
 	{
-		validateBillingdeliveryAddress();
+		//validateBillingdeliveryAddress();
 		if(debitCardSection.isDisplayed())
 		{
 			debitCardName.sendKeys("Param-deep");
@@ -133,13 +145,21 @@ public class ConnectionAddress extends Testbase {
 			String securevalue=secureText.getText();
 			System.out.println("Secure text is :"+securevalue);
 			ReviewDetailsButton.click();
-			return new OtpPage();
+			//return new OtpPage();
 		}
 		else
 		{
-			System.out.println("Debit Card session is MISSING !!");
-			return null;
+			System.out.println("Debit Card session is not their OR MISSING !!");
+			//return null;
 		}
+	}
+	
+	public OtpPage validateAllSectionConnectionAddressPage() throws Throwable
+	{
+		validateConnectionDetailsSection();
+		validateBillingdeliveryAddress();
+		validateDebitcardSection();
+		return new OtpPage();
 	}
 	       
 	
