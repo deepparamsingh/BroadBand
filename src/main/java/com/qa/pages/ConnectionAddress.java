@@ -142,6 +142,7 @@ public class ConnectionAddress extends Testbase {
 			}
 			else if(otherAddressBilling.isDisplayed())
 			{
+				Thread.sleep(2000);
 				otherAddressBilling.click();
 				inputOtherAddressBilling.sendKeys("barangaroo  ");
 				selectOtherAddressBilling.click();
@@ -157,17 +158,20 @@ public class ConnectionAddress extends Testbase {
 		
 		if(deliverySection.isDisplayed())
 		{
+			if(DeliveryAddress.isDisplayed())
+			{
 			String deliveryAddress=DeliveryAddress.getText();
 			System.out.println("Equiptments will be deliver to Address :"+deliveryAddress);
 			DeliveryAddress.click();
 		}
 		else if(otherAddressDelivery.isDisplayed())
 		{
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			otherAddressDelivery.click();
 			inputOtherAddressDelivery.sendKeys("barangaroo  ");
 			selectOtherAddressDelivery.click();
 			checkBoxAddress.click();
+		}
 		}
 		else
 		{
