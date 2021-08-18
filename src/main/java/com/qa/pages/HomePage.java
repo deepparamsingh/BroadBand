@@ -180,6 +180,7 @@ public class HomePage extends Testbase {
 	{
 		addressInputBar.sendKeys(prop.getProperty("address"));
 		Thread.sleep(3000);
+		try {
 		if(selectAddress.isDisplayed())
 		{
 		selectAddress.click();
@@ -189,13 +190,16 @@ public class HomePage extends Testbase {
 		{
 			
 			compareButton.click();
-			return new AddressDetails();
+			//return new AddressDetails();
 		}
-		else {
+		}
+		catch (Exception e) {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
 			System.out.println(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
 			return null;
-		}		
+		}
+		return new AddressDetails();
+			
 
 	}
 

@@ -52,7 +52,7 @@ public class HomePageTest extends Testbase {
 //	}
 	
 	@Test(enabled=false)
-	public void validateHomePageTitleTest()
+	public void validateHomePageTitleTest() throws Throwable
 	{
 		homepage.validateHomePageTitle();
 //		String basicInfoTitle=driver.getCurrentUrl();
