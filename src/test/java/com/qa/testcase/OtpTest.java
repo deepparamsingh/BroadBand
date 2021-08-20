@@ -46,7 +46,7 @@ public class OtpTest extends Testbase {
 		   otpPage= new OtpPage();
 		   saleCreatedPage= new SaleCreatedPage();
 		   addressDetails= homepage.validateEnterAddress();
-		   popupPage= addressDetails.validateNextButton();
+		   popupPage= addressDetails.validateFullJourney();
 		   popupPage= popupPage.validateCredentials();
 		   try{
 			   addOnPage= popupPage.validateCheckPlanSpecial();			   
@@ -64,10 +64,8 @@ public class OtpTest extends Testbase {
 	@Test(priority = 1)
 	public void validateOTPTest() throws Throwable
 	{
-		otpPage.validateOTPpageContent();
-		otpPage.validateCheckBox();
-		otpPage.validateOtp();
-		saleCreatedPage= otpPage.validateSubmitSale();
+		
+		saleCreatedPage= otpPage.validateFullJourney();
 		
 	}
 	

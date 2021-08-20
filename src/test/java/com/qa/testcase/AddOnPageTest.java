@@ -36,7 +36,7 @@ public class AddOnPageTest extends Testbase {
 		   popupPage = new PopUpPage();
 		   addOnPage = new AddOnsPage();
 		   addressDetails= homepage.validateEnterAddress();
-		   popupPage= addressDetails.validateNextButton();
+		   popupPage= addressDetails.validateFullJourney();
 		   popupPage= popupPage.validateCredentials();
 		   try{
 			   addOnPage= popupPage.validateCheckPlanSpecial();			   
@@ -59,7 +59,7 @@ public class AddOnPageTest extends Testbase {
 	public void validateIdentificationButtonTest() throws Throwable
 	{
 		addOnPage.validateAddOntitle();
-		basicInfoPage=addOnPage.validateIdentificationButton();
+		basicInfoPage=addOnPage.validateFullJourney();
 		
 	}
 	

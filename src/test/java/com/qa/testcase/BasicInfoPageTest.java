@@ -38,7 +38,7 @@ public class BasicInfoPageTest extends Testbase {
 		   basicInfoPage = new BasicInfoPage();
 		   connectionAddress = new ConnectionAddress();
 		   addressDetails= homepage.validateEnterAddress();
-		   popupPage= addressDetails.validateNextButton();
+		   popupPage= addressDetails.validateFullJourney();
 		  // popUpPageTest.validateCheckPlanTest();
 		   popupPage= popupPage.validateCredentials();
 		   try{
@@ -48,7 +48,7 @@ public class BasicInfoPageTest extends Testbase {
 			   addOnPage= popupPage.validateCheckPlan();
 		   }		   
 		   addOnPage= popupPage.validateApplyButton();
-		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   basicInfoPage= addOnPage.validateFullJourney();
 		   	   
 		 
 	   }

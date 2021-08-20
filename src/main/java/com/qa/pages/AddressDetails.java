@@ -30,8 +30,17 @@ public class AddressDetails extends Testbase {
 		WebElement specialNote;
 		
 		
+		@FindBy(xpath = "//span[contains(text(),'Internet connection type')]")
+		WebElement ict;
+		
+		
+		@FindBy(xpath = "//span[contains(text(),'4G')]")
+		WebElement selectICT;
+		
+		
 		
 		String addressFound="Congratulations!";
+		String adressNotFound="NBN™ is not available";
 
 		//Intilizing The Page Objects
 		public AddressDetails()
@@ -46,6 +55,11 @@ public class AddressDetails extends Testbase {
 			if(actuaRibonText.contains(addressFound))
 			{
 				System.out.println("Address Found!  ------>"+actuaRibonText);
+			}
+			else if(actuaRibonText.contains(adressNotFound))
+			{
+				ict.click();
+				selectICT.click();
 			}
 			else
 			{
@@ -66,7 +80,7 @@ public class AddressDetails extends Testbase {
 			}
 		}
 		
-		public PopUpPage validateNextButton() throws Throwable
+		public void validateNextButton() throws Throwable
 		{
 			Thread.sleep(7000);
 			if(nextButton.isDisplayed())
@@ -74,20 +88,21 @@ public class AddressDetails extends Testbase {
 				moveInNo.click();
 				nextButton.click();
 				System.out.println("validateNextButton-->PASSED!!-->Next Button Clicked");
-				return new PopUpPage();
+				//return new PopUpPage();
 			}
 			else
 			{
 				System.out.println("validateNextButton --> FAILLED!!");
-				return null;
+				//return null;
 			}
 			
 		}
-		public void fullJourney() throws Throwable
+		public PopUpPage validateFullJourney() throws Throwable
 		{
 			validateRibbon();
 			validateSpecialNote();
-			validateNextButton();		
+			validateNextButton();	
+			return new PopUpPage();
 		}
 
 }

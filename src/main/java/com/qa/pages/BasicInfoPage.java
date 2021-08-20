@@ -218,8 +218,6 @@ public class BasicInfoPage extends Testbase {
 			timeOfCurrentEmploymentMonth.click();
 			SelectTOCEmonth.click();
 			doYouHaveCreditCardYES.click();
-			connectionDetailsButton.click();
-			connectionDetailsButton.click();
 			Thread.sleep(4000);
 			//return new ConnectionAddress();
 			
@@ -232,6 +230,18 @@ public class BasicInfoPage extends Testbase {
 		
 	}
 	
+	public void validatesubmitBasicDetailsButton()
+	{
+		if(connectionDetailsButton.isDisplayed())
+		{
+			connectionDetailsButton.click();
+		}
+		else
+		{
+			System.out.println("Basic details submit button is MISSING");
+		}
+	}
+	
 	
 	public ConnectionAddress validateAllSectionBasicInfoPage() throws Throwable 
 	{
@@ -239,6 +249,7 @@ public class BasicInfoPage extends Testbase {
 		validateconnectionDetailsSection();
 		validateIdentificationDetailsSection();
 		validateEmploymentdetailsSection();
+		validatesubmitBasicDetailsButton();
 		return new ConnectionAddress();
 		
 	}

@@ -10,18 +10,22 @@ import com.qa.pages.AddressDetails;
 import com.qa.pages.BasicInfoPage;
 import com.qa.pages.ConnectionAddress;
 import com.qa.pages.HomePage;
+import com.qa.pages.OtpPage;
 import com.qa.pages.PopUpPage;
-import com.qa.pages.YourDetails;
+import com.qa.pages.SaleCreatedPage;
+
 
 public class SaleCreatedTest extends Testbase {
 	
+
 	HomePage homepage;
-	BasicInfoPage basicInfoPage;
-	PopUpPage popupPage;
-	AddOnsPage addOnPage;
-	//YourDetails yourDetails;
 	AddressDetails addressDetails;
+	PopUpPage popupPage;	
+	AddOnsPage addOnPage;
+	BasicInfoPage basicInfoPage;
 	ConnectionAddress connectionAddress;
+	OtpPage otpPage;
+	SaleCreatedPage saleCreatedPage;
 
 	public SaleCreatedTest()
 	{
@@ -33,16 +37,27 @@ public class SaleCreatedTest extends Testbase {
 	   {
 		   initialization();
 		   homepage= new HomePage();
-		   basicInfoPage= new BasicInfoPage();
+		   addressDetails = new AddressDetails();
 		   popupPage = new PopUpPage();
-		   addressDetails= new AddressDetails();
-		   yourDetails=new YourDetails();
-		   connectionAddress= new ConnectionAddress();
-		   basicInfoPage=homepage.clickBroadbandButton();
-		   popupPage=basicInfoPage.validateNextButton();
-		   popupPage=popupPage.validateCredentials();
-		   addOnPage=popupPage.validateApplyButton();
-		   yourDetails=addOnPage.validatesubmitAddons();
+		   addOnPage = new AddOnsPage();
+		   basicInfoPage = new BasicInfoPage();
+		   connectionAddress = new ConnectionAddress();
+		   otpPage= new OtpPage();
+		   saleCreatedPage= new SaleCreatedPage();
+		   addressDetails= homepage.validateEnterAddress();
+		   popupPage= addressDetails.validateFullJourney();
+		   popupPage= popupPage.validateCredentials();
+		   try{
+			   addOnPage= popupPage.validateCheckPlanSpecial();			   
+		   }catch (Exception e) 
+		   {			   
+			   addOnPage= popupPage.validateCheckPlan();
+		   }	
+		   addOnPage= popupPage.validateApplyButton();
+		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	  
+		   otpPage= connectionAddress.validateAllSectionConnectionAddressPage();
+		   saleCreatedPage= otpPage.validateFullJourney();
 		 
 	   }
 	
@@ -54,14 +69,15 @@ public class SaleCreatedTest extends Testbase {
 //		yourDetails.validateYourDetails();
 //		yourDetails.connectionDetails();
 //		yourDetails.validateidentificationDetails();
-		connectionAddress=yourDetails.validateConnectionAddressBTN();
+		System.out.println("Sale created Thanks");
+		
 	  
 	}
 	
 	@Test(enabled=false)
 	public void validateConnectionDetailsTest() throws Throwable
 	{
-		yourDetails.validateYourDetails();
+		//yourDetails.validateYourDetails();
 	  
 	}
 		

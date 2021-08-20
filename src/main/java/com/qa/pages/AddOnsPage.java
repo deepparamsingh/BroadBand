@@ -41,21 +41,35 @@ public class AddOnsPage extends Testbase {
 				}
 				
 			}
-			public BasicInfoPage validateIdentificationButton() throws Throwable
+			public void validateIdentificationButton() throws Throwable
 			{
-				Thread.sleep(3000);
+				Thread.sleep(6000);
+				try {
 				if(identificationSubmitButton.isDisplayed())
 				{
 					identificationSubmitButton.click();
 					System.out.println("Identification Button Clicked !!");
-					return new BasicInfoPage();
+					
 				}
 				else
 				{
-					System.out.println("Identification Button MISSING");
-				}	return null;
+					System.out.println("Identification Button is non-clickable");
+				}
+				}
+				catch (Exception e)
+				{
+					System.out.println("Their is NO modem with this Plan OR Identification Button MISSING");
+				}
+				
 			}
 			
+			public BasicInfoPage validateFullJourney() throws Throwable
+			{
+				//validateAddOntitle();
+				validateIdentificationButton();
+				return new BasicInfoPage();
+				
+			}
 			
 	
 	

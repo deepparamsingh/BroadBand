@@ -46,14 +46,14 @@ public class AddressDetailsTest extends Testbase {
 	@Test(priority=1)
 	public void validateNextButtonTest() throws Throwable
 	{
-		popUpPage= addressDetails.validateNextButton();
+		popUpPage= addressDetails.validateFullJourney();
 	}
 	
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
      	
 
 }

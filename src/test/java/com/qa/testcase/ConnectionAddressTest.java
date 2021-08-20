@@ -41,7 +41,7 @@ public class ConnectionAddressTest extends Testbase {
 		   connectionAddress = new ConnectionAddress();
 		   otpPage= new OtpPage();
 		   addressDetails= homepage.validateEnterAddress();
-		   popupPage= addressDetails.validateNextButton();
+		   popupPage= addressDetails.validateFullJourney();
 		   popupPage= popupPage.validateCredentials();
 		   try{
 			   addOnPage= popupPage.validateCheckPlanSpecial();			   

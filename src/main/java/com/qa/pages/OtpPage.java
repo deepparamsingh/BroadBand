@@ -256,12 +256,20 @@ public class OtpPage extends Testbase {
 			
 			
 		}		
-		public SaleCreatedPage  validateSubmitSale()
+		public void  validateSubmitSale()
 		{
 			SaleCreated.click();
+		
+			
+			
+		}
+		public SaleCreatedPage validateFullJourney() throws Throwable
+		{
+			validateOTPpageContent();
+			validateCheckBox();
+			validateOtp();
+			validateSubmitSale();
 			return new SaleCreatedPage();
-			
-			
 		}
 		
 		

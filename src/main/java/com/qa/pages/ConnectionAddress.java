@@ -194,21 +194,35 @@ public class ConnectionAddress extends Testbase {
 			debitCardCheckBox2.click();
 			String securevalue=secureText.getText();
 			System.out.println("Secure text is :"+securevalue);
-			ReviewDetailsButton.click();
-			//return new OtpPage();
+			
 		}
 		else
 		{
 			System.out.println("Debit Card session is not their OR MISSING !!");
-			//return null;
+			
 		}
 	}
+	
+	public void validateConnectionDetailsButton()
+	{
+		if(ReviewDetailsButton.isDisplayed())
+		{
+			ReviewDetailsButton.click();
+		}
+		else
+		{
+			System.out.println("Review connection details button is MISSING !! ");
+		}
+			
+	}
+	
 	
 	public OtpPage validateAllSectionConnectionAddressPage() throws Throwable
 	{
 		validateConnectionDetailsSection();
 		validateBillingdeliveryAddress();
 		validateDebitcardSection();
+		validateConnectionDetailsButton();
 		return new OtpPage();
 	}
 	       
