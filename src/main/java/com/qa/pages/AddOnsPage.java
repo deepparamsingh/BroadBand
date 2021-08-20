@@ -43,7 +43,7 @@ public class AddOnsPage extends Testbase {
 			}
 			public void validateIdentificationButton() throws Throwable
 			{
-				Thread.sleep(6000);
+				//Thread.sleep(6000);
 				try {
 				if(identificationSubmitButton.isDisplayed())
 				{

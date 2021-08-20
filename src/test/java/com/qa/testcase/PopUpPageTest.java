@@ -66,22 +66,24 @@ public class PopUpPageTest extends Testbase {
 		
 	}
 	
+//	@Test(priority = 1)
+//	public void validateCheckPlanTest() throws Throwable
+//	{
+//		popupPage.validateCredentials();
+//		try {			
+//			popupPage.validateCheckPlanSpecial();
+//			addOnPage= popupPage.validateApplyButton();
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//			popupPage.validateCheckPlan();
+//			addOnPage= popupPage.validateApplyButton();			
+//		}	
+//	}
+	
 	@Test(priority = 1)
 	public void validateCheckPlanTest() throws Throwable
 	{
-		popupPage.validateCredentials();
-		try {			
-			popupPage.validateCheckPlanSpecial();
-			addOnPage= popupPage.validateApplyButton();
-		}catch (Exception e) {
-			// TODO: handle exception
-			popupPage.validateCheckPlan();
-			addOnPage= popupPage.validateApplyButton();
-			
-		}
-		
-		
-		
+		addOnPage = popupPage.fullJourney();
 	}
 	
 	

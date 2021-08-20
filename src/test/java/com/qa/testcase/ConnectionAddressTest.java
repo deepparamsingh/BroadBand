@@ -50,7 +50,7 @@ public class ConnectionAddressTest extends Testbase {
 			   addOnPage= popupPage.validateCheckPlan();
 		   }	
 		   addOnPage= popupPage.validateApplyButton();
-		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   basicInfoPage= addOnPage.validateFullJourney();
 		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	   	   
 		 
 	   }

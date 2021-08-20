@@ -529,25 +529,26 @@ public class PopUpPage extends Testbase {
 		public AddOnsPage validateApplyButton() throws Throwable 
 		{
 			try {
-			if(applyPlan.isDisplayed())
-			{
-				Thread.sleep(2000);
-				applyPlan.click();
-				System.out.println("Plan Applied !!");
-				return new AddOnsPage();
-			}
-			else
-			{
-				System.out.println("Apply button Is MISSING!!!");
-				return null;
-			}
-				}
-			catch(Exception e)
-			{
 				if(applyPlanSpecial.isDisplayed())
 				{
 					Thread.sleep(2000);
 					applyPlanSpecial.click();
+					System.out.println("Plan Applied !!");
+					return new AddOnsPage();
+				}
+				else
+				{
+					System.out.println("Apply button Is MISSING!!!");
+					return null;
+				}
+				
+				}
+			catch(Exception e)
+			{
+				if(applyPlan.isDisplayed())
+				{
+					Thread.sleep(2000);
+					applyPlan.click();
 					System.out.println("Plan Applied !!");
 					return new AddOnsPage();
 				}
@@ -561,14 +562,23 @@ public class PopUpPage extends Testbase {
 		}
 		
 		
-		public void fullJourney() throws Throwable
+		public AddOnsPage fullJourney() throws Throwable
 		{
-			validateinfoPopup();
-			validateValidations();
-			validateWrongCredentials();
+//			validateinfoPopup();
+//			validateValidations();
+//			validateWrongCredentials();
 			validateCredentials();
-			validateTopBarFeatures();
-			validateCheckPlan();
+//			validateTopBarFeatures();
+			try {
+				validateCheckPlanSpecial();
+			}
+			catch (Exception e) {
+				validateCheckPlan();
+			
+			}
+			
+			validateApplyButton();
+			return new AddOnsPage();
 			
 		}
 

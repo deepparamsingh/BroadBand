@@ -55,7 +55,7 @@ public class OtpTest extends Testbase {
 			   addOnPage= popupPage.validateCheckPlan();
 		   }	
 		   addOnPage= popupPage.validateApplyButton();
-		   basicInfoPage= addOnPage.validateIdentificationButton();
+		   basicInfoPage= addOnPage.validateFullJourney();
 		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	  
 		   otpPage= connectionAddress.validateAllSectionConnectionAddressPage();
 		 
