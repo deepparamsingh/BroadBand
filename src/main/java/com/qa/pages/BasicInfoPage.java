@@ -118,8 +118,98 @@ public class BasicInfoPage extends Testbase {
 	WebElement connectionDetailsButton;
 	
 	
+	//Validation Messages - Your Details section
+	@FindBy(xpath = "//span[contains(text(),'Choose Title.')]")
+	WebElement titleValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter the first name.')]")
+	WebElement firstNameValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter the last name.')]")
+	WebElement lastNameValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter date of birth.')]")
+	WebElement dBValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter email.')]")
+	WebElement emailValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please Enter Phone Number.')]")
+	WebElement phoneNumberValidation;
+
+	//Validation Messages - Connection Details section
+	
+	@FindBy(xpath = "//span[contains(text(),'Do you have account with this provider?')]")
+	WebElement accountProviderValidation;
+	@FindBy(xpath = "//span[contains(text(),'Account Number is required.')]")
+	WebElement accountNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Do you want existing phone number?')]")
+	WebElement existingPhoneNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter home phone number.')]")
+	WebElement existingHomeNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter account number.')]")
+	WebElement providerAccountNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please check the above box to confirm the number transfer request')]")
+	WebElement connectionCheckBoxValidation;
+	
+	//Validation Messages - Identification Details section
+	
+	@FindBy(xpath = "//span[contains(text(),'Please select any one ID.')]")
+	WebElement selectIdentificationIdvalidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter passport number.')]")
+	WebElement passportvalidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter expiry date.')]")
+	WebElement passportExpiryValidation;
+	
+	@FindBy(xpath = "//span[contains(text(),'Please enter Medicare card number.')]")
+	WebElement medicareCardNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select IRN from dropdown.')]")
+	WebElement irnValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter middle name on card.')]")
+	WebElement medicareMidnameValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select from dropdown.')]")
+	WebElement medicareCardColourValidation;
+	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/span[1]")
+	WebElement medicareCardExpiryValidation;
+	
+	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[2]/div[1]/div[1]/span[1]")
+	WebElement foreignPassortNumberValidation;
+	//country drop down validation is missing
+	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/span[1]")
+	WebElement foreignPassortExpiryValidation;
+	//Last tab of section is missing
 	
 	
+	//Validation Messages - Employment Details section
+	@FindBy(xpath = "//span[contains(text(),'Please select Industry from dropdown.')]")
+	WebElement industryValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select occupation type from dropdown.')]")
+	WebElement occupationValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter your occupation or job title.')]")
+	WebElement enterOccupationValueValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select employment status from dropdown.')]")
+	WebElement employmentStatusValidation;
+	@FindBy(xpath = "//span[contains(text(),'Employer Name is required.')]")
+	WebElement employmentNameValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select year from dropdown.')]")
+	WebElement yearEmploymentValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select month from dropdown.')]")
+	WebElement monthEmploymentValidation;
+	
+	//Validation Messages - Connection Address Details section
+	@FindBy(xpath = "//span[contains(text(),'Please select Residential status from dropdown')]")
+	WebElement residentialStatusValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select year from dropdown')]")
+	WebElement yearResidentailValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter your occupation or job title.')]")
+	WebElement monthResidentailValidation;
+	
+	//Validation Messages - Billing/Delivery Address Details section
+	@FindBy(xpath = "//span[contains(text(),'Please select any option for billing.')]")
+	WebElement billingAddressValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please select any option for delivery.')]")
+	WebElement deliveryAddressValidation;
+	
+	//Validation Messages - Debit Card Details section
+	@FindBy(xpath = "//span[contains(text(),'Please enter name given on card.')]")
+	WebElement cardHolderNameValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter card expiry date')]")
+	WebElement cardExpirydate;
 	
 	
 
