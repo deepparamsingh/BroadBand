@@ -225,9 +225,8 @@ public class BasicInfoPage extends Testbase {
 	//Actions
 	public void validateErrorMessages() throws Throwable
 	{
-		Thread.sleep(3000);
-//		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//		connectionDetailsButton.click();
+		js.executeScript("arguments[0].scrollIntoView();", connectionDetailsButton);
+		validatesubmitBasicDetailsButton();
 		
 	}
 	
@@ -333,6 +332,102 @@ public class BasicInfoPage extends Testbase {
 	}
 	
 	
+	//check all error messages
+	public void yourDetailsEmptyValidationMessages() throws Throwable
+	{
+		Thread.sleep(7000);
+		if(yourDetailssection.isDisplayed())
+		{
+			fName.clear();
+			lName.clear();
+			email.clear();
+			pNum.clear();
+			altpNum.clear();
+			dB.clear();
+			validateErrorMessages();
+			Thread.sleep(2000);
+			System.out.println("\n"+"---Validation Messages of Your Details Section---");
+			System.out.println("Validation message for Title: "+titleValidation.getText());
+			System.out.println("Validation message for first name: "+firstNameValidation.getText());
+			System.out.println("Validation message for last name: "+lastNameValidation.getText());
+			System.out.println("Validation message for email: "+emailValidation.getText());
+			System.out.println("Validation message for phone: "+phoneNumberValidation.getText());
+			System.out.println("Validation message for DOB: "+dBValidation.getText());
+			
+			titleDropdown.click();
+			selectTitle.click();
+			fName.sendKeys(prop.getProperty("username"));
+			lName.sendKeys("Singh");
+			email.sendKeys(prop.getProperty("email"));
+			pNum.sendKeys(prop.getProperty("phone"));
+			altpNum.sendKeys(prop.getProperty("altnumber"));
+			dB.sendKeys("02 02 1995");
+		}
+		else
+		{
+			System.out.println("Your Details section is Not their or Missing !!");
+		}
+	}
+	
+	public void connectionDetailsEmptyValidationMessages() throws Throwable
+	{
+		Thread.sleep(7000);
+		validateErrorMessages();
+		
+		if(connectionDetailsSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
+			System.out.println("Validation message for Account provider: "+accountProviderValidation.getText());
+			System.out.println("Validation message for Existing Phone Number: "+existingPhoneNumberValidation.getText());
+			Thread.sleep(1000);
+			alreadyaccountyes.click();
+			existingphoneyes.click();
+			validateErrorMessages();
+			System.out.println("Validation message for Account number: "+accountNumberValidation.getText());
+			System.out.println("Validation message for Existing Home Number: "+existingHomeNumberValidation.getText());
+			System.out.println("Validation message for Provider Account Number: "+providerAccountNumberValidation.getText());
+			System.out.println("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());
+			
+			EnterAccountno.sendKeys("1478961289");			
+			Enterhomeno.sendKeys("0244564645");
+			Entercurrentacount.sendKeys("7418529636");
+			Thread.sleep(1000);
+			haveAuthorityCheckBox.click();
+			haveAuthorityCheckBox.click();
+			validateErrorMessages();
+			
+			
+		}
+		else
+		{
+			System.out.println("\n---Connection Details section is Not their or Missing !!---");
+		}
+	}
+	
+	public void identificationDetailsEmptyValidationMessages() throws Throwable
+	{
+		Thread.sleep(7000);
+		validateErrorMessages();
+		
+		if(IdentificationdetailsSection.isDisplayed())
+		{
+			
+			System.out.println("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
+			AustralianPassport.click();
+			validateErrorMessages();
+			System.out.println("Validation message for Passport number: "+passportvalidation.getText());
+			System.out.println("Validation message for Passport Expiry date: "+passportExpiryValidation.getText());
+			passport_number.sendKeys("56566655515");
+			Thread.sleep(1000);
+			passport_exp.sendKeys("15 05 2025");
+		}
+		else
+		{
+			System.out.println("\n---Identification Details section is Not their or Missing !!---");
+		}
+	}
+	
+	
 	public ConnectionAddress validateAllSectionBasicInfoPage() throws Throwable 
 	{
 		validateYourDetailsSection();
@@ -342,6 +437,12 @@ public class BasicInfoPage extends Testbase {
 		validatesubmitBasicDetailsButton();
 		return new ConnectionAddress();
 		
+	}
+	public void validateAllsectionEmptyErrorValidation() throws Throwable
+	{
+		yourDetailsEmptyValidationMessages();
+		connectionDetailsEmptyValidationMessages();
+		//identificationDetailsEmptyValidationMessages();
 	}
 	
 }

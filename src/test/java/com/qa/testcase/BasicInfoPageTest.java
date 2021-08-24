@@ -1,5 +1,7 @@
 package com.qa.testcase;
 
+import static org.testng.Assert.fail;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -87,10 +89,17 @@ public class BasicInfoPageTest extends Testbase {
 		
 	}
 	
-	@Test(priority = 1)
-	public void validateEmploymentdetailsSectionTest() throws Throwable
+	@Test(enabled = false)
+	public void validateAllSectionTest() throws Throwable
 	{
 		connectionAddress=basicInfoPage.validateAllSectionBasicInfoPage();
+		
+	}
+	
+	@Test(priority = 1)
+	public void validatevalidationmessagesTest() throws Throwable
+	{
+		basicInfoPage.validateAllsectionEmptyErrorValidation();
 		
 	}
 	
