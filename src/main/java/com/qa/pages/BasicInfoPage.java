@@ -388,14 +388,12 @@ public class BasicInfoPage extends Testbase {
 			System.out.println("Validation message for Provider Account Number: "+providerAccountNumberValidation.getText());
 			System.out.println("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());
 			
+			
 			EnterAccountno.sendKeys("1478961289");			
 			Enterhomeno.sendKeys("0244564645");
 			Entercurrentacount.sendKeys("7418529636");
-			Thread.sleep(1000);
 			haveAuthorityCheckBox.click();
 			haveAuthorityCheckBox.click();
-			validateErrorMessages();
-			
 			
 		}
 		else
