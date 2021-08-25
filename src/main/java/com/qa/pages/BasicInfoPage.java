@@ -148,7 +148,7 @@ public class BasicInfoPage extends Testbase {
 	WebElement connectionCheckBoxValidation;
 	
 	//Validation Messages - Identification Details section
-	
+	//Australian passport
 	@FindBy(xpath = "//span[contains(text(),'Please select any one ID.')]")
 	WebElement selectIdentificationIdvalidation;
 	@FindBy(xpath = "//span[contains(text(),'Please enter passport number.')]")
@@ -156,6 +156,7 @@ public class BasicInfoPage extends Testbase {
 	@FindBy(xpath = "//span[contains(text(),'Please enter expiry date.')]")
 	WebElement passportExpiryValidation;
 	
+	//medical card
 	@FindBy(xpath = "//span[contains(text(),'Please enter Medicare card number.')]")
 	WebElement medicareCardNumberValidation;
 	@FindBy(xpath = "//span[contains(text(),'Please select IRN from dropdown.')]")
@@ -167,12 +168,20 @@ public class BasicInfoPage extends Testbase {
 	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/span[1]")
 	WebElement medicareCardExpiryValidation;
 	
+	//foreign passport
 	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[2]/div[1]/div[1]/span[1]")
 	WebElement foreignPassortNumberValidation;
 	//country drop down validation is missing
 	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/span[1]")
 	WebElement foreignPassortExpiryValidation;
-	//Last tab of section is missing
+	
+	//Driver licence
+	@FindBy(xpath = "//span[contains(text(),'Please select license state from dropdown.')]")
+	WebElement licenceStateValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please enter license number.')]")
+	WebElement licenceNumberValidation;
+	@FindBy(xpath = "//span[contains(text(),'Please Enter Driving License Expiry Date.')]")
+	WebElement licenceExpiryValidation;
 	
 	
 	//Validation Messages - Employment Details section
@@ -185,7 +194,7 @@ public class BasicInfoPage extends Testbase {
 	@FindBy(xpath = "//span[contains(text(),'Please select employment status from dropdown.')]")
 	WebElement employmentStatusValidation;
 	@FindBy(xpath = "//span[contains(text(),'Employer Name is required.')]")
-	WebElement employmentNameValidation;
+	WebElement employerNameValidation;
 	@FindBy(xpath = "//span[contains(text(),'Please select year from dropdown.')]")
 	WebElement yearEmploymentValidation;
 	@FindBy(xpath = "//span[contains(text(),'Please select month from dropdown.')]")
@@ -384,21 +393,20 @@ public class BasicInfoPage extends Testbase {
 			existingphoneyes.click();
 			validateErrorMessages();
 			System.out.println("Validation message for Account number: "+accountNumberValidation.getText());
+			EnterAccountno.sendKeys("1478961289");
 			System.out.println("Validation message for Existing Home Number: "+existingHomeNumberValidation.getText());
 			System.out.println("Validation message for Provider Account Number: "+providerAccountNumberValidation.getText());
-			System.out.println("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());
-			
-			
-			EnterAccountno.sendKeys("1478961289");			
+			System.out.println("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());			
 			Enterhomeno.sendKeys("0244564645");
 			Entercurrentacount.sendKeys("7418529636");
+			existingphoneyes.click();
 			haveAuthorityCheckBox.click();
-			haveAuthorityCheckBox.click();
+			
 			
 		}
 		else
 		{
-			System.out.println("\n---Connection Details section is Not their or Missing !!---");
+			System.out.println("\n"+"---Connection Details section is Not their or Missing !!---");
 		}
 	}
 	
@@ -409,8 +417,9 @@ public class BasicInfoPage extends Testbase {
 		
 		if(IdentificationdetailsSection.isDisplayed())
 		{
-			
+			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
 			System.out.println("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
+			Thread.sleep(1000);
 			AustralianPassport.click();
 			validateErrorMessages();
 			System.out.println("Validation message for Passport number: "+passportvalidation.getText());
@@ -421,7 +430,42 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("\n---Identification Details section is Not their or Missing !!---");
+			System.out.println("\n"+"---Identification Details section is Not their or Missing !!---");
+		}
+	}
+	
+	public void employmentDetailsEmptyValidationMessages() throws Throwable
+	{
+		Thread.sleep(7000);
+		validateErrorMessages();
+		
+		if(EmploymentDetailsSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Employment Details Section---");
+			System.out.println("Validation message for Industry dropdown: "+industryValidation.getText());
+			System.out.println("Validation message for Occupation dropdown: "+occupationValidation.getText());
+			System.out.println("Validation message for Job title: "+enterOccupationValueValidation.getText());
+			System.out.println("Validation message for Employment status: "+employmentStatusValidation.getText());
+			System.out.println("Validation message for Curent Time Year: "+yearEmploymentValidation.getText());
+			System.out.println("Validation message for Curent Time Month: "+monthEmploymentValidation.getText());
+			industry.click();
+			selectindustry.click();
+			occupationType.click();
+			SelectoccupationType.click();
+			employmentStatus.click();
+			SelectemploymentStatus.click();
+			enterOccupation.clear();
+			enterOccupation.sendKeys("techie");
+			timeOfCurrentEmploymentYear.click();
+			SelectTOCEyear.click();
+			timeOfCurrentEmploymentMonth.click();
+			SelectTOCEmonth.click();
+			doYouHaveCreditCardYES.click();
+		}
+			
+		else
+		{
+			System.out.println("\n"+"---Employment Details section is Not their or Missing !!---");
 		}
 	}
 	
@@ -436,11 +480,14 @@ public class BasicInfoPage extends Testbase {
 		return new ConnectionAddress();
 		
 	}
-	public void validateAllsectionEmptyErrorValidation() throws Throwable
+	public ConnectionAddress validateAllsectionEmptyErrorValidation() throws Throwable
 	{
 		yourDetailsEmptyValidationMessages();
 		connectionDetailsEmptyValidationMessages();
-		//identificationDetailsEmptyValidationMessages();
+		identificationDetailsEmptyValidationMessages();
+		employmentDetailsEmptyValidationMessages();
+		validatesubmitBasicDetailsButton();
+		return new ConnectionAddress();
 	}
 	
 }

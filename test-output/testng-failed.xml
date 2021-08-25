@@ -5,6 +5,7 @@
     <classes>
       <class name="com.qa.testcase.BasicInfoPageTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setup"/>
           <include name="validatevalidationmessagesTest"/>
         </methods>
