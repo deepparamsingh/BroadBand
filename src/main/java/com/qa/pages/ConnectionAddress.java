@@ -1,5 +1,6 @@
 package com.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.qa.base.Testbase;
 
 public class ConnectionAddress extends Testbase {
+	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	//Connection Address Section
 		@FindBy(xpath = "//div[@class='sub-wrap dotted-area address-screen-adrs-area conn_addr_res_status_section']")
@@ -77,10 +80,16 @@ public class ConnectionAddress extends Testbase {
 		//Credit card Details
 		@FindBy(xpath = "//div[@class='ques-wrap dotted-area credit_card_section']")
 		WebElement debitCardSection;
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[4]/div[1]/div[1]/div[1]/p[1]")
+		WebElement debitCardContent;
+		@FindBy(xpath = "//input[@name='cardNumber']")
+		WebElement debitCardNumber;
 		@FindBy(xpath = "//input[@id='dcardName']")
 		WebElement debitCardName;
 		@FindBy(xpath = "//input[@id='valid_thru']")
 		WebElement debitCardValidity;
+		@FindBy(xpath = "//input[@name='Data']")
+		WebElement debitCarCVV;
 		@FindBy(xpath = "//label[@for='106_checkbox']")
 		WebElement debitCardCheckBox1;
 		@FindBy(xpath = "//label[@for='107_checkbox']")
@@ -181,11 +190,25 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateDebitcardSection() throws Throwable
 	{
+		Thread.sleep(5000);
 		//validateBillingdeliveryAddress();
 		if(debitCardSection.isDisplayed())
 		{
+			js.executeScript("arguments[0].scrollIntoView();", debitCardName);
+			if(debitCardContent.isDisplayed())
+			{
+				System.out.println("Content of Debit card is: "+debitCardContent.getText());
+			}
+			else
+			{
+				System.out.println("Content of Debit card is not their or missing");
+			}
 			debitCardName.sendKeys("Param-deep");
 			debitCardValidity.sendKeys("04 25");
+			debitCardNumber.click();
+			debitCardNumber.sendKeys(" 4111111111111111");
+			debitCarCVV.click();
+			debitCarCVV.sendKeys("123");
 			String checkBoxValue1=debitCardCheckBox1.getText();
 			System.out.println("Content Of checkBox is :"+checkBoxValue1);
 			debitCardCheckBox1.click();
