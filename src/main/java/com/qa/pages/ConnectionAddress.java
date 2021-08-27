@@ -108,7 +108,8 @@ public class ConnectionAddress extends Testbase {
 
 	public void validateConnectionDetailsSection() throws Throwable
 	{
-		Thread.sleep(5000);
+		waitForElementToBeVisible(driver, connectionAddressSection, 30);
+		//Thread.sleep(5000);
 		if(connectionAddressSection.isDisplayed())
 		{
 			String existingAddress= fetchaddess.getText();

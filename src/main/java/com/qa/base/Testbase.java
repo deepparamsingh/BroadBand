@@ -89,6 +89,13 @@ public class Testbase {
 		FileUtils.copyFile(file, new File("C:/Users/paramdeep/git/eyenus_BroadBand/eyenus/ScreenShots/"+filename+".jpg"));
 		
 	}
+	
+	public static WebElement waitForElementToBeVisible(WebDriver driver, WebElement webElement, int seconds )
+	{
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement element = wait.until(ExpectedConditions.visibilityOf(webElement));
+		return element;
+	}
 
 }
  
