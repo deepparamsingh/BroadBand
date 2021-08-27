@@ -2,16 +2,16 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-27T18:43:36Z" name="Default suite" finished-at="2021-08-27T18:45:20Z" duration-ms="104034">
+  <suite started-at="2021-08-27T18:49:31Z" name="Default suite" finished-at="2021-08-27T18:50:57Z" duration-ms="86125">
     <groups>
     </groups>
-    <test started-at="2021-08-27T18:43:36Z" name="Default test" finished-at="2021-08-27T18:45:20Z" duration-ms="104034">
+    <test started-at="2021-08-27T18:49:31Z" name="Default test" finished-at="2021-08-27T18:50:57Z" duration-ms="86125">
       <class name="com.qa.testcase.ConnectionAddressTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:43:36Z" name="setup" finished-at="2021-08-27T18:44:55Z" duration-ms="79006" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:49:31Z" name="setup" finished-at="2021-08-27T18:50:51Z" duration-ms="79766" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateAllSectionConnectionAddressPageTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:44:55Z" name="validateAllSectionConnectionAddressPageTest" finished-at="2021-08-27T18:45:20Z" duration-ms="24966" status="PASS">
+        <test-method signature="validateAllSectionConnectionAddressPageTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:50:51Z" name="validateAllSectionConnectionAddressPageTest" finished-at="2021-08-27T18:50:57Z" duration-ms="6302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAllSectionConnectionAddressPageTest -->

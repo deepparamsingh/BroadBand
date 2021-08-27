@@ -241,7 +241,7 @@ public class BasicInfoPage extends Testbase {
 	
 	public void validateYourDetailsSection() throws Throwable 
 	{
-		waitForElementToBeVisible(driver, yourDetailssection, 30);
+		waitForElementToBeVisible(driver, yourDetailssection, 50);
 		//Thread.sleep(7000);
 		if(yourDetailssection.isDisplayed())
 		{

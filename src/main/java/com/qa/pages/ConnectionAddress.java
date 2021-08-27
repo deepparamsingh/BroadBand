@@ -108,7 +108,7 @@ public class ConnectionAddress extends Testbase {
 
 	public void validateConnectionDetailsSection() throws Throwable
 	{
-		waitForElementToBeVisible(driver, connectionAddressSection, 30);
+		waitForElementToBeVisible(driver, connectionAddressSection, 50);
 		//Thread.sleep(5000);
 		if(connectionAddressSection.isDisplayed())
 		{
@@ -132,6 +132,7 @@ public class ConnectionAddress extends Testbase {
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
 		//validateConnectionDetailsSection();
+		waitForElementToBeVisible(driver, BillingSection, 50);
 		if(BillingSection.isDisplayed())
 		{
 			if(BillingEmail.isDisplayed()) 
@@ -161,7 +162,7 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
 		
-		
+		waitForElementToBeVisible(driver, deliverySection, 50);
 		if(deliverySection.isDisplayed())
 		{
 			if(DeliveryAddress.isDisplayed())
@@ -187,7 +188,8 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateDebitcardSection() throws Throwable
 	{
-		Thread.sleep(7000);
+		waitForElementToBeVisible(driver, debitCardSection, 50);
+		//Thread.sleep(7000);
 		//validateBillingdeliveryAddress();
 		if(debitCardSection.isDisplayed())
 		{
