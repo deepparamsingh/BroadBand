@@ -45,6 +45,7 @@ public class AddOnsPage extends Testbase {
 			{
 				//Thread.sleep(6000);
 				try {
+					waitForElementToBeVisible(driver, identificationSubmitButton, 10);
 				if(identificationSubmitButton.isDisplayed())
 				{
 					identificationSubmitButton.click();

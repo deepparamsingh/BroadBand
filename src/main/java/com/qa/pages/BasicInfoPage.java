@@ -234,6 +234,7 @@ public class BasicInfoPage extends Testbase {
 	//Actions
 	public void validateErrorMessages() throws Throwable
 	{
+		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
 		js.executeScript("arguments[0].scrollIntoView();", connectionDetailsButton);
 		validatesubmitBasicDetailsButton();
 		
@@ -241,7 +242,7 @@ public class BasicInfoPage extends Testbase {
 	
 	public void validateYourDetailsSection() throws Throwable 
 	{
-		waitForElementToBeVisible(driver, yourDetailssection, 50);
+		waitForElementToBeVisible(driver, yourDetailssection, 10);
 		//Thread.sleep(7000);
 		if(yourDetailssection.isDisplayed())
 		{
@@ -266,6 +267,7 @@ public class BasicInfoPage extends Testbase {
 	public void validateconnectionDetailsSection() throws Throwable
 	{
 		//validateYourDetailsSection();
+		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			alreadyaccountyes.click();
@@ -285,6 +287,7 @@ public class BasicInfoPage extends Testbase {
 	{
 		
 		//validateconnectionDetailsSection();
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			AustralianPassport.click();
@@ -303,6 +306,7 @@ public class BasicInfoPage extends Testbase {
 	{
 		
 		//validateIdentificationDetailsSection();
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			industry.click();
@@ -331,6 +335,7 @@ public class BasicInfoPage extends Testbase {
 	
 	public void validatesubmitBasicDetailsButton()
 	{
+		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
 		if(connectionDetailsButton.isDisplayed())
 		{
 			connectionDetailsButton.click();
@@ -345,7 +350,8 @@ public class BasicInfoPage extends Testbase {
 	//check all error messages
 	public void yourDetailsEmptyValidationMessages() throws Throwable
 	{
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
+		waitForElementToBeVisible(driver, yourDetailssection, 10);
 		if(yourDetailssection.isDisplayed())
 		{
 			fName.clear();
@@ -381,9 +387,9 @@ public class BasicInfoPage extends Testbase {
 	
 	public void connectionDetailsEmptyValidationMessages() throws Throwable
 	{
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		validateErrorMessages();
-		
+		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
@@ -413,9 +419,9 @@ public class BasicInfoPage extends Testbase {
 	
 	public void identificationDetailsEmptyValidationMessages() throws Throwable
 	{
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		validateErrorMessages();
-		
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
@@ -437,9 +443,9 @@ public class BasicInfoPage extends Testbase {
 	
 	public void employmentDetailsEmptyValidationMessages() throws Throwable
 	{
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		validateErrorMessages();
-		
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Employment Details Section---");

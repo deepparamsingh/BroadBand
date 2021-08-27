@@ -127,6 +127,7 @@ public class OtpPage extends Testbase {
 		//Actions
 		public void validateOTPpageContent() throws InterruptedException
 		{
+			waitForElementToBeVisible(driver, personalDetailsSection, 10);
 			if(personalDetailsSection.isDisplayed())
 			{
 				Thread.sleep(3000);
@@ -147,7 +148,7 @@ public class OtpPage extends Testbase {
 				
 				System.out.println("Personal Details Section is MISSING !!");
 			}
-			
+			waitForElementToBeVisible(driver, yourPlansection, 10);
 			if(yourPlansection.isDisplayed())
 			{
 				System.out.println("Plan details are:--------------");
@@ -167,7 +168,7 @@ public class OtpPage extends Testbase {
 			{
 				System.out.println("Your Plan Section is MISSING !!");
 			}
-			
+			waitForElementToBeVisible(driver, termConditionsection, 10);
 			if(termConditionsection.isDisplayed())
 			{
 				
@@ -202,7 +203,7 @@ public class OtpPage extends Testbase {
 			{
 				System.out.println("Term and Condition Section is MISSING !!");
 			}
-			
+			waitForElementToBeVisible(driver, acknowledgementsection, 10);
 			if(acknowledgementsection.isDisplayed())
 			{
 		

@@ -162,7 +162,7 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
 		
-		waitForElementToBeVisible(driver, deliverySection, 10);
+		//waitForElementToBeVisible(driver, deliverySection, 10);
 		if(deliverySection.isDisplayed())
 		{
 			if(DeliveryAddress.isDisplayed())
@@ -235,6 +235,7 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateConnectionDetailsButton()
 	{
+		waitForElementToBeVisible(driver, ReviewDetailsButton, 10);
 		if(ReviewDetailsButton.isDisplayed())
 		{
 			ReviewDetailsButton.click();
