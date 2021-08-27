@@ -132,7 +132,7 @@ public class ConnectionAddress extends Testbase {
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
 		//validateConnectionDetailsSection();
-		waitForElementToBeVisible(driver, BillingSection, 50);
+		waitForElementToBeVisible(driver, BillingSection, 20);
 		if(BillingSection.isDisplayed())
 		{
 			if(BillingEmail.isDisplayed()) 
@@ -162,7 +162,7 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
 		
-		waitForElementToBeVisible(driver, deliverySection, 50);
+		waitForElementToBeVisible(driver, deliverySection, 10);
 		if(deliverySection.isDisplayed())
 		{
 			if(DeliveryAddress.isDisplayed())
@@ -188,11 +188,14 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateDebitcardSection() throws Throwable
 	{
-		waitForElementToBeVisible(driver, debitCardSection, 50);
+		
 		//Thread.sleep(7000);
 		//validateBillingdeliveryAddress();
+		try {
+			waitForElementToBeVisible(driver, debitCardSection, 10);
 		if(debitCardSection.isDisplayed())
 		{
+			
 			js.executeScript("arguments[0].scrollIntoView();", debitCardName);
 			if(debitCardContent.isDisplayed())
 			{
@@ -222,11 +225,12 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Secure text is :"+securevalue);
 			
 		}
-		else
-		{
-			System.out.println("Debit Card session is not their OR MISSING !!");
-			
 		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Debit Card session is not their OR MISSING !!");
+		}			
+		
 	}
 	
 	public void validateConnectionDetailsButton()

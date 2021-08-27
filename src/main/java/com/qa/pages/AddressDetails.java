@@ -82,7 +82,7 @@ public class AddressDetails extends Testbase {
 		
 		public void validateNextButton() throws Throwable
 		{
-			Thread.sleep(7000);
+			waitForElementToBeVisible(driver, nextButton, 10);
 			if(nextButton.isDisplayed())
 			{
 				moveInNo.click();

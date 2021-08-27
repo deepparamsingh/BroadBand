@@ -162,7 +162,8 @@ public class HomePage extends Testbase {
 	public  void validateWrongAddress() throws Throwable 
 	{
 		addressInputBar.sendKeys("qwertyuiopasdfghjk");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
+		waitForElementToBeVisible(driver, withOutAndWrongAddress, 15);
 		//compareButton.click();
 		
 		String wrongValueEntered= withOutAndWrongAddress.getText();
@@ -178,13 +179,17 @@ public class HomePage extends Testbase {
 	
 	public AddressDetails validateEnterAddress() throws Throwable
 	{
+		waitForElementToBeVisible(driver, addressInputBar, 10);
 		addressInputBar.sendKeys(prop.getProperty("address"));
-		Thread.sleep(3000);
-		try {
+		//Thread.sleep(3000);
+		waitForElementToBeVisible(driver, selectAddress, 10);
+		try 
+		{
 		if(selectAddress.isDisplayed())
 		{
 		selectAddress.click();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
+		waitForElementToBeVisible(driver, compareButton, 10);
 		}
 		if(compareButton.isDisplayed())
 		{

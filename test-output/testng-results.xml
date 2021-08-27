@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-27T18:49:31Z" name="Default suite" finished-at="2021-08-27T18:50:57Z" duration-ms="86125">
+  <suite started-at="2021-08-27T21:14:03Z" name="Default suite" finished-at="2021-08-27T21:16:40Z" duration-ms="156778">
     <groups>
     </groups>
-    <test started-at="2021-08-27T18:49:31Z" name="Default test" finished-at="2021-08-27T18:50:57Z" duration-ms="86125">
-      <class name="com.qa.testcase.ConnectionAddressTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:49:31Z" name="setup" finished-at="2021-08-27T18:50:51Z" duration-ms="79766" status="PASS">
+    <test started-at="2021-08-27T21:14:03Z" name="Default test" finished-at="2021-08-27T21:16:40Z" duration-ms="156778">
+      <class name="com.qa.testcase.PopUpPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.PopUpPageTest@4fbe37eb]" started-at="2021-08-27T21:14:04Z" name="setup" finished-at="2021-08-27T21:14:26Z" duration-ms="22601" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateAllSectionConnectionAddressPageTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@3e2059ae]" started-at="2021-08-27T18:50:51Z" name="validateAllSectionConnectionAddressPageTest" finished-at="2021-08-27T18:50:57Z" duration-ms="6302" status="PASS">
+        <test-method signature="validateCheckPlanTest()[pri:1, instance:com.qa.testcase.PopUpPageTest@4fbe37eb]" started-at="2021-08-27T21:14:26Z" name="validateCheckPlanTest" finished-at="2021-08-27T21:16:39Z" duration-ms="133087" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateAllSectionConnectionAddressPageTest -->
-      </class> <!-- com.qa.testcase.ConnectionAddressTest -->
+        </test-method> <!-- validateCheckPlanTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.PopUpPageTest@4fbe37eb]" started-at="2021-08-27T21:16:39Z" name="tearDown" finished-at="2021-08-27T21:16:40Z" duration-ms="1034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.testcase.PopUpPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

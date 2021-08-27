@@ -80,6 +80,10 @@ public class PopUpPage extends Testbase {
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]")
 		WebElement planViewDetailsSpecial;
 		
+		@FindBy(xpath = "//div[contains(text(),'Mail have been sent')]")
+		WebElement mailSent;
+		
+		
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/a[1]")
 		WebElement planKeyFacts;
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[4]/a[1]")
@@ -151,7 +155,8 @@ public class PopUpPage extends Testbase {
 		//Actions
 		public void validateinfoPopup() throws Throwable
 		{
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, infoPopUp, 10);
 			if(infoPopUp.isDisplayed())
 			{
 				System.out.println("validateinfoPopup ---> Passed");
@@ -165,7 +170,8 @@ public class PopUpPage extends Testbase {
 		public void validateValidations() throws Throwable
 		{
 			
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
+			waitForElementToBeVisible(driver, submitButton, 10);
 			submitButton.click();
 			Thread.sleep(2000);
 			String nameValidation=nameValidateMsg.getText();
@@ -225,16 +231,20 @@ public class PopUpPage extends Testbase {
 		
 		public PopUpPage validateCredentials() throws Throwable
 		{
-			Thread.sleep(6000);
+			//Thread.sleep(6000);
+			waitForElementToBeVisible(driver, cust_name, 10);
 			cust_name.clear();
 			cust_name.sendKeys(prop.getProperty("username"));
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, cust_email, 10);
 			cust_email.clear();
 			cust_email.sendKeys(prop.getProperty("email"));
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, cust_phone, 10);
 			cust_phone.clear();
 			cust_phone.sendKeys(prop.getProperty("phone"));
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, submitButton, 10);
 		    submitButton.click();
 		    return new PopUpPage();
 			
@@ -296,7 +306,8 @@ public class PopUpPage extends Testbase {
 		public AddOnsPage validateCheckPlan() throws Throwable
 		{
 			//validateCredentials();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, providerLOGO, 10);
 			if(providerLOGO.isDisplayed())
 			{
 				System.out.println("LOGO of provider is visible");
@@ -305,6 +316,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("LOGO of provider is NOT visible");
 			}
+			waitForElementToBeVisible(driver, planName, 10);
 			if(planName.isDisplayed()) 
 			{
 				String planNameText=planName.getText();
@@ -314,6 +326,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Plan name is MISSING!!");
 			}
+			waitForElementToBeVisible(driver, planContractName, 10);
 			if(planContractName.isDisplayed())
 			{
 				String contract=planContractName.getText();
@@ -323,16 +336,20 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Contract of plan is MISSING!!");
 			}
+			waitForElementToBeVisible(driver, planViewDetails, 10);
 			if(planViewDetails.isDisplayed())
 			{
 				System.out.println("View plan Link Displayed");
 				planViewDetails.click();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
+				waitForElementToBeVisible(driver, viewPlanEmailButtons, 10);
 				if(viewPlanEmailButtons.isDisplayed())
 				{
 					viewPlanEmailButtons.click();
+					waitForElementToBeVisible(driver, mailSent, 10);
+					//mailSent.isDisplayed();
 					System.out.println("Mail Sent");
-					Thread.sleep(4000);
+					//Thread.sleep(4000);
 					crossViewDetails.click();
 				}
 				else
@@ -344,6 +361,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("View plan Link is NOT Displayed");
 			}
+			waitForElementToBeVisible(driver, planKeyFacts, 10);
 			if(planKeyFacts.isDisplayed())
 			{
 				System.out.println("KeyFact Link Displayed");
@@ -352,7 +370,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("KeyFact Link is NOT Displayed");
 			}
-			
+			waitForElementToBeVisible(driver, planInclussionSection, 10);
 			if(planInclussionSection.isDisplayed())
 			{
 				System.out.println("Plan inclusion section is displayed!!");
@@ -371,7 +389,8 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("Plan Inclusion");
-			}	
+			}
+			waitForElementToBeVisible(driver, planCost, 10);
 			if(planCost.isDisplayed())
 			{
 				String planCost1=planCost.getText();
@@ -381,6 +400,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Cost of plan is MISSING!!!");
 			}
+			waitForElementToBeVisible(driver, typicalEveningspeed, 10);
 			if(typicalEveningspeed.isDisplayed())
 			{
 				String typicaleveningSpeed1=typicalEveningspeed.getText();
@@ -398,7 +418,8 @@ public class PopUpPage extends Testbase {
 		public AddOnsPage validateCheckPlanSpecial() throws Throwable
 		{
 			//validateCredentials();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, specialOfferBarSpecial, 10);
 			if(specialOfferBarSpecial.isDisplayed())
 			{
 				System.out.println("Special Offer Bar is displayed!!");
@@ -418,6 +439,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Special offer Bar is MISSING!!!");
 			}
+			waitForElementToBeVisible(driver, providerLOGOSpecial, 10);
 			if(providerLOGOSpecial.isDisplayed())
 			{
 				System.out.println("LOGO of provider is visible");
@@ -426,6 +448,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("LOGO of provider is NOT visible");
 			}
+			waitForElementToBeVisible(driver, planNameSpecial, 10);
 			if(planNameSpecial.isDisplayed()) 
 			{
 				String planNameText=planNameSpecial.getText();
@@ -435,6 +458,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Plan name is MISSING!!");
 			}
+			waitForElementToBeVisible(driver, planContractNameSpecial, 10);
 			if(planContractNameSpecial.isDisplayed())
 			{
 				String contract=planContractNameSpecial.getText();
@@ -444,17 +468,21 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Contract of plan is MISSING!!");
 			}
+			waitForElementToBeVisible(driver, planViewDetailsSpecial, 10);
 			if(planViewDetailsSpecial.isDisplayed())
 			{
 				System.out.println("View plan Link Displayed");
 				planViewDetailsSpecial.click();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
+				waitForElementToBeVisible(driver, viewPlanEmailButtons, 10);
 				if(viewPlanEmailButtons.isDisplayed())
 				{
 					//Thread.sleep(2000);
 					viewPlanEmailButtons.click();
+					waitForElementToBeVisible(driver, mailSent, 10);
+					//mailSent.isDisplayed();
 					System.out.println("Mail Sent");
-					Thread.sleep(4000);
+					//Thread.sleep(4000);
 					crossViewDetails.click();
 				}
 				else
@@ -466,6 +494,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("View plan Link is NOT Displayed");
 			}
+			waitForElementToBeVisible(driver, planKeyFactsSpecial, 10);
 			if(planKeyFactsSpecial.isDisplayed())
 			{
 				System.out.println("KeyFact Link Displayed");
@@ -474,7 +503,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("KeyFact Link is NOT Displayed");
 			}
-			
+			waitForElementToBeVisible(driver, planInclussionSectionSpecial, 10);
 			if(planInclussionSectionSpecial.isDisplayed())
 			{
 				System.out.println("Plan inclusion section is displayed!!");
@@ -494,6 +523,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Plan Inclusion");
 			}	
+			waitForElementToBeVisible(driver, planCostSpecial, 10);
 			if(planCostSpecial.isDisplayed())
 			{
 				String planCost1=planCostSpecial.getText();
@@ -503,6 +533,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Cost of plan is MISSING!!!");
 			}
+			waitForElementToBeVisible(driver, typicalEveningspeedSpecial, 10);
 			if(typicalEveningspeedSpecial.isDisplayed())
 			{
 				String typicaleveningSpeed1=typicalEveningspeedSpecial.getText();
@@ -512,6 +543,7 @@ public class PopUpPage extends Testbase {
 			{
 				System.out.println("Typical Evening speed of plan  is MISSING!!");
 			}
+			waitForElementToBeVisible(driver, planActualCostSpecial, 10);
 			if(planActualCostSpecial.isDisplayed())
 			{
 				String actualCost=planActualCostSpecial.getText();
@@ -531,7 +563,8 @@ public class PopUpPage extends Testbase {
 			try {
 				if(applyPlanSpecial.isDisplayed())
 				{
-					Thread.sleep(2000);
+					//Thread.sleep(2000);
+					waitForElementToBeVisible(driver, applyPlanSpecial, 10);
 					applyPlanSpecial.click();
 					System.out.println("Plan Applied !!");
 					return new AddOnsPage();
@@ -547,7 +580,8 @@ public class PopUpPage extends Testbase {
 			{
 				if(applyPlan.isDisplayed())
 				{
-					Thread.sleep(2000);
+					//Thread.sleep(2000);
+					waitForElementToBeVisible(driver, applyPlan, 10);
 					applyPlan.click();
 					System.out.println("Plan Applied !!");
 					return new AddOnsPage();
