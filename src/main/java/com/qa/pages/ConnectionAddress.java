@@ -72,23 +72,19 @@ public class ConnectionAddress extends Testbase {
 		//--------------------------------------
 		
 		
-		
-		
-		
-		
-		
 		//Credit card Details
+		
 		@FindBy(xpath = "//div[@class='ques-wrap dotted-area credit_card_section']")
 		WebElement debitCardSection;
 		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[4]/div[1]/div[1]/div[1]/p[1]")
 		WebElement debitCardContent;
-		@FindBy(xpath = "//input[@name='cardNumber']")
+		@FindBy(xpath = "//input[@placeholder='Credit/Debit Card Number']")
 		WebElement debitCardNumber;
 		@FindBy(xpath = "//input[@id='dcardName']")
 		WebElement debitCardName;
 		@FindBy(xpath = "//input[@id='valid_thru']")
 		WebElement debitCardValidity;
-		@FindBy(xpath = "//input[@name='Data']")
+		@FindBy(xpath = "//input[@placeholder='CVV']")
 		WebElement debitCarCVV;
 		@FindBy(xpath = "//label[@for='106_checkbox']")
 		WebElement debitCardCheckBox1;
@@ -112,7 +108,7 @@ public class ConnectionAddress extends Testbase {
 
 	public void validateConnectionDetailsSection() throws Throwable
 	{
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		if(connectionAddressSection.isDisplayed())
 		{
 			String existingAddress= fetchaddess.getText();
@@ -190,7 +186,7 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateDebitcardSection() throws Throwable
 	{
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		//validateBillingdeliveryAddress();
 		if(debitCardSection.isDisplayed())
 		{
@@ -203,12 +199,16 @@ public class ConnectionAddress extends Testbase {
 			{
 				System.out.println("Content of Debit card is not their or missing");
 			}
+			
+			driver.switchTo().frame("tx_iframe_tokenExIframeDiv");
+			debitCardNumber.sendKeys(" 4111111111111111");
+			driver.switchTo().defaultContent();
 			debitCardName.sendKeys("Param-deep");
 			debitCardValidity.sendKeys("04 25");
-			debitCardNumber.click();
-			debitCardNumber.sendKeys(" 4111111111111111");
-			debitCarCVV.click();
+			driver.switchTo().frame("tx_iframe_cvv_CvvTextbox");
 			debitCarCVV.sendKeys("123");
+			driver.switchTo().defaultContent();
+		
 			String checkBoxValue1=debitCardCheckBox1.getText();
 			System.out.println("Content Of checkBox is :"+checkBoxValue1);
 			debitCardCheckBox1.click();

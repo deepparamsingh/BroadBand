@@ -5,8 +5,8 @@
     <classes>
       <class name="com.qa.testcase.ConnectionAddressTest">
         <methods>
-          <include name="validateBillingdeliveryAddressTest"/>
           <include name="setup"/>
+          <include name="validateAllSectionConnectionAddressPageTest"/>
         </methods>
       </class> <!-- com.qa.testcase.ConnectionAddressTest -->
     </classes>

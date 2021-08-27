@@ -62,8 +62,15 @@ public class ConnectionAddressTest extends Testbase {
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateBillingdeliveryAddressTest() throws Throwable
+	{
+		connectionAddress.validateAllSectionConnectionAddressPage();
+		
+	}
+	
+	@Test(priority = 1)
+	public void validateAllSectionConnectionAddressPageTest() throws Throwable
 	{
 		otpPage=connectionAddress.validateAllSectionConnectionAddressPage();
 		
