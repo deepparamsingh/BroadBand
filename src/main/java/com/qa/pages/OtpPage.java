@@ -180,6 +180,7 @@ public class OtpPage extends Testbase {
 				{
 					System.out.println("Provider Image is NOT Visible");
 				}
+				waitForElementToBeVisible(driver, TandCproviderLink, 10);
 				if(TandCproviderLink.isDisplayed())
 				{
 					System.out.println("Provider Link :"+TandCproviderLink.getText());
@@ -188,7 +189,7 @@ public class OtpPage extends Testbase {
 				{
 					System.out.println("Term and condition provider Link is MISSING !!");
 				}
-				
+				waitForElementToBeVisible(driver, TandCplanLink, 10);
 				if(TandCplanLink.isDisplayed())
 				{
 					System.out.println("Provider Link :"+TandCplanLink.getText());
@@ -215,7 +216,7 @@ public class OtpPage extends Testbase {
 				{
 					System.out.println("Image is NOT Vissible !!!");
 				}
-				
+				waitForElementToBeVisible(driver, planAck, 10);
 				if(planAck.isDisplayed())
 				{
 					System.out.println("Content of Plan Acknowledgement is :"+planAckContent.getText());
@@ -224,7 +225,7 @@ public class OtpPage extends Testbase {
 				{
 					System.out.println("Plan Acknowledgement Content is MISSING !!");
 				}
-				
+				waitForElementToBeVisible(driver, providerAck, 10);
 				if(providerAck.isDisplayed())
 				{
 					System.out.println("Content of Provider Acknowledgement is :"+providerAckContent.getText());

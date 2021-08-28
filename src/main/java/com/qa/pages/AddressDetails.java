@@ -10,7 +10,11 @@ public class AddressDetails extends Testbase {
 	
 	//PageFactory
 		@FindBy(xpath = "//p[@id='loading']")
-		WebElement ribbonBar;		
+		WebElement ribbonBar;
+		
+		@FindBy(xpath = "//i[@class='fas fa-times nbn_msg_close']")
+		WebElement ribbonBarCrosss;
+		
 		
 		
 		@FindBy(xpath = "//div[@class='noty_body']")
@@ -50,7 +54,8 @@ public class AddressDetails extends Testbase {
 		
 		public void validateRibbon() throws Throwable
 		{	
-			Thread.sleep(7000);
+			waitForElementToBeVisible(driver, ribbonBarCrosss, 10);
+			//Thread.sleep(7000);
 			String actuaRibonText = ribbonBar.getText();
 			if(actuaRibonText.contains(addressFound))
 			{

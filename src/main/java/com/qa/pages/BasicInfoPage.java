@@ -292,7 +292,7 @@ public class BasicInfoPage extends Testbase {
 		{
 			AustralianPassport.click();
 			passport_number.sendKeys("56566655515");
-			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, passport_exp, 10);
 			passport_exp.sendKeys("15 05 2025");
 			
 		}

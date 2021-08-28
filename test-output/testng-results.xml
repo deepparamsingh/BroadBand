@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-27T21:40:36Z" name="Default suite" finished-at="2021-08-27T21:42:01Z" duration-ms="85087">
+  <suite started-at="2021-08-28T20:03:47Z" name="Default suite" finished-at="2021-08-28T20:05:09Z" duration-ms="81882">
     <groups>
     </groups>
-    <test started-at="2021-08-27T21:40:36Z" name="Default test" finished-at="2021-08-27T21:42:01Z" duration-ms="85087">
-      <class name="com.qa.testcase.OtpTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-08-27T21:40:36Z" name="setup" finished-at="2021-08-27T21:41:50Z" duration-ms="73595" status="PASS">
+    <test started-at="2021-08-28T20:03:47Z" name="Default test" finished-at="2021-08-28T20:05:09Z" duration-ms="81882">
+      <class name="com.qa.testcase.ConnectionAddressTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@398dada8]" started-at="2021-08-28T20:03:47Z" name="setup" finished-at="2021-08-28T20:05:01Z" duration-ms="73648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateOTPTest()[pri:1, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-08-27T21:41:50Z" name="validateOTPTest" finished-at="2021-08-27T21:42:00Z" duration-ms="10336" status="PASS">
+        <test-method signature="validateAllSectionConnectionAddressPageTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@398dada8]" started-at="2021-08-28T20:05:01Z" name="validateAllSectionConnectionAddressPageTest" finished-at="2021-08-28T20:05:09Z" duration-ms="8137" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateOTPTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-08-27T21:42:00Z" name="tearDown" finished-at="2021-08-27T21:42:01Z" duration-ms="1113" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.testcase.OtpTest -->
+        </test-method> <!-- validateAllSectionConnectionAddressPageTest -->
+      </class> <!-- com.qa.testcase.ConnectionAddressTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

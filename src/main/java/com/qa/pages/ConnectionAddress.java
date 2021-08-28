@@ -69,11 +69,8 @@ public class ConnectionAddress extends Testbase {
 		WebElement checkBoxAddress;
 		
 		
-		//--------------------------------------
-		
 		
 		//Credit card Details
-		
 		@FindBy(xpath = "//div[@class='ques-wrap dotted-area credit_card_section']")
 		WebElement debitCardSection;
 		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[4]/div[1]/div[1]/div[1]/p[1]")
@@ -95,6 +92,37 @@ public class ConnectionAddress extends Testbase {
 	
 		@FindBy(xpath = "//a[normalize-space()='Review Details']")
 		WebElement ReviewDetailsButton;
+		
+		
+		//Validation Message for Connection Address
+		@FindBy(xpath = "//span[contains(text(),'Please select Residential status from dropdown')]")
+		WebElement residentialStatusValidation;
+		@FindBy(xpath = "//span[contains(text(),'Please select year from dropdown')]")
+		WebElement livingYearValidation;
+		@FindBy(xpath = "//span[contains(text(),'Please Select Valid month.')]")
+		WebElement livingMonthValidation;
+		
+		
+		//Validation Message for Billing Section
+		@FindBy(xpath = "//span[contains(text(),'Please select any option for billing.')]")
+		WebElement billingValidation;
+		@FindBy(xpath = "//span[contains(text(),'Please select any option for delivery.')]")
+		WebElement deliveryValidation;
+		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]")
+		WebElement billingOtherAddressValidation;
+		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]")
+		WebElement deliveryOtherAddressValidation;
+		
+		
+		//Validation Message for Debit Card Section
+		@FindBy(xpath = "//span[contains(text(),'Please enter name given on card.')]")
+		WebElement debitCardNameValidation;
+		@FindBy(xpath = "//span[contains(text(),'Please enter card expiry date')]")
+		WebElement debitCardValidityValidation;
+		@FindBy(xpath = "//span[contains(text(),'Checkbox two is required')]")
+		WebElement chk1Validation;
+		@FindBy(xpath = "//span[contains(text(),'new data')]")
+		WebElement chk2Validation;
 		
 		
 		
@@ -162,7 +190,7 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
 		
-		//waitForElementToBeVisible(driver, deliverySection, 10);
+		waitForElementToBeVisible(driver, deliverySection, 10);
 		if(deliverySection.isDisplayed())
 		{
 			if(DeliveryAddress.isDisplayed())
@@ -248,6 +276,89 @@ public class ConnectionAddress extends Testbase {
 	}
 	
 	
+	public void connectionAddressEmptyValidationMessages() throws Throwable
+	{
+		//Thread.sleep(7000);
+		validateConnectionDetailsButton();
+		Thread.sleep(7000);
+		waitForElementToBeVisible(driver, connectionAddressSection, 10);
+		if(connectionAddressSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
+			System.out.println("Validation message for Connection Address : "+residentialStatusValidation.getText());
+			waitForElementToBeVisible(driver, residentialStatus, 10);
+			residentialStatus.click();
+			selectResidentalStatus.click();
+			validateConnectionDetailsButton();
+			waitForElementToBeVisible(driver, livingYear, 10);
+			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
+			waitForElementToBeVisible(driver, livingMonth, 10);
+			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
+			livingYear.click();
+			selectLivingYear.click();
+			livingMonth.click();
+			selectLivingMonth.click();
+			ASAP.click();
+		}
+		else
+		{
+			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+		}
+	}
+	
+	public void billingDeliveryEmptyValidationMessages() throws Throwable
+	{
+		//Thread.sleep(7000);
+		validateConnectionDetailsButton();
+		waitForElementToBeVisible(driver, BillingSection, 10);
+		if(BillingSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
+			System.out.println("Validation message for Billing Section : "+billingValidation.getText());
+			System.out.println("Validation message for Delivery Section : "+deliveryValidation.getText());
+			otherAddressBilling.click();
+			otherAddressDelivery.click();
+			validateConnectionDetailsButton();
+			System.out.println("Validation message for Delivery Section : "+billingOtherAddressValidation.getText());
+			System.out.println("Validation message for Delivery Section : "+deliveryOtherAddressValidation.getText());
+			BillingEmail.click();
+			DeliveryAddress.click();
+						
+		}
+		else
+		{
+			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+		}
+	}
+	
+	public void debitCardEmptyValidationMessages() throws Throwable
+	{
+		//Thread.sleep(7000);
+		validateConnectionDetailsButton();
+		waitForElementToBeVisible(driver, debitCardSection, 10);
+		if(debitCardSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Debit Card Section---");
+			System.out.println("Validation message for Debit Card Name : "+debitCardNameValidation.getText());
+			System.out.println("Validation message for Debit Card Expiry : "+debitCardValidityValidation.getText());
+			System.out.println("Validation message for Delivery Section : "+chk1Validation.getText());
+			System.out.println("Validation message for Delivery Section : "+chk2Validation.getText());
+			driver.switchTo().frame("tx_iframe_tokenExIframeDiv");
+			debitCardNumber.sendKeys(" 4111111111111111");
+			driver.switchTo().defaultContent();
+			debitCardName.sendKeys("Param-deep");
+			debitCardValidity.sendKeys("04 25");
+			driver.switchTo().frame("tx_iframe_cvv_CvvTextbox");
+			debitCarCVV.sendKeys("123");
+			driver.switchTo().defaultContent();
+						
+		}
+		else
+		{
+			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+		}
+	}
+	
 	public OtpPage validateAllSectionConnectionAddressPage() throws Throwable
 	{
 		validateConnectionDetailsSection();
@@ -256,7 +367,15 @@ public class ConnectionAddress extends Testbase {
 		validateConnectionDetailsButton();
 		return new OtpPage();
 	}
-	       
+	    
+	public OtpPage validateEmptyValidationMessageConnectionAddressPage() throws Throwable
+	{
+		connectionAddressEmptyValidationMessages();
+		billingDeliveryEmptyValidationMessages();
+		debitCardEmptyValidationMessages();
+		validateConnectionDetailsButton();
+		return new OtpPage();
+	}
 	
 	
 }
