@@ -16,7 +16,9 @@ public class ConnectionAddress extends Testbase {
 		WebElement connectionAddressSection;
 		@FindBy(xpath = "//i[@id='conn_addr_disp']")
 		WebElement fetchaddess;
-		@FindBy(xpath = "//span[@class='jcf-select jcf-unselectable jcf-select-resstatus jcf-select-custom-select jcf-select-custom-select-form']")
+//		@FindBy(xpath = "//span[@class='jcf-select jcf-unselectable jcf-select-resstatus jcf-select-custom-select jcf-select-custom-select-form']")
+//		WebElement residentialStatus;
+		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[2]/div[2]/div[1]/span[1]")
 		WebElement residentialStatus;
 		@FindBy(xpath = "//span[normalize-space()='Owner Fully Paid']")
 		WebElement selectResidentalStatus;
@@ -137,7 +139,6 @@ public class ConnectionAddress extends Testbase {
 	public void validateConnectionDetailsSection() throws Throwable
 	{
 		waitForElementToBeVisible(driver, connectionAddressSection, 50);
-		//Thread.sleep(5000);
 		if(connectionAddressSection.isDisplayed())
 		{
 			String existingAddress= fetchaddess.getText();
@@ -159,8 +160,8 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
-		//validateConnectionDetailsSection();
-		waitForElementToBeVisible(driver, BillingSection, 20);
+		try {
+		waitForElementToBeVisible(driver, BillingSection, 30);
 		if(BillingSection.isDisplayed())
 		{
 			if(BillingEmail.isDisplayed()) 
@@ -183,13 +184,19 @@ public class ConnectionAddress extends Testbase {
 				selectOtherAddressBilling.click();
 				checkBoxBilling.click();
 			}
+			else
+			{
+				System.out.println("No Option Selected from Billing Address Section");
+			}
 									
 		}
-		else
-		{
+		}
+		catch (Exception e) {
+			// TODO: handle exception
 			System.out.println("Billing Section is not their OR  MISSING !!");
 		}
 		
+		try {
 		waitForElementToBeVisible(driver, deliverySection, 10);
 		if(deliverySection.isDisplayed())
 		{
@@ -198,41 +205,48 @@ public class ConnectionAddress extends Testbase {
 			String deliveryAddress=DeliveryAddress.getText();
 			System.out.println("Equiptments will be deliver to Address :"+deliveryAddress);
 			DeliveryAddress.click();
-		}
-		else if(otherAddressDelivery.isDisplayed())
-		{
+			}
+			else if(otherAddressDelivery.isDisplayed())
+			{
 			Thread.sleep(2000);
 			otherAddressDelivery.click();
 			inputOtherAddressDelivery.sendKeys("barangaroo  ");
 			selectOtherAddressDelivery.click();
 			checkBoxAddress.click();
+			}
+			else
+			{
+				System.out.println("No Option Selected from Delivery Address Section");
+			}
 		}
 		}
-		else
-		{
+		catch (Exception e) {
+			// TODO: handle exception
 			System.out.println("Delivery Section is not their OR  MISSING!!");
 		}
+		
 	}
 	
 	public void validateDebitcardSection() throws Throwable
 	{
-		
-		//Thread.sleep(7000);
 		//validateBillingdeliveryAddress();
-		try {
-			waitForElementToBeVisible(driver, debitCardSection, 10);
+		try{
+			waitForElementToBeVisible(driver, debitCardSection, 30);
+			js.executeScript("arguments[0].scrollIntoView();", debitCardSection);
 		if(debitCardSection.isDisplayed())
 		{
 			
-			js.executeScript("arguments[0].scrollIntoView();", debitCardName);
+			try {
 			if(debitCardContent.isDisplayed())
 			{
 				System.out.println("Content of Debit card is: "+debitCardContent.getText());
 			}
-			else
-			{
+			}
+			catch (Exception e) {
+				// TODO: handle exception
 				System.out.println("Content of Debit card is not their or missing");
 			}
+			
 			
 			driver.switchTo().frame("tx_iframe_tokenExIframeDiv");
 			debitCardNumber.sendKeys(" 4111111111111111");
@@ -252,7 +266,7 @@ public class ConnectionAddress extends Testbase {
 			String securevalue=secureText.getText();
 			System.out.println("Secure text is :"+securevalue);
 			
-		}
+				}
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -263,7 +277,7 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateConnectionDetailsButton()
 	{
-		waitForElementToBeVisible(driver, ReviewDetailsButton, 10);
+		waitForElementToBeVisible(driver, ReviewDetailsButton, 30);
 		if(ReviewDetailsButton.isDisplayed())
 		{
 			ReviewDetailsButton.click();
@@ -278,21 +292,22 @@ public class ConnectionAddress extends Testbase {
 	
 	public void connectionAddressEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
 		validateConnectionDetailsButton();
-		Thread.sleep(7000);
-		waitForElementToBeVisible(driver, connectionAddressSection, 10);
+		try {
+		waitForElementToBeVisible(driver, connectionAddressSection, 30);
 		if(connectionAddressSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
 			System.out.println("Validation message for Connection Address : "+residentialStatusValidation.getText());
-			waitForElementToBeVisible(driver, residentialStatus, 10);
+			//waitForElementToBeVisible(driver, residentialStatus, 30);
 			residentialStatus.click();
+			System.out.println("residentialStatus Clicked");
 			selectResidentalStatus.click();
+			System.out.println("selectResidentalStatus Clicked");
 			validateConnectionDetailsButton();
-			waitForElementToBeVisible(driver, livingYear, 10);
+			waitForElementToBeVisible(driver, livingYear, 30);
 			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
-			waitForElementToBeVisible(driver, livingMonth, 10);
+			waitForElementToBeVisible(driver, livingMonth, 30);
 			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
 			livingYear.click();
 			selectLivingYear.click();
@@ -302,32 +317,42 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
+			System.out.println("\n"+"---Exception Occurs -> No option selected from Connection Address!!---");
+		}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
 			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
 		}
+		
 	}
 	
 	public void billingDeliveryEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
 		validateConnectionDetailsButton();
-		waitForElementToBeVisible(driver, BillingSection, 10);
+		try {
+		waitForElementToBeVisible(driver, BillingSection, 30);
 		if(BillingSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
+			System.out.println("\n"+"---Validation Messages of Billing Address Section---");
 			System.out.println("Validation message for Billing Section : "+billingValidation.getText());
 			System.out.println("Validation message for Delivery Section : "+deliveryValidation.getText());
 			otherAddressBilling.click();
 			otherAddressDelivery.click();
 			validateConnectionDetailsButton();
-			System.out.println("Validation message for Delivery Section : "+billingOtherAddressValidation.getText());
-			System.out.println("Validation message for Delivery Section : "+deliveryOtherAddressValidation.getText());
-			BillingEmail.click();
-			DeliveryAddress.click();
+			System.out.println("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
+			System.out.println("Validation message for Other Address Delivery Section : "+deliveryOtherAddressValidation.getText());
+			validateBillingdeliveryAddress();
 						
 		}
 		else
 		{
-			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+			System.out.println("\n"+"---No option selected from billing Address section !!---");
+		}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("\n"+"---Exception Occurs Billing Address section is Not their or Missing !!---");
 		}
 	}
 	
@@ -335,7 +360,8 @@ public class ConnectionAddress extends Testbase {
 	{
 		//Thread.sleep(7000);
 		validateConnectionDetailsButton();
-		waitForElementToBeVisible(driver, debitCardSection, 10);
+		try {
+		waitForElementToBeVisible(driver, debitCardSection, 30);
 		if(debitCardSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Debit Card Section---");
@@ -355,7 +381,12 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
-			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+			System.out.println("\n"+"---No option selected from Debit card section !!---");
+		}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
 		}
 	}
 	
@@ -370,6 +401,7 @@ public class ConnectionAddress extends Testbase {
 	    
 	public OtpPage validateEmptyValidationMessageConnectionAddressPage() throws Throwable
 	{
+	
 		connectionAddressEmptyValidationMessages();
 		billingDeliveryEmptyValidationMessages();
 		debitCardEmptyValidationMessages();

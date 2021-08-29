@@ -68,14 +68,14 @@ public class ConnectionAddressTest extends Testbase {
 		connectionAddress.validateAllSectionConnectionAddressPage();
 		
 	}
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void validateEmptyValidationMessageConnectionAddressPageTest() throws Throwable 
 	{
 		otpPage=connectionAddress.validateEmptyValidationMessageConnectionAddressPage();
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateAllSectionConnectionAddressPageTest() throws Throwable
 	{
 		otpPage=connectionAddress.validateAllSectionConnectionAddressPage();
