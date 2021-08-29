@@ -1,5 +1,6 @@
 package com.qa.pages;
 
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
@@ -311,10 +312,15 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
 			waitForElementToBeVisible(driver, livingMonth, 30);
 			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
+			waitForElementToBeVisible(driver, livingYear, 10);
 			livingYear.click();
+			waitForElementToBeVisible(driver, selectLivingYear, 10);
 			selectLivingYear.click();
+			waitForElementToBeVisible(driver, livingMonth, 10);
 			livingMonth.click();
+			waitForElementToBeVisible(driver, selectLivingMonth, 10);
 			selectLivingMonth.click();
+			waitForElementToBeVisible(driver, ASAP, 10);
 			ASAP.click();
 		}
 		else
@@ -339,7 +345,9 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("\n"+"---Validation Messages of Billing Address Section---");
 			System.out.println("Validation message for Billing Section : "+billingValidation.getText());
 			System.out.println("Validation message for Delivery Section : "+deliveryValidation.getText());
+			waitForElementToBeVisible(driver, otherAddressBilling, 10);
 			otherAddressBilling.click();
+			waitForElementToBeVisible(driver, otherAddressDelivery, 10);
 			otherAddressDelivery.click();
 			validateConnectionDetailsButton();
 			System.out.println("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
@@ -362,7 +370,7 @@ public class ConnectionAddress extends Testbase {
 	{
 		validateConnectionDetailsButton();
 		try {
-		waitForElementToBeVisible(driver, debitCardSection, 30);
+		waitForElementToBeVisible(driver, debitCardSection, 10);
 		if(debitCardSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Debit Card Section---");
@@ -377,10 +385,6 @@ public class ConnectionAddress extends Testbase {
 		{
 			System.out.println("\n"+"---Exception Occurs No option selected from Debit card section !!---");
 		}
-		}
-		catch (NoSuchElementException e) {
-			
-			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
 		}
 		catch (TimeoutException e) {
 			

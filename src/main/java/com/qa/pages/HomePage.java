@@ -179,18 +179,19 @@ public class HomePage extends Testbase {
 	
 	public AddressDetails validateEnterAddress() throws Throwable
 	{
-		waitForElementToBeVisible(driver, addressInputBar, 10);
+		waitForElementToBeVisible(driver, addressInputBar, 20);
 		addressInputBar.sendKeys(prop.getProperty("address"));
 		//Thread.sleep(3000);
-		waitForElementToBeVisible(driver, selectAddress, 10);
+		waitForElementToBeVisible(driver, selectAddress, 20);
 		try 
 		{
 		if(selectAddress.isDisplayed())
 		{
 		selectAddress.click();
 		//Thread.sleep(3000);
-		waitForElementToBeVisible(driver, compareButton, 10);
+		
 		}
+		waitForElementToBeVisible(driver, compareButton, 20);
 		if(compareButton.isDisplayed())
 		{
 			
