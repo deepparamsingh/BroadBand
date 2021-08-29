@@ -1,6 +1,8 @@
 package com.qa.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -376,7 +378,11 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("\n"+"---Exception Occurs No option selected from Debit card section !!---");
 		}
 		}
-		catch (Exception e) {
+		catch (NoSuchElementException e) {
+			
+			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
+		}
+		catch (TimeoutException e) {
 			
 			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
 		}
@@ -391,7 +397,7 @@ public class ConnectionAddress extends Testbase {
 		return new OtpPage();
 	}
 	    
-	public OtpPage validateEmptyValidationMessageConnectionAddressPage() throws Throwable
+	public OtpPage validateEmptyValidationMessageConnectionAddressPage() throws Throwable 
 	{
 	
 		connectionAddressEmptyValidationMessages();
