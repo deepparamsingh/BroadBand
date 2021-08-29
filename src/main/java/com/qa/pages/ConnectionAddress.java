@@ -358,7 +358,6 @@ public class ConnectionAddress extends Testbase {
 	
 	public void debitCardEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
 		validateConnectionDetailsButton();
 		try {
 		waitForElementToBeVisible(driver, debitCardSection, 30);
@@ -369,23 +368,16 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Validation message for Debit Card Expiry : "+debitCardValidityValidation.getText());
 			System.out.println("Validation message for Delivery Section : "+chk1Validation.getText());
 			System.out.println("Validation message for Delivery Section : "+chk2Validation.getText());
-			driver.switchTo().frame("tx_iframe_tokenExIframeDiv");
-			debitCardNumber.sendKeys(" 4111111111111111");
-			driver.switchTo().defaultContent();
-			debitCardName.sendKeys("Param-deep");
-			debitCardValidity.sendKeys("04 25");
-			driver.switchTo().frame("tx_iframe_cvv_CvvTextbox");
-			debitCarCVV.sendKeys("123");
-			driver.switchTo().defaultContent();
+			validateDebitcardSection();
 						
 		}
 		else
 		{
-			System.out.println("\n"+"---No option selected from Debit card section !!---");
+			System.out.println("\n"+"---Exception Occurs No option selected from Debit card section !!---");
 		}
 		}
 		catch (Exception e) {
-			// TODO: handle exception
+			
 			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
 		}
 	}
@@ -405,7 +397,7 @@ public class ConnectionAddress extends Testbase {
 		connectionAddressEmptyValidationMessages();
 		billingDeliveryEmptyValidationMessages();
 		debitCardEmptyValidationMessages();
-		validateConnectionDetailsButton();
+		//validateConnectionDetailsButton();
 		return new OtpPage();
 	}
 	
