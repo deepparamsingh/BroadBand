@@ -96,7 +96,7 @@ public class OtpPage extends Testbase {
 	WebElement chk1;
 	@FindBy(css = "label[for='term_105']")
 	WebElement chk2;
-	@FindBy(css = "label[for='term_10']")
+	@FindBy(css = "label[for='term_179']")
 	WebElement chk3;
 	@FindBy(css = "label[for='term_12']")
 	WebElement chk4;

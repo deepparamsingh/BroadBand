@@ -1,5 +1,7 @@
 package com.qa.pages;
 
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -74,6 +76,7 @@ public class HomePage extends Testbase {
 	
 	public void validateh1Heading()
 	{
+		waitForElementToBeVisible(driver, h1Heading, 10);
 		String actualH1heading= h1Heading.getText();
 		if(actualH1heading.contentEquals(h1Title))
 		{
@@ -88,6 +91,7 @@ public class HomePage extends Testbase {
 	
 	public void validateBelowh1Heading()
 	{
+		waitForElementToBeVisible(driver, belowh1Headng, 10);
 		String actualBelowH1heading= belowh1Headng.getText();
 		if(actualBelowH1heading.contentEquals(belowh1Title))
 		{
@@ -101,6 +105,7 @@ public class HomePage extends Testbase {
 	
 	public void validateNavBar()
 	{
+		waitForElementToBeVisible(driver, homePageNavBar, 10);
 		if(homePageNavBar.isDisplayed())
 		{
 			System.out.println("Navigation Bar Displayed");
@@ -116,64 +121,83 @@ public class HomePage extends Testbase {
 	
 	public void validatehomePageImage()
 	{
-		
+		try {
+		waitForElementToBeVisible(driver, homePageFirstImg, 10);
 		if(homePageFirstImg.isDisplayed())
 			{
 			System.out.println("HomePage Image Displayed ");
 			}
-		else {
-			{
-				System.out.println("HomePage Image NOT Displayed ");
-			}
+//		else 
+//			{
+//				System.out.println("HomePage Image NOT Displayed ");
+//			}
 		}
-		
+		catch (TimeoutException e) {
+			System.out.println("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
+		}
 	}
 	
 	public void validatehomeLOGO()
 	{
-		
+		try {
+		waitForElementToBeVisible(driver, homePageLogo, 10);
 		if(homePageLogo.isDisplayed())
 			{
 			System.out.println("HomePage LOGO Displayed ");
 			}
-		else {
-			{
-				System.out.println("HomePage LOGO NOT Displayed ");
-			}
+//		else 
+//		{
+//				System.out.println("HomePage LOGO NOT Displayed ");
+//			}
+		
+		}
+		catch (TimeoutException e) {
+			System.out.println("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
 		}
 		
 	}
 	
 	public  void validateEmptyAddress() 
 	{
+		try {
+		waitForElementToBeVisible(driver, compareButton, 10);
 		compareButton.click();
+		waitForElementToBeVisible(driver, withOutAndWrongAddress, 10);
 		String emptyAddres= withOutAndWrongAddress.getText();
 		if(emptyAddres.contentEquals(withOutAdress))
 		{
-			System.out.println(emptyAddres);
+			System.out.println("Validation for empty address: "+emptyAddres);
 		}
 		else
 		{
-			System.out.println("validateEmptyAddress --> FAILED!!");
+			System.out.println("validateEmptyAddress --> FAILED Message didn't match!!");
+		}
+		}
+		catch (NoSuchElementException e) {
+			System.out.println("Exception Occurs-->validation Message is Missing!!");
 		}
 	}
 	
 	
 	public  void validateWrongAddress() throws Throwable 
 	{
+		try {
+		waitForElementToBeVisible(driver, addressInputBar, 10);
 		addressInputBar.sendKeys("qwertyuiopasdfghjk");
-		//Thread.sleep(3000);
-		waitForElementToBeVisible(driver, withOutAndWrongAddress, 15);
-		//compareButton.click();
 		
+		waitForElementToBeVisible(driver, withOutAndWrongAddress, 15);
 		String wrongValueEntered= withOutAndWrongAddress.getText();
 		if(wrongValueEntered.contentEquals(wrongAddress))
 		{
-			System.out.println(wrongValueEntered);
+			System.out.println("Validation for Wrong address: "+wrongValueEntered);
 		}
 		else
 		{
-			System.out.println("validateWrongAddress --> FAILED!!");
+			System.out.println("validateWrongAddress --> FAILED!! as validation Message failed!");
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("Exception occurs ->validateWrongAddress --> FAILED!!");
 		}
 	}
 	
@@ -199,7 +223,7 @@ public class HomePage extends Testbase {
 			//return new AddressDetails();
 		}
 		}
-		catch (Exception e) {
+		catch (TimeoutException e) {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
 			System.out.println(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
 			return null;

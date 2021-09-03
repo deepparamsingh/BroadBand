@@ -170,16 +170,17 @@ public class PopUpPage extends Testbase {
 		public void validateValidations() throws Throwable
 		{
 			
-			//Thread.sleep(5000);
 			waitForElementToBeVisible(driver, submitButton, 10);
 			submitButton.click();
-			Thread.sleep(2000);
+			waitForElementToBeVisible(driver, nameValidateMsg, 10);
 			String nameValidation=nameValidateMsg.getText();
+			waitForElementToBeVisible(driver, emailValidateMsg, 10);
 			String emailValidation = emailValidateMsg.getText();
+			waitForElementToBeVisible(driver, phoneValidateMsg, 10);
 			String phoneValidation = phoneValidateMsg.getText();
 			if(nameValidation.contains(nameValidationMessage))
 			{
-				System.out.println("Validation message for name is visible");
+				System.out.println("Validation message for name is visible: "+nameValidation);
 			}
 			else
 			{
@@ -187,7 +188,7 @@ public class PopUpPage extends Testbase {
 			}
 			if(emailValidation.contains(emailValidationMessage))
 			{
-				System.out.println("Validation message for email is visible");
+				System.out.println("Validation message for email is visible: "+emailValidation);
 			}
 			else
 			{
@@ -195,7 +196,7 @@ public class PopUpPage extends Testbase {
 			}
 			if(phoneValidation.contains(phoneValidationMessage))
 			{
-				System.out.println("Validation message for email is visible");
+				System.out.println("Validation message for phone is visible: "+phoneValidation);
 			}
 			else
 			{
@@ -207,22 +208,25 @@ public class PopUpPage extends Testbase {
 		
 		public PopUpPage validateWrongCredentials() throws Throwable
 		{
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
+			waitForElementToBeVisible(driver, cust_name, 10);
 			cust_name.sendKeys("12234%%");
 			submitButton.click();
 			String s1=nameValidateMsg.getText();
 			System.out.println("Enetred name as 12234%% -->"+s1);
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, cust_email, 10);
 			cust_email.sendKeys("paramdeeps/cimet.com.au");
 			submitButton.click();
 			String s2=emailValidateMsg.getText();
 			System.out.println("Enetred email as paramdeeps/cimet.com.au -->"+s2);
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
+			waitForElementToBeVisible(driver, cust_phone, 10);
 			cust_phone.sendKeys("qwerty");
 			submitButton.click();
 			String s3=phoneValidateMsg.getText();
 			System.out.println("Enetred phone as qwerty -->"+s3);
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		    submitButton.click();
 		    return new PopUpPage();
 			

@@ -94,24 +94,23 @@ public class HomePageTest extends Testbase {
 		
 	}
 	
-	@Test(enabled=false)
+	@Test(priority=1)
 	public void validateEmptyAddressTest()
 	{
 		homepage.validateEmptyAddress();
 		
 	}
 	
-	@Test(enabled=false)
+	@Test(priority=2)
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=3)
 	public void validateEnterAddressTest() throws Throwable
 	{
-		//Thread.sleep(3000);
 		addressDetails=homepage.validateEnterAddress();
 	}
 	

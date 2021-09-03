@@ -61,7 +61,7 @@ public class OtpTest extends Testbase {
 		 
 	   }
 	
-	@Test(priority = 1)
+	@Test(priority = 10)
 	public void validateOTPTest() throws Throwable
 	{
 		

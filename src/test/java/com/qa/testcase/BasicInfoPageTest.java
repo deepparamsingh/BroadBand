@@ -89,7 +89,7 @@ public class BasicInfoPageTest extends Testbase {
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 2)
 	public void validateAllSectionTest() throws Throwable
 	{
 		connectionAddress=basicInfoPage.validateAllSectionBasicInfoPage();
@@ -105,9 +105,9 @@ public class BasicInfoPageTest extends Testbase {
 	
 	
 			
-//	@AfterMethod
-//	public void tearDown()
-//	{                                              
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void tearDown()
+	{                                              
+		driver.quit();
+	}
 }

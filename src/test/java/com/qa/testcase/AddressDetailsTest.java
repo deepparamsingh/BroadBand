@@ -37,23 +37,23 @@ public class AddressDetailsTest extends Testbase {
 		addressDetails.validateRibbon();
 	}
 	
-	@Test(enabled = false)
+	@Test(priority=4)
 	public void validateSpecialNoteTest() throws Throwable
 	{
 		addressDetails.validateSpecialNote();
 	}
 	
-	@Test(priority=1)
+	@Test(priority=5)
 	public void validateNextButtonTest() throws Throwable
 	{
 		popUpPage= addressDetails.validateFullJourney();
 	}
 	
-//	@AfterMethod
-//	public void tearDown()
-//	{
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.quit();
+	}
      	
 
 }

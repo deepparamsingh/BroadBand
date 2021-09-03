@@ -3,6 +3,7 @@ package com.qa.pages;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -234,7 +235,7 @@ public class BasicInfoPage extends Testbase {
 	//Actions
 	public void validateErrorMessages() throws Throwable
 	{
-		waitForElementToBeVisible(driver, connectionDetailsButton, 15);
+		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
 		js.executeScript("arguments[0].scrollIntoView();", connectionDetailsButton);
 		validatesubmitBasicDetailsButton();
 		
@@ -242,8 +243,8 @@ public class BasicInfoPage extends Testbase {
 	
 	public void validateYourDetailsSection() throws Throwable 
 	{
-		waitForElementToBeVisible(driver, yourDetailssection, 15);
-		//Thread.sleep(7000);
+		try {
+		waitForElementToBeVisible(driver, yourDetailssection, 10);
 		if(yourDetailssection.isDisplayed())
 		{
 			titleDropdown.click();
@@ -260,14 +261,18 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("Your Details section is Not their or Missing !!");
+			System.out.println("\n"+"Exception Occurs ->No option selected from YourDetails Section!!---");
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("\n"+"Your Details section is Not their or Missing !!");
 		}
 		
 	}
 	public void validateconnectionDetailsSection() throws Throwable
 	{
-		//validateYourDetailsSection();
-		waitForElementToBeVisible(driver, connectionDetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			alreadyaccountyes.click();
@@ -279,25 +284,33 @@ public class BasicInfoPage extends Testbase {
 			
 		}
 		else {
-			System.out.println("Connection Details section is Not their or Missing !!");
+			System.out.println("\n"+"Exception Occurs ->No option selected from Connection Address!!---");
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("\n"+"Connection Details section is Not their or Missing !!");
 		}
 	}
 	
 	public void validateIdentificationDetailsSection() throws Throwable
 	{
-		
-		//validateconnectionDetailsSection();
-		waitForElementToBeVisible(driver, IdentificationdetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			AustralianPassport.click();
 			passport_number.sendKeys("56566655515");
-			waitForElementToBeVisible(driver, passport_exp, 15);
+			waitForElementToBeVisible(driver, passport_exp, 10);
 			passport_exp.sendKeys("15 05 2025");
 			
 		}
 		else {
-			System.out.println("Identification Details section is Not their or Missing !!");
+			System.out.println("\n"+"Exception Occurs ->No option selected from Identification Details!!---");
+		}
+		}
+		catch (TimeoutException e) {
+			// TODO: handle exception
+			System.out.println("\n"+"Identification Details section is Not their or Missing !!");
 		}
 		
 	}
@@ -306,7 +319,8 @@ public class BasicInfoPage extends Testbase {
 	{
 		
 		//validateIdentificationDetailsSection();
-		waitForElementToBeVisible(driver, EmploymentDetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			industry.click();
@@ -321,28 +335,38 @@ public class BasicInfoPage extends Testbase {
 			timeOfCurrentEmploymentMonth.click();
 			SelectTOCEmonth.click();
 			doYouHaveCreditCardYES.click();
-			Thread.sleep(4000);
+			
 			//return new ConnectionAddress();
 			
 			
 		}
 		else {
-			System.out.println("Employment Details section is Not their or  Missing !!");
+			System.out.println("\n"+"Exception Occurs ->No option selected from Employment Details!!---");
 			//return null;
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("\n"+"Employment Details section is Not their or  Missing !!");
 		}
 		
 	}
 	
 	public void validatesubmitBasicDetailsButton()
 	{
-		waitForElementToBeVisible(driver, connectionDetailsButton, 15);
+		
+		try {
+		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
 		if(connectionDetailsButton.isDisplayed())
 		{
 			connectionDetailsButton.click();
 		}
 		else
 		{
-			System.out.println("Basic details submit button is MISSING");
+			System.out.println("\n"+"Exception Occurs -> Basic details submit button is not Clicked---");
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("\n"+"Basic details submit button is MISSING");
 		}
 	}
 	
@@ -350,8 +374,8 @@ public class BasicInfoPage extends Testbase {
 	//check all error messages
 	public void yourDetailsEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
-		waitForElementToBeVisible(driver, yourDetailssection, 15);
+		try {
+		waitForElementToBeVisible(driver, yourDetailssection, 10);
 		if(yourDetailssection.isDisplayed())
 		{
 			fName.clear();
@@ -361,7 +385,7 @@ public class BasicInfoPage extends Testbase {
 			altpNum.clear();
 			dB.clear();
 			validateErrorMessages();
-			Thread.sleep(2000);
+			waitForElementToBeVisible(driver, titleValidation, 10);
 			System.out.println("\n"+"---Validation Messages of Your Details Section---");
 			System.out.println("Validation message for Title: "+titleValidation.getText());
 			System.out.println("Validation message for first name: "+firstNameValidation.getText());
@@ -381,15 +405,19 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("Your Details section is Not their or Missing !!");
+			System.out.println("\n"+"Exception Occurs-->No option selected from YourDetails!!---");
+		}
+		}
+		catch (TimeoutException e) {
+			System.out.println("\n"+"Your Details section is Not their or Missing !!");
 		}
 	}
 	
 	public void connectionDetailsEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
 		validateErrorMessages();
-		waitForElementToBeVisible(driver, connectionDetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
@@ -413,15 +441,20 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
+			System.out.println("\n"+"Exception Occurs-->No option selected from Connection Details!!---");
+		}
+		}
+		catch (TimeoutException e) {
 			System.out.println("\n"+"---Connection Details section is Not their or Missing !!---");
 		}
 	}
 	
 	public void identificationDetailsEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
+		
 		validateErrorMessages();
-		waitForElementToBeVisible(driver, IdentificationdetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
@@ -437,15 +470,20 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
+			System.out.println("\n"+"---Exception Occurs-->No option selected from Identification Details!!--");
+		}
+		}
+		catch (TimeoutException e) {
 			System.out.println("\n"+"---Identification Details section is Not their or Missing !!---");
 		}
 	}
 	
 	public void employmentDetailsEmptyValidationMessages() throws Throwable
 	{
-		//Thread.sleep(7000);
+		
 		validateErrorMessages();
-		waitForElementToBeVisible(driver, EmploymentDetailsSection, 15);
+		try {
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Employment Details Section---");
@@ -472,6 +510,10 @@ public class BasicInfoPage extends Testbase {
 			
 		else
 		{
+			System.out.println("\n"+"---Exception Occurs-->No option selected from Employment Details!!---");
+		}
+		}
+		catch (TimeoutException e) {
 			System.out.println("\n"+"---Employment Details section is Not their or Missing !!---");
 		}
 	}

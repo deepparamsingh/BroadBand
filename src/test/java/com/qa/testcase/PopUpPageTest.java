@@ -38,21 +38,21 @@ public class PopUpPageTest extends Testbase {
 		 
 	   }
 	
-	@Test(enabled = false)
+	@Test(priority = 6)
 	public void validateValidationsTest() throws Throwable
 	{
 		popupPage.validateValidations();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 7)
 	public void validateCredentialsTest() throws Throwable
 	{
 		popupPage.validateCredentials();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 8)
 	public void validateWrongCredentialsTest() throws Throwable
 	{
 		popupPage.validateWrongCredentials();
@@ -80,7 +80,7 @@ public class PopUpPageTest extends Testbase {
 //		}	
 //	}
 	
-	@Test(priority = 1)
+	@Test(priority = 9)
 	public void validateCheckPlanTest() throws Throwable
 	{
 		addOnPage = popupPage.fullJourney();
