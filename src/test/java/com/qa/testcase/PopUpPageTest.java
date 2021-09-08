@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.qa.base.Testbase;
 import com.qa.pages.AddOnsPage;
 import com.qa.pages.AddressDetails;
-import com.qa.pages.BasicInfoPage;
 import com.qa.pages.HomePage;
 import com.qa.pages.PopUpPage;
 
@@ -38,21 +37,21 @@ public class PopUpPageTest extends Testbase {
 		 
 	   }
 	
-	@Test(priority = 6)
+	@Test(enabled = false)
 	public void validateValidationsTest() throws Throwable
 	{
 		popupPage.validateValidations();
 		
 	}
 	
-	@Test(priority = 7)
+	@Test(enabled = false)
 	public void validateCredentialsTest() throws Throwable
 	{
 		popupPage.validateCredentials();
 		
 	}
 	
-	@Test(priority = 8)
+	@Test(enabled = false)
 	public void validateWrongCredentialsTest() throws Throwable
 	{
 		popupPage.validateWrongCredentials();
@@ -80,7 +79,7 @@ public class PopUpPageTest extends Testbase {
 //		}	
 //	}
 	
-	@Test(priority = 9)
+	@Test(priority = 1)
 	public void validateCheckPlanTest() throws Throwable
 	{
 		addOnPage = popupPage.fullJourney();

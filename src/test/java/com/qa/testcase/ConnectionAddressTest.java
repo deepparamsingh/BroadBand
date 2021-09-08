@@ -42,13 +42,8 @@ public class ConnectionAddressTest extends Testbase {
 		   otpPage= new OtpPage();
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateFullJourney();
-		   popupPage= popupPage.validateCredentials();
-		   try{
-			   addOnPage= popupPage.validateCheckPlanSpecial();			   
-		   }catch (Exception e) 
-		   {			   
-			   addOnPage= popupPage.validateCheckPlan();
-		   }	
+		   popupPage= popupPage.validateCredentials();			   
+		   addOnPage= popupPage.validateCheckPlan();	
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateFullJourney();
 		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	   	   

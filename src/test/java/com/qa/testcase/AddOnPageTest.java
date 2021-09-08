@@ -3,8 +3,6 @@ package com.qa.testcase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
 import com.qa.base.Testbase;
 import com.qa.pages.AddOnsPage;
 import com.qa.pages.AddressDetails;
@@ -38,12 +36,7 @@ public class AddOnPageTest extends Testbase {
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateFullJourney();
 		   popupPage= popupPage.validateCredentials();
-		   try{
-			   addOnPage= popupPage.validateCheckPlanSpecial();			   
-		   }catch (Exception e) 
-		   {			   
-			   addOnPage= popupPage.validateCheckPlan();
-		   }	
+		   addOnPage= popupPage.validateCheckPlan();		   	
 		   addOnPage= popupPage.validateApplyButton();
 		   
 		 

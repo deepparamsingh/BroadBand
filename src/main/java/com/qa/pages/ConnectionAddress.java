@@ -1,8 +1,6 @@
 package com.qa.pages;
 
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -141,6 +139,7 @@ public class ConnectionAddress extends Testbase {
 
 	public void validateConnectionDetailsSection() throws Throwable
 	{
+		try {
 		waitForElementToBeVisible(driver, connectionAddressSection, 50);
 		if(connectionAddressSection.isDisplayed())
 		{
@@ -156,6 +155,10 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
+			System.out.println("---Exception Occurs-->Connection Address Section is not their OR  MISSING!!");
+		}
+		}
+		catch (TimeoutException e) {
 			System.out.println("Connection Address Section is not their OR  MISSING!!");
 		}
 		
@@ -280,6 +283,7 @@ public class ConnectionAddress extends Testbase {
 	
 	public void validateConnectionDetailsButton()
 	{
+		try {
 		waitForElementToBeVisible(driver, ReviewDetailsButton, 30);
 		if(ReviewDetailsButton.isDisplayed())
 		{
@@ -287,6 +291,10 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
+			System.out.println("--Exception Occurs -->Review connection details button is MISSING !! ");
+		}
+		}
+		catch (TimeoutException e) {
 			System.out.println("Review connection details button is MISSING !! ");
 		}
 			

@@ -43,12 +43,7 @@ public class BasicInfoPageTest extends Testbase {
 		   popupPage= addressDetails.validateFullJourney();
 		  // popUpPageTest.validateCheckPlanTest();
 		   popupPage= popupPage.validateCredentials();
-		   try{
-			   addOnPage= popupPage.validateCheckPlanSpecial();			   
-		   }catch (Exception e) 
-		   {			   
-			   addOnPage= popupPage.validateCheckPlan();
-		   }		   
+		   addOnPage= popupPage.validateCheckPlan();
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateFullJourney();
 		   	   

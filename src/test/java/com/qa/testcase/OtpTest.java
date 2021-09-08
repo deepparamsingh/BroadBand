@@ -48,12 +48,7 @@ public class OtpTest extends Testbase {
 		   addressDetails= homepage.validateEnterAddress();
 		   popupPage= addressDetails.validateFullJourney();
 		   popupPage= popupPage.validateCredentials();
-		   try{
-			   addOnPage= popupPage.validateCheckPlanSpecial();			   
-		   }catch (Exception e) 
-		   {			   
-			   addOnPage= popupPage.validateCheckPlan();
-		   }	
+		   addOnPage= popupPage.validateCheckPlan();	
 		   addOnPage= popupPage.validateApplyButton();
 		   basicInfoPage= addOnPage.validateFullJourney();
 		   connectionAddress= basicInfoPage.validateAllSectionBasicInfoPage();	  

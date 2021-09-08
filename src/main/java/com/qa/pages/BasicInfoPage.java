@@ -251,7 +251,7 @@ public class BasicInfoPage extends Testbase {
 			selectTitle.click();
 			String FirstName=fName.getText();
 			System.out.println("Name of User is :"+FirstName);
-			lName.sendKeys("Singh");
+			lName.sendKeys("Script");
 			String userEmail=email.getText();
 			System.out.println("Email of User is :"+userEmail);
 			String userPhon=pNum.getText();
@@ -423,7 +423,7 @@ public class BasicInfoPage extends Testbase {
 			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
 			System.out.println("Validation message for Account provider: "+accountProviderValidation.getText());
 			System.out.println("Validation message for Existing Phone Number: "+existingPhoneNumberValidation.getText());
-			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, alreadyaccountyes, 10);
 			alreadyaccountyes.click();
 			existingphoneyes.click();
 			validateErrorMessages();
@@ -459,13 +459,13 @@ public class BasicInfoPage extends Testbase {
 		{
 			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
 			System.out.println("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
-			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, AustralianPassport, 10);
 			AustralianPassport.click();
 			validateErrorMessages();
 			System.out.println("Validation message for Passport number: "+passportvalidation.getText());
 			System.out.println("Validation message for Passport Expiry date: "+passportExpiryValidation.getText());
 			passport_number.sendKeys("56566655515");
-			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, passport_exp, 10);
 			passport_exp.sendKeys("15 05 2025");
 		}
 		else
