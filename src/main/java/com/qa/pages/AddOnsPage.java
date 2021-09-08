@@ -98,28 +98,33 @@ public class AddOnsPage extends Testbase {
 					String HCplanName=homecallingName.getText();
 					System.out.println("Name of Home Calling Plan is ->"+HCplanName);
 					homecallingSelectButton.click();
-					
-					if(((WebElement) homecallingFeatures).isDisplayed())
-						{
-							System.out.println("Plan inclusion section is displayed!!");
 							
 						List<WebElement> homeCallingFeaturePoints = homecallingFeatures;
-				        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-						System.out.println("-----Below are the list of plan Inclussion points-----");
+				       
+						System.out.println("-----Below are the list of home calling features points-----");
 						
 				        for (WebElement getHomecallingFeature : homeCallingFeaturePoints) 
 				        	{
-				            	String name = getHomecallingFeature.getText();
-				            	System.out.println(name);
+				            	String value = getHomecallingFeature.getText();
+				            	System.out.println(value);
 				        	}
-				        System.out.println("--------------------------------");
-					
-						}
+				        System.out.println("--------------------------------");						
 				}
-				}
+					}
 				catch (TimeoutException e)
 				{
 					System.out.println("Exception Occurs--> Home Calling Section MISSING");
+				}
+				
+				String homecallingPlanCost=homecallingCost.getText();
+				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost);
+				if(homecallingViewDetails.isDisplayed())
+				{
+					homecallingViewDetails.click();
+				}
+				else
+				{
+					System.out.println("Home calling View Details Link Visible");
 				}
 				
 			}

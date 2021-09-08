@@ -48,14 +48,21 @@ public class AddOnPageTest extends Testbase {
 		addOnPage.validateAddOntitle();
 		
 	}
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateIdentificationButtonTest() throws Throwable
 	{
 		addOnPage.validateAddOntitle();
 		basicInfoPage=addOnPage.validateFullJourney();
 		
 	}
-	
+
+	@Test(priority = 1)
+	public void validateHomeCallingSectionTest() throws Throwable
+	{
+		addOnPage.validateHomeCallingSection();
+		basicInfoPage=addOnPage.validateFullJourney();
+		
+	}
 	
 	
 	
