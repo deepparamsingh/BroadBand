@@ -98,6 +98,7 @@ public class AddOnsPage extends Testbase {
 					String HCplanName=homecallingName.getText();
 					System.out.println("Name of Home Calling Plan is ->"+HCplanName);
 					homecallingSelectButton.click();
+					System.out.println("Home calling Modem Selected!!");
 							
 						List<WebElement> homeCallingFeaturePoints = homecallingFeatures;
 				       
@@ -111,32 +112,87 @@ public class AddOnsPage extends Testbase {
 				        System.out.println("--------------------------------");						
 				}
 					}
-				catch (TimeoutException e)
+				catch (NoSuchElementException e)
 				{
 					System.out.println("Exception Occurs--> Home Calling Section MISSING");
 				}
 				
 				String homecallingPlanCost=homecallingCost.getText();
-				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost);
-				if(homecallingViewDetails.isDisplayed())
-				{
-					homecallingViewDetails.click();
-				}
-				else
-				{
-					System.out.println("Home calling View Details Link Visible");
-				}
+				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
+//				waitForElementToBeVisible(driver, homecallingViewDetails, 10);
+//				if(homecallingViewDetails.isDisplayed())
+//				{
+//					homecallingViewDetails.click();
+//				}
+//				else
+//				{
+//					System.out.println("Home calling View Details Link Visible");
+//				}
 				
 			}
 			public void validateModemSection() throws Throwable
 			{
+				try {
+					waitForElementToBeVisible(driver, modemSection, 10);
+				if(modemSection.isDisplayed())
+				{
+					String ModemName=modemName.getText();
+					System.out.println("Name of Modem is ->"+ModemName);
+					modemSelectButton.click();
+					System.out.println("Modem Selected!!");
+							
+						List<WebElement> modemFeaturePoints = modemFeatures;
+				       
+						System.out.println("-----Below are the list of Modem features points-----");
+						
+				        for (WebElement getModemFeature : modemFeaturePoints) 
+				        	{
+				            	String value = getModemFeature.getText();
+				            	System.out.println(value);
+				        	}
+				        System.out.println("--------------------------------");						
+				}
+					}
+				catch (NoSuchElementException e)
+				{
+					System.out.println("Exception Occurs--> Modem Section MISSING");
+				}
 				
-				
+				String ModemCost=modemCost.getText();
+				System.out.println("Cost for modem is :"+ModemCost+"\n\n");
+								
 			}
 			public void validateOtherAddonSection() throws Throwable
 			{
 				
+				try {
+					waitForElementToBeVisible(driver, otherAddonSection, 10);
+				if(otherAddonSection.isDisplayed())
+				{
+					String otherAddOnName=otherAddonName.getText();
+					System.out.println("Name of Other AddOn is ->"+otherAddOnName);
+					otherAddonSelectButton.click();
+					System.out.println("Other Addon Selected!!");
+							
+						List<WebElement> otherAddonFeaturePoints = otherAddonFeatures;
+				       
+						System.out.println("-----Below are the list of Other AddOn features points-----");
+						
+				        for (WebElement getOtherAddOnFeature : otherAddonFeaturePoints) 
+				        	{
+				            	String value = getOtherAddOnFeature.getText();
+				            	System.out.println(value);
+				        	}
+				        System.out.println("--------------------------------");						
+				}
+					}
+				catch (NoSuchElementException e)
+				{
+					System.out.println("Exception Occurs--> Other AddOn Section MISSING");
+				}
 				
+				String otherAddOnCost=otherAddonCost.getText();
+				System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
 			}
 			
 						
@@ -160,26 +216,12 @@ public class AddOnsPage extends Testbase {
 			}
 			
 			
-			public void fullJourney() throws Throwable
-			{
-				Thread.sleep(3000);
-				String Title=driver.getTitle();
-				if(Title.contentEquals(actualTitle))
-				{
-					System.out.println("Title of addOn Page is -->"+Title);
-				}
-				else
-				{
-					System.out.println("Title MISS-Match");
-				}
-				
-			}
-			
-			
 			
 			public BasicInfoPage validateFullJourney() throws Throwable
 			{
-				//validateAddOntitle();
+				validateHomeCallingSection();
+				validateModemSection();
+				validateOtherAddonSection();
 				validateIdentificationButton();
 				return new BasicInfoPage();
 				

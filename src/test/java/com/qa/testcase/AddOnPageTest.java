@@ -48,18 +48,12 @@ public class AddOnPageTest extends Testbase {
 		addOnPage.validateAddOntitle();
 		
 	}
-	@Test(enabled = false)
-	public void validateIdentificationButtonTest() throws Throwable
-	{
-		addOnPage.validateAddOntitle();
-		basicInfoPage=addOnPage.validateFullJourney();
-		
-	}
+
 
 	@Test(priority = 1)
-	public void validateHomeCallingSectionTest() throws Throwable
+	public void validateFullJourneyTest() throws Throwable
 	{
-		addOnPage.validateHomeCallingSection();
+	
 		basicInfoPage=addOnPage.validateFullJourney();
 		
 	}
@@ -67,10 +61,10 @@ public class AddOnPageTest extends Testbase {
 	
 	
 			
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 
 }
