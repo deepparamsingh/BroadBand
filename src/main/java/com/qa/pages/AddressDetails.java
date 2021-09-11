@@ -22,10 +22,22 @@ public class AddressDetails extends Testbase {
 		String offdaysMessage= "We'd love to get you connected as soon as possible";
 		 
 		
-		 
-		 @FindBy(xpath = "//label[@for='moven']")
+		//calendar
+		@FindBy(xpath = "//label[@for='movey']")
+		WebElement moveInYes;
+		@FindBy(xpath = "//div[@class='ui-datepicker-title']")
+		WebElement datePickerTitle;
+		@FindBy(xpath = "//span[contains(text(),'Next')]")
+		WebElement datePickerNext;
+		@FindBy(xpath = "//a[contains(text(),'15')]")
+		WebElement datePickerDate;		
+		@FindBy(xpath = "//label[@for='moven']")
 		WebElement moveInNo;
+		@FindBy(xpath = "//span[@id='show_date']")
+		WebElement selectedDate;
+		
 		 
+		
 		@FindBy(xpath = "//a[@id='home_page_next']")
 		WebElement nextButton;
 		
@@ -72,6 +84,32 @@ public class AddressDetails extends Testbase {
 			}
 				
 		}
+		
+		
+		public void validateSelectDate()
+		{
+			waitForElementToBeVisible(driver, moveInYes, 10);
+			moveInYes.click();
+			waitForElementToBeVisible(driver, datePickerTitle, 10);
+			String monthYearVal=datePickerTitle.getText();
+			System.out.println("Current month and year :"+monthYearVal);
+			String month= monthYearVal.split(" ")[0].trim();
+			String year= monthYearVal.split(" ")[1].trim();
+			
+			while(!(month.equals("October") && year.equals("2021")))
+			{
+				datePickerNext.click();
+				waitForElementToBeVisible(driver, datePickerTitle, 10);
+				monthYearVal=datePickerTitle.getText();
+				System.out.println("Select Month and year :"+monthYearVal);
+				 month= monthYearVal.split(" ")[0].trim();
+				 year= monthYearVal.split(" ")[1].trim();
+			}
+			datePickerDate.click();
+			System.out.println("Selected Date :"+selectedDate.getText());
+		}
+		
+		
 		
 		public void validateSpecialNote() 
 		{
