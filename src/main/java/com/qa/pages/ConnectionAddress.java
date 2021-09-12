@@ -31,8 +31,23 @@ public class ConnectionAddress extends Testbase {
 		WebElement livingMonth;
 		@FindBy(xpath = "//span[@class='jcf-option'][normalize-space()='3']")
 		WebElement selectLivingMonth;
-		@FindBy(xpath = "//label[normalize-space()='Asap']")
-		WebElement ASAP;
+		
+		
+		//calendar
+				@FindBy(xpath = "//label[contains(text(),'Select Date')]")
+				WebElement selectConnectionDate;
+				@FindBy(xpath = "//div[@class='ui-datepicker-title']")
+				WebElement datePickerTitle;
+				@FindBy(xpath = "//span[contains(text(),'Next')]")
+				WebElement datePickerNext;
+				@FindBy(xpath = "//a[contains(text(),'15')]")
+				WebElement datePickerDate;		
+				@FindBy(xpath = "//span[@id='delivery_addr_date_show']")
+				WebElement selectedDate;
+				@FindBy(xpath = "//label[normalize-space()='Asap']")
+				WebElement ASAP;
+				@FindBy(xpath = "//div[@class='noty_body']")				
+				WebElement holidayDate;
 		
 		//Billing And Delivery Address
 //		@FindBy(xpath = "//div[@id='billing_and_delivery_address_section']")
@@ -163,6 +178,48 @@ public class ConnectionAddress extends Testbase {
 		}
 		
 	}
+	
+	
+	public void validateConnectionDeliverDate() throws Throwable
+	{
+		waitForElementToBeVisible(driver, selectConnectionDate, 10);
+		selectConnectionDate.click();
+		waitForElementToBeVisible(driver, datePickerTitle, 10);
+		String monthYearVal=datePickerTitle.getText();
+		System.out.println("Current month and year :"+monthYearVal);
+		String month= monthYearVal.split(" ")[0].trim();
+		String year= monthYearVal.split(" ")[1].trim();
+		
+		waitForElementToBeVisible(driver, datePickerNext, 10);
+		while(!(month.equals(prop.getProperty("month")) && year.equals(prop.getProperty("year"))))
+		{				
+			datePickerNext.click();
+			waitForElementToBeVisible(driver, datePickerTitle, 10);
+			monthYearVal=datePickerTitle.getText();				
+			 month= monthYearVal.split(" ")[0].trim();
+			 year= monthYearVal.split(" ")[1].trim();
+		}
+		waitForElementToBeVisible(driver, datePickerDate, 10);
+		datePickerDate.click();		
+		
+		try
+		{
+		waitForElementToBeVisible(driver, holidayDate, 10);
+		if(holidayDate.isDisplayed())
+		{
+			
+			String holidayDetails = holidayDate.getText();
+			System.out.println(holidayDetails);
+		}			
+		}
+		catch (TimeoutException e) 
+		{
+			System.out.println("Select Month and year :"+monthYearVal);
+			System.out.println("Selected Date :"+selectedDate.getText());
+		}
+		
+	}
+	
 	
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
@@ -403,6 +460,7 @@ public class ConnectionAddress extends Testbase {
 	public OtpPage validateAllSectionConnectionAddressPage() throws Throwable
 	{
 		validateConnectionDetailsSection();
+		validateConnectionDeliverDate();
 		validateBillingdeliveryAddress();
 		validateDebitcardSection();
 		validateConnectionDetailsButton();

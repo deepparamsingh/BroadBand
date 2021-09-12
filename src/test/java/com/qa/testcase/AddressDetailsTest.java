@@ -50,16 +50,17 @@ public class AddressDetailsTest extends Testbase {
 	}
 	
 	@Test(priority = 1)
-	public void validateSelectDateTest()
+	public void validateSelectDateTest() throws Throwable
 	{
 		addressDetails.validateSelectDate();
 	}
 	
-//	@AfterMethod
-//	public void tearDown()
-//	{
-//		driver.quit();
-//	}
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.quit();
+	}
      	
 
 }

@@ -1,5 +1,7 @@
 package com.qa.testcase;
 
+import static org.testng.Assert.fail;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -63,25 +65,32 @@ public class ConnectionAddressTest extends Testbase {
 		connectionAddress.validateAllSectionConnectionAddressPage();
 		
 	}
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateEmptyValidationMessageConnectionAddressPageTest() throws Throwable 
 	{
 		otpPage=connectionAddress.validateEmptyValidationMessageConnectionAddressPage();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void validateAllSectionConnectionAddressPageTest() throws Throwable
 	{
 		otpPage=connectionAddress.validateAllSectionConnectionAddressPage();
 		
 	}
 	
-	@AfterMethod
-	public void tearDown()
+	@Test(enabled = false)
+	public void validateConnectionDeliverDateTest() throws Throwable
 	{
-		driver.quit();
+		connectionAddress.validateConnectionDeliverDate();
+		
 	}
+	
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 	
 
 }

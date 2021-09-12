@@ -1,5 +1,9 @@
 package com.qa.pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,10 +21,7 @@ public class AddressDetails extends Testbase {
 		
 		
 		
-		@FindBy(xpath = "//div[@class='noty_body']")
-		WebElement holidayDate;
-		String offdaysMessage= "We'd love to get you connected as soon as possible";
-		 
+		
 		
 		//calendar
 		@FindBy(xpath = "//label[@for='movey']")
@@ -35,6 +36,10 @@ public class AddressDetails extends Testbase {
 		WebElement moveInNo;
 		@FindBy(xpath = "//span[@id='show_date']")
 		WebElement selectedDate;
+		@FindBy(xpath = "//div[@class='noty_body']")
+		WebElement holidayDate;
+		//String offdaysMessage= "We'd love to get you connected as soon as possible";
+		 
 		
 		 
 		
@@ -86,27 +91,45 @@ public class AddressDetails extends Testbase {
 		}
 		
 		
-		public void validateSelectDate()
+		public void validateSelectDate() throws Throwable
 		{
-			waitForElementToBeVisible(driver, moveInYes, 10);
+			waitForElementToBeVisible(driver, ribbonBarCrosss, 10);
 			moveInYes.click();
+			Thread.sleep(1000);
 			waitForElementToBeVisible(driver, datePickerTitle, 10);
 			String monthYearVal=datePickerTitle.getText();
 			System.out.println("Current month and year :"+monthYearVal);
 			String month= monthYearVal.split(" ")[0].trim();
 			String year= monthYearVal.split(" ")[1].trim();
 			
-			while(!(month.equals("October") && year.equals("2021")))
-			{
+			waitForElementToBeVisible(driver, datePickerNext, 10);
+			while(!(month.equals(prop.getProperty("month")) && year.equals(prop.getProperty("year"))))
+			{				
 				datePickerNext.click();
 				waitForElementToBeVisible(driver, datePickerTitle, 10);
-				monthYearVal=datePickerTitle.getText();
-				System.out.println("Select Month and year :"+monthYearVal);
+				monthYearVal=datePickerTitle.getText();				
 				 month= monthYearVal.split(" ")[0].trim();
 				 year= monthYearVal.split(" ")[1].trim();
 			}
-			datePickerDate.click();
-			System.out.println("Selected Date :"+selectedDate.getText());
+			waitForElementToBeVisible(driver, datePickerDate, 10);
+			datePickerDate.click();	
+			System.out.println("Select Month and year :"+monthYearVal);
+			
+			if(holidayDate.isDisplayed())
+			{
+				System.out.println("1");
+				String holidayDetails = holidayDate.getText();
+				System.out.println(holidayDetails);	
+							
+			}				
+			else
+			{		
+				System.out.println("2");
+				waitForElementToBeVisible(driver, selectedDate, 10);
+				System.out.println("Selected Date :"+selectedDate.getText());		
+			}
+			
+			
 		}
 		
 		
@@ -125,6 +148,7 @@ public class AddressDetails extends Testbase {
 		
 		public void validateNextButton() throws Throwable
 		{
+			try {
 			waitForElementToBeVisible(driver, nextButton, 10);
 			if(nextButton.isDisplayed())
 			{
@@ -133,11 +157,14 @@ public class AddressDetails extends Testbase {
 				System.out.println("validateNextButton-->PASSED!!-->Next Button Clicked");
 				//return new PopUpPage();
 			}
-			else
-			{
-				System.out.println("validateNextButton --> FAILLED!!");
-				//return null;
+			
 			}
+			catch (ElementClickInterceptedException e) 
+				{
+					System.out.println("validateNextButton --> FAILLED!!");
+					//return null;
+				}
+			
 			
 		}
 		public PopUpPage validateFullJourney() throws Throwable
