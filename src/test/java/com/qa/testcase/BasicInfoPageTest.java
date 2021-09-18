@@ -99,10 +99,10 @@ public class BasicInfoPageTest extends Testbase {
 	}
 	
 	
-			
-	@AfterMethod
-	public void tearDown()
-	{                                              
-		driver.quit();
-	}
+//			
+//	@AfterMethod
+//	public void tearDown()
+//	{                                              
+//		driver.quit();
+//	}
 }
