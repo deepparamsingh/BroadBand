@@ -84,14 +84,14 @@ public class BasicInfoPageTest extends Testbase {
 		
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void validateAllSectionTest() throws Throwable
 	{
 		connectionAddress=basicInfoPage.validateAllSectionBasicInfoPage();
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validatevalidationmessagesTest() throws Throwable
 	{
 		connectionAddress=basicInfoPage.validateAllsectionEmptyErrorValidation();

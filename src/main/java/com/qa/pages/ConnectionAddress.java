@@ -202,17 +202,17 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, datePickerDate, 10);
 		datePickerDate.click();		
 		
-		try
-		{
-		waitForElementToBeVisible(driver, holidayDate, 10);
-		if(holidayDate.isDisplayed())
-		{
-			
-			String holidayDetails = holidayDate.getText();
-			System.out.println(holidayDetails);
-		}			
-		}
-		catch (TimeoutException e) 
+//		try
+//		{
+//		waitForElementToBeVisible(driver, holidayDate, 10);
+//		if(holidayDate.isDisplayed())
+//		{
+//			
+//			String holidayDetails = holidayDate.getText();
+//			System.out.println(holidayDetails);
+//		}			
+//		}
+//		catch (TimeoutException e) 
 		{
 			System.out.println("Select Month and year :"+monthYearVal);
 			System.out.println("Selected Date :"+selectedDate.getText());

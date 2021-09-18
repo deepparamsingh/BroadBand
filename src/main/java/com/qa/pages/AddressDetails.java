@@ -72,7 +72,6 @@ public class AddressDetails extends Testbase {
 		public void validateRibbon() throws Throwable
 		{	
 			waitForElementToBeVisible(driver, ribbonBarCrosss, 10);
-			//Thread.sleep(7000);
 			String actuaRibonText = ribbonBar.getText();
 			if(actuaRibonText.contains(addressFound))
 			{
@@ -114,20 +113,22 @@ public class AddressDetails extends Testbase {
 			waitForElementToBeVisible(driver, datePickerDate, 10);
 			datePickerDate.click();	
 			System.out.println("Select Month and year :"+monthYearVal);
-			
-			if(holidayDate.isDisplayed())
-			{
-				System.out.println("1");
-				String holidayDetails = holidayDate.getText();
-				System.out.println(holidayDetails);	
-							
-			}				
-			else
+//			try {
+//			if(holidayDate.isDisplayed())
+//			{
+//				System.out.println("1");
+//				String holidayDetails = holidayDate.getText();
+//				System.out.println(holidayDetails);	
+//							
+//			}
+//			}
+//			catch (Exception e)
 			{		
-				System.out.println("2");
+				//System.out.println("2");
 				waitForElementToBeVisible(driver, selectedDate, 10);
 				System.out.println("Selected Date :"+selectedDate.getText());		
 			}
+			
 			
 			
 		}
@@ -152,7 +153,6 @@ public class AddressDetails extends Testbase {
 			waitForElementToBeVisible(driver, nextButton, 10);
 			if(nextButton.isDisplayed())
 			{
-				moveInNo.click();
 				nextButton.click();
 				System.out.println("validateNextButton-->PASSED!!-->Next Button Clicked");
 				//return new PopUpPage();
@@ -170,6 +170,7 @@ public class AddressDetails extends Testbase {
 		public PopUpPage validateFullJourney() throws Throwable
 		{
 			validateRibbon();
+			validateSelectDate();
 			validateSpecialNote();
 			validateNextButton();	
 			return new PopUpPage();

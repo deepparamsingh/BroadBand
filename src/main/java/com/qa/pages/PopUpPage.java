@@ -750,6 +750,7 @@ public class PopUpPage extends Testbase {
 					if(viewPlanEmailButtons.isDisplayed())
 					{
 						viewPlanEmailButtons.click();
+						System.out.println("Send Plan button clicked");
 						waitForElementToBeVisible(driver, mailSent, 15);
 						//mailSent.isDisplayed();
 						System.out.println("Mail Sent");

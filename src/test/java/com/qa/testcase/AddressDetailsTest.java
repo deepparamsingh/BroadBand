@@ -43,13 +43,13 @@ public class AddressDetailsTest extends Testbase {
 		addressDetails.validateSpecialNote();
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void validateNextButtonTest() throws Throwable
 	{
 		popUpPage= addressDetails.validateFullJourney();
 	}
 	
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateSelectDateTest() throws Throwable
 	{
 		addressDetails.validateSelectDate();

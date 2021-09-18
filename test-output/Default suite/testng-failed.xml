@@ -6,8 +6,8 @@
       <class name="com.qa.testcase.AddressDetailsTest">
         <methods>
           <include name="tearDown"/>
-          <include name="validateSelectDateTest"/>
           <include name="setup"/>
+          <include name="validateNextButtonTest"/>
         </methods>
       </class> <!-- com.qa.testcase.AddressDetailsTest -->
     </classes>

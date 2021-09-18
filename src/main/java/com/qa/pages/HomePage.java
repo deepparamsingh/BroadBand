@@ -211,16 +211,13 @@ public class HomePage extends Testbase {
 		{
 		if(selectAddress.isDisplayed())
 		{
-		selectAddress.click();
-		//Thread.sleep(3000);
-		
+		selectAddress.click();		
 		}
 		waitForElementToBeVisible(driver, compareButton, 20);
 		if(compareButton.isDisplayed())
 		{
 			
 			compareButton.click();
-			//return new AddressDetails();
 		}
 		}
 		catch (TimeoutException e) {
