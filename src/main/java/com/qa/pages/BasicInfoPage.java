@@ -79,44 +79,44 @@ public class BasicInfoPage extends Testbase {
 	//DriverLicence
 	@FindBy(xpath = "//label[normalize-space()='Drivers Licence']")
 	WebElement DriversLicence;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/span[1]/span[1]/span[1]")
+	@FindBy(xpath = "//span[@class='jcf-select jcf-unselectable jcf-select-dl_state jcf-select-custom-select jcf-select-custom-select-form']")
 	WebElement DriversLicenceState;
 	@FindBy(xpath = "//span[contains(text(),'NSW')]")
 	WebElement DriversLicenceStateSelect;
-	@FindBy(xpath = "//label[contains(text(),'Driving Licence Number')]")
+	@FindBy(xpath = "//input[@id='dl_num']")
 	WebElement DriversLicenceNumber;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/label[1]")
+	@FindBy(xpath = "//input[@id='dl_exp_date']")
 	WebElement DriversLicenceExpiry;
 	
 	
 	//Medicare card
 	@FindBy(xpath = "//label[normalize-space()='Medicare Card']")
 	WebElement MedicareCard;
-	@FindBy(xpath = "//label[contains(text(),'Medicare Card Number')]")
+	@FindBy(xpath = "//input[@id='medc']")
 	WebElement MedicareCardNumber;
 	@FindBy(xpath = "//span[contains(text(),'Individual Reference Number (IRN)*')]")
 	WebElement MedicareCardIRN;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/div[1]/span[1]/span[1]/ul[1]/li[3]/span[1]")
+	@FindBy(xpath = "//span[@class='jcf-option' and @data-index='2']")
 	WebElement MedicareCardIRNselect;
-	@FindBy(xpath = "//label[contains(text(),'Middle Name On Card')]")
+	@FindBy(xpath = "//input[@id='card_middle_name']")
 	WebElement MedicareCardMiddleName;
 	@FindBy(xpath = "//span[contains(text(),'Card Color (G-Green, Y-Yellow, B-Blue)')]")
 	WebElement MedicareCardColour;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/span[1]/div[1]/div[1]/span[1]/span[1]/ul[1]/li[3]/span[1]")
+	@FindBy(xpath = "//span[@class='jcf-option' and @data-index='2']")
 	WebElement MedicareCardColourSelect;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/label[1]")
+	@FindBy(xpath = "//input[@id='medicare_card_expiry_date']")
 	WebElement MedicareCardExpiry;
 	
 	//Foreign passport
 	@FindBy(xpath = "//label[normalize-space()='Foreign Passport']")
 	WebElement ForeignsPassport;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]")
+	@FindBy(xpath = "//span[@class='niceCountryInputMenuDefaultText']")
 	WebElement ForeignsPassportCountry;
 	@FindBy(xpath = "//span[contains(text(),'Albania (Shqipëri)')]")
 	WebElement ForeignsPassportCountrySelect;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[2]/div[1]/div[1]/label[1]")
+	@FindBy(xpath = "//input[@id='for_passport_number']")
 	WebElement ForeignsPassportNumber;
-	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/label[1]")
+	@FindBy(xpath = "//input[@id='for_passport_exp']")
 	WebElement ForeignsPassportExpiry;
 
 
@@ -343,32 +343,51 @@ public class BasicInfoPage extends Testbase {
 			if(AustralianPassport.isDisplayed())
 			{
 			AustralianPassport.click();
+			waitForElementToBeVisible(driver, passport_number, 10);
 			passport_number.sendKeys("56566655515");
 			waitForElementToBeVisible(driver, passport_exp, 10);
 			passport_exp.sendKeys("15 05 2025");
 			}
 			else if(MedicareCard.isDisplayed())
 			{
+				MedicareCard.click();
+				waitForElementToBeVisible(driver, MedicareCardNumber, 10);
 				MedicareCardNumber.sendKeys("1234567890");
 				MedicareCardIRN.click();
+				waitForElementToBeVisible(driver, MedicareCardIRNselect, 10);
 				MedicareCardIRNselect.click();
+				waitForElementToBeVisible(driver, MedicareCardMiddleName, 10);
 				MedicareCardMiddleName.sendKeys("Qwerty");
 				MedicareCardColour.click();
+				waitForElementToBeVisible(driver, MedicareCardColourSelect, 10);
 				MedicareCardColourSelect.click();
+				waitForElementToBeVisible(driver, MedicareCardExpiry, 10);
 				MedicareCardExpiry.sendKeys("15 05 2025");
 			}
 			else if(ForeignsPassport.isDisplayed())
 			{
+				waitForElementToBeVisible(driver, ForeignsPassport, 10);
+				ForeignsPassport.click();
+				waitForElementToBeVisible(driver, ForeignsPassportCountry, 10);
 				ForeignsPassportCountry.click();
+				waitForElementToBeVisible(driver, ForeignsPassportCountrySelect, 10);
 				ForeignsPassportCountrySelect.click();
+				waitForElementToBeVisible(driver, ForeignsPassportNumber, 10);
 				ForeignsPassportNumber.sendKeys("74185296");
+				waitForElementToBeVisible(driver, ForeignsPassportExpiry, 10);
 				ForeignsPassportExpiry.sendKeys("15 05 2025");
 			}
 			else if(DriversLicence.isDisplayed())
 			{
+				waitForElementToBeVisible(driver, DriversLicence, 10);
+				DriversLicence.click();
+				waitForElementToBeVisible(driver, DriversLicenceState, 10);
 				DriversLicenceState.click();
+				waitForElementToBeVisible(driver, DriversLicenceStateSelect, 10);
 				DriversLicenceStateSelect.click();
+				waitForElementToBeVisible(driver, DriversLicenceNumber, 10);
 				DriversLicenceNumber.sendKeys("2422535");
+				waitForElementToBeVisible(driver, DriversLicenceExpiry, 10);
 				DriversLicenceExpiry.sendKeys("02 02 2028");
 			}
 		}
