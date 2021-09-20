@@ -50,6 +50,29 @@ public class HomePage extends Testbase {
 	String withOutAdress="Please enter your complete address and select it from dropdown.";
 	String wrongAddress="Address not found. Please enter correct address and select it from dropdown.";
 	
+	//Mannual Home
+	@FindBy(xpath = "//body/div[1]/div[1]/div[2]/section[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/p[1]/span[1]/label[1]")
+	WebElement homemannual;
+	@FindBy(xpath = "//input[@id='home_unitnumber']")
+	WebElement homeUnit;
+	@FindBy(xpath = "//input[@id='home_lot_number']")
+	WebElement homeLotNumber;
+	@FindBy(xpath = "//input[@id='home_streetnumber1']")
+	WebElement homeStreetNumber;
+	@FindBy(xpath = "//input[@id='home_streetname']")
+	WebElement homeStreetName;
+	@FindBy(xpath = "//input[@id='home_suburb']")
+	WebElement homeSuburb;
+	@FindBy(xpath = "//input[@id='home_postcode']")
+	WebElement homePostCode;
+	@FindBy(xpath = "//span[contains(text(),'Select State*')]")
+	WebElement homeState;
+	@FindBy(xpath = "//span[contains(text(),'NSW')]")
+	WebElement homeStateSelect;
+	@FindBy(xpath = "//a[@id='submit_mannual_postcode']")
+	WebElement homeCompare;
+	
+	
 	
 	//Intilizing The Page Objects
 	public HomePage()
@@ -167,6 +190,7 @@ public class HomePage extends Testbase {
 		if(emptyAddres.contentEquals(withOutAdress))
 		{
 			System.out.println("Validation for empty address: "+emptyAddres);
+			
 		}
 		else
 		{
@@ -190,6 +214,25 @@ public class HomePage extends Testbase {
 		if(wrongValueEntered.contentEquals(wrongAddress))
 		{
 			System.out.println("Validation for Wrong address: "+wrongValueEntered);
+			homemannual.click();
+			waitForElementToBeVisible(driver, homeUnit, 10);
+			homeUnit.sendKeys("1");
+			waitForElementToBeVisible(driver, homeLotNumber, 10);
+			homeLotNumber.sendKeys("101");
+			waitForElementToBeVisible(driver, homeStreetNumber, 10);
+			homeStreetNumber.sendKeys("112");
+			waitForElementToBeVisible(driver, homeStreetName, 10);
+			homeStreetName.sendKeys("whales street");
+			waitForElementToBeVisible(driver, homeSuburb, 10);
+			homeSuburb.sendKeys("pakhnem");
+			waitForElementToBeVisible(driver, homePostCode, 10);
+			homePostCode.sendKeys("2000");
+			waitForElementToBeVisible(driver, homeState, 10);
+			homeState.click();
+			waitForElementToBeVisible(driver, homeStateSelect, 10);
+			homeStateSelect.click();
+			waitForElementToBeVisible(driver, homeCompare, 10);
+			homeCompare.click();
 		}
 		else
 		{

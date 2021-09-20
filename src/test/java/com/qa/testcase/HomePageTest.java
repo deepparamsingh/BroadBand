@@ -89,31 +89,31 @@ public class HomePageTest extends Testbase {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(enabled=false)
 	public void validateEmptyAddressTest()
 	{
 		homepage.validateEmptyAddress();
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=1)
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
 		
 	}
 	
-	@Test(priority=3)
+	@Test(enabled=false)
 	public void validateEnterAddressTest() throws Throwable
 	{
 		addressDetails=homepage.validateEnterAddress();
 	}
 	
 	
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
      	
 }
