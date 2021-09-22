@@ -96,7 +96,7 @@ public class HomePageTest extends Testbase {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=2)
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
@@ -107,6 +107,12 @@ public class HomePageTest extends Testbase {
 	public void validateEnterAddressTest() throws Throwable
 	{
 		addressDetails=homepage.validateEnterAddress();
+	}
+	
+	@Test(priority=1)
+	public void valdateValidationMessagesManualAddressTest()
+	{
+		homepage.valdateValidationMessagesManualAddress();
 	}
 	
 	

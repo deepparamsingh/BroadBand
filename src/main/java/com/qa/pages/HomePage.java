@@ -72,7 +72,21 @@ public class HomePage extends Testbase {
 	@FindBy(xpath = "//a[@id='submit_mannual_postcode']")
 	WebElement homeCompare;
 	
-	
+	//validation messages for manual address
+	@FindBy(xpath = "//span[@class='error_home_unitnumber text-danger fielderrormain active']")
+	WebElement validationUnitNumber;
+	@FindBy(xpath = "//span[@class='error_home_lot_number text-danger fielderrormain active']")
+	WebElement validationLotNumber;
+	@FindBy(xpath = "//span[@class='error_home_streetnumber1 text-danger fielderrormain active']")
+	WebElement validationStreetNumber;
+	@FindBy(xpath = "//span[@class='error_home_streetname text-danger fielderrormain active']")
+	WebElement validationStreetName;
+	@FindBy(xpath = "//span[@class='error_home_suburb text-danger fielderrormain active']")
+	WebElement validationSuburb;
+	@FindBy(xpath = "//span[@class='error_home_state text-danger fielderrormain active']")
+	WebElement validationState;
+	@FindBy(xpath = "//span[@class='error_home_postcode text-danger fielderrormain active']")
+	WebElement validationPostCode;
 	
 	//Intilizing The Page Objects
 	public HomePage()
@@ -242,6 +256,39 @@ public class HomePage extends Testbase {
 		catch (TimeoutException e) {
 			System.out.println("Exception occurs ->validateWrongAddress --> FAILED!!");
 		}
+	}
+	
+	
+	public void valdateValidationMessagesManualAddress()
+	{
+		homemannual.click();
+		waitForElementToBeVisible(driver, homeUnit, 10);
+		homeUnit.sendKeys("test");
+		waitForElementToBeVisible(driver, homeLotNumber, 10);
+		homeLotNumber.sendKeys("test");
+		homeCompare.click();
+		waitForElementToBeVisible(driver, validationUnitNumber, 10);
+		String unitVal= validationUnitNumber.getText();
+		System.out.println("unit validation message :"+unitVal);
+		waitForElementToBeVisible(driver, validationLotNumber, 10);
+		String lotVal= validationLotNumber.getText();
+		System.out.println("Lot number validation message :"+lotVal);
+		waitForElementToBeVisible(driver, validationStreetNumber, 10);
+		String streetNumberVal= validationStreetNumber.getText();
+		System.out.println("Street Number validation message :"+streetNumberVal);
+		waitForElementToBeVisible(driver, validationStreetName, 10);
+		String streetNameVal= validationStreetName.getText();
+		System.out.println("Street name validation message :"+streetNameVal);
+		waitForElementToBeVisible(driver, validationSuburb, 10);
+		String suburbVal= validationSuburb.getText();
+		System.out.println("Suburb validation message :"+suburbVal);
+		waitForElementToBeVisible(driver, validationState, 10);
+		String stateVal=validationState.getText();
+		System.out.println("state validation message :"+stateVal);
+		waitForElementToBeVisible(driver, validationPostCode, 10);
+		String postCodeVal=validationPostCode.getText();
+		System.out.println("postcode validation message :"+postCodeVal);
+		
 	}
 	
 	public AddressDetails validateEnterAddress() throws Throwable
