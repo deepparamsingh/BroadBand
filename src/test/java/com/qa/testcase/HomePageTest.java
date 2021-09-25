@@ -56,26 +56,26 @@ public class HomePageTest extends Testbase {
 	}
 	
 	@Test(enabled=false)
-	public void validateh1HeadingTest()
+	public void validateh1HeadingTest() throws Throwable
 	{
 		homepage.validateh1Heading();
 	}
 	
 	@Test(enabled=false)
-	public void validateBeowh1HeadingTest()
+	public void validateBeowh1HeadingTest() throws Throwable
 	{
 		homepage.validateBelowh1Heading();
 	}
 	
 	
 	@Test(enabled=false)
-	public void validateNavBarTest()
+	public void validateNavBarTest() throws Throwable
 	{
 		homepage.validateNavBar();
 	}
 	
 	@Test(enabled=false)
-	public void validatehomePageImageTest()
+	public void validatehomePageImageTest() throws Throwable
 	{
 		homepage.validatehomePageImage();
 		
@@ -83,33 +83,33 @@ public class HomePageTest extends Testbase {
 	
 
 	@Test(enabled=false)
-	public void validatehomeLOGOTest()
+	public void validatehomeLOGOTest() throws Throwable
 	{
 		homepage.validatehomeLOGO();
 		
 	}
 	
 	@Test(enabled=false)
-	public void validateEmptyAddressTest()
+	public void validateEmptyAddressTest() throws Throwable
 	{
 		homepage.validateEmptyAddress();
 		
 	}
 	
-	@Test(priority=2)
+	@Test(enabled = false)
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
 		
 	}
 	
-	@Test(enabled=false)
+	@Test(priority=1)
 	public void validateEnterAddressTest() throws Throwable
 	{
 		addressDetails=homepage.validateEnterAddress();
 	}
 	
-	@Test(priority=1)
+	@Test(enabled = false)
 	public void valdateValidationMessagesManualAddressTest()
 	{
 		homepage.valdateValidationMessagesManualAddress();

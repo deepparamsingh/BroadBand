@@ -85,7 +85,7 @@ public class Testbase {
 	}
 	public static void takeScreenShot(String filename) throws Throwable
 	{
-		File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file, new File("C:/Users/paramdeep/git/eyenus_BroadBand/eyenus/ScreenShots/"+filename+".jpg"));
 		
 	}

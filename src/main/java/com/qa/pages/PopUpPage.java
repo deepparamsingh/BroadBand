@@ -165,6 +165,7 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("validateinfoPopup ---> Failled");
+				takeScreenShot("Info Pop-Up");
 			}
 		}
 		
@@ -186,6 +187,7 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("Validation message for name is NOT- visible");
+				takeScreenShot("Name validation");
 			}
 			if(emailValidation.contains(emailValidationMessage))
 			{
@@ -194,6 +196,7 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("Validation message for email is NOT-visible");
+				takeScreenShot("email validation");
 			}
 			if(phoneValidation.contains(phoneValidationMessage))
 			{
@@ -202,6 +205,7 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("Validation message for phone is NOT-visible");
+				takeScreenShot("phone validation");
 			}
 			
 		}
@@ -209,25 +213,25 @@ public class PopUpPage extends Testbase {
 		
 		public PopUpPage validateWrongCredentials() throws Throwable
 		{
-			//Thread.sleep(4000);
+			
 			waitForElementToBeVisible(driver, cust_name, 10);
 			cust_name.sendKeys("12234%%");
 			submitButton.click();
 			String s1=nameValidateMsg.getText();
 			System.out.println("Enetred name as 12234%% -->"+s1);
-			//Thread.sleep(2000);
+			
 			waitForElementToBeVisible(driver, cust_email, 10);
 			cust_email.sendKeys("paramdeeps/cimet.com.au");
 			submitButton.click();
 			String s2=emailValidateMsg.getText();
 			System.out.println("Enetred email as paramdeeps/cimet.com.au -->"+s2);
-			//Thread.sleep(2000);
+			
 			waitForElementToBeVisible(driver, cust_phone, 10);
 			cust_phone.sendKeys("qwerty");
 			submitButton.click();
 			String s3=phoneValidateMsg.getText();
 			System.out.println("Enetred phone as qwerty -->"+s3);
-			//Thread.sleep(2000);
+			
 		    submitButton.click();
 		    return new PopUpPage();
 			
@@ -236,19 +240,19 @@ public class PopUpPage extends Testbase {
 		
 		public PopUpPage validateCredentials() throws Throwable
 		{
-			//Thread.sleep(6000);
+			
 			waitForElementToBeVisible(driver, cust_name, 15);
 			cust_name.clear();
 			cust_name.sendKeys(prop.getProperty("username"));
-			//Thread.sleep(2000);
+			
 			waitForElementToBeVisible(driver, cust_email, 15);
 			cust_email.clear();
 			cust_email.sendKeys(prop.getProperty("email"));
-			//Thread.sleep(2000);
+		
 			waitForElementToBeVisible(driver, cust_phone, 15);
 			cust_phone.clear();
 			cust_phone.sendKeys(prop.getProperty("phone"));
-			//Thread.sleep(2000);
+			
 			waitForElementToBeVisible(driver, submitButton, 15);
 		    submitButton.click();
 		    return new PopUpPage();
@@ -309,6 +313,7 @@ public class PopUpPage extends Testbase {
 			else
 			{
 				System.out.println("Top Bar Features is MISSING!!!");
+				takeScreenShot("Nav Bar plan listing");
 			}
 		}
 		
@@ -839,6 +844,7 @@ public class PopUpPage extends Testbase {
 				else
 				{
 					System.out.println("Apply button Is MISSING!!! (s)");
+					takeScreenShot("Plan Apply button(S)");
 					return null;
 				}
 				
@@ -855,6 +861,7 @@ public class PopUpPage extends Testbase {
 				else
 				{
 					System.out.println("Apply button Is MISSING!!!");
+					takeScreenShot("Plan Apply button");
 					return null;
 				}
 			}

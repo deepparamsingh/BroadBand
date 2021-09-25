@@ -111,7 +111,7 @@ public class HomePage extends Testbase {
 			
 	}
 	
-	public void validateh1Heading()
+	public void validateh1Heading() throws Throwable
 	{
 		waitForElementToBeVisible(driver, h1Heading, 10);
 		String actualH1heading= h1Heading.getText();
@@ -122,11 +122,12 @@ public class HomePage extends Testbase {
 		else
 		{
 			System.out.println("validateh1Heading FAILED!");
+			takeScreenShot("H1 heading");
 		}
 	}
 
 	
-	public void validateBelowh1Heading()
+	public void validateBelowh1Heading() throws Throwable
 	{
 		waitForElementToBeVisible(driver, belowh1Headng, 10);
 		String actualBelowH1heading= belowh1Headng.getText();
@@ -137,10 +138,11 @@ public class HomePage extends Testbase {
 		else
 		{
 			System.out.println("validateBelowh1Heading FAILED!");
+			takeScreenShot("Below H1 heading");
 		}
 	}
 	
-	public void validateNavBar()
+	public void validateNavBar() throws Throwable
 	{
 		waitForElementToBeVisible(driver, homePageNavBar, 10);
 		if(homePageNavBar.isDisplayed())
@@ -150,13 +152,14 @@ public class HomePage extends Testbase {
 		else
 		{
 			System.out.println("validateNavBar FAILED!");
+			takeScreenShot("Nav bar Home");
 		}
 		
 	}
 	
 	
 	
-	public void validatehomePageImage()
+	public void validatehomePageImage() throws Throwable
 	{
 		try {
 		waitForElementToBeVisible(driver, homePageFirstImg, 10);
@@ -171,10 +174,11 @@ public class HomePage extends Testbase {
 		}
 		catch (TimeoutException e) {
 			System.out.println("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
+			takeScreenShot("Home Page Image");
 		}
 	}
 	
-	public void validatehomeLOGO()
+	public void validatehomeLOGO() throws Throwable
 	{
 		try {
 		waitForElementToBeVisible(driver, homePageLogo, 10);
@@ -190,11 +194,12 @@ public class HomePage extends Testbase {
 		}
 		catch (TimeoutException e) {
 			System.out.println("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
+			takeScreenShot("Home Page LOGO");
 		}
 		
 	}
 	
-	public  void validateEmptyAddress() 
+	public  void validateEmptyAddress() throws Throwable 
 	{
 		try {
 		waitForElementToBeVisible(driver, compareButton, 10);
@@ -208,11 +213,12 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			System.out.println("validateEmptyAddress --> FAILED Message didn't match!!");
+			System.out.println("validateEmptyAddress --> FAILED Message didn't match!!");			
 		}
 		}
 		catch (NoSuchElementException e) {
 			System.out.println("Exception Occurs-->validation Message is Missing!!");
+			takeScreenShot("Empty address validation");
 		}
 	}
 	
@@ -255,6 +261,7 @@ public class HomePage extends Testbase {
 		}
 		catch (TimeoutException e) {
 			System.out.println("Exception occurs ->validateWrongAddress --> FAILED!!");
+			takeScreenShot("Wrong address validation");
 		}
 	}
 	
@@ -295,7 +302,7 @@ public class HomePage extends Testbase {
 	{
 		waitForElementToBeVisible(driver, addressInputBar, 20);
 		addressInputBar.sendKeys(prop.getProperty("address"));
-		//Thread.sleep(3000);
+		takeScreenShot("home page image");
 		waitForElementToBeVisible(driver, selectAddress, 20);
 		try 
 		{
@@ -313,6 +320,7 @@ public class HomePage extends Testbase {
 		catch (TimeoutException e) {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
 			System.out.println(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
+			takeScreenShot("Enter address validation");
 			return null;
 		}
 		return new AddressDetails();

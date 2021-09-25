@@ -85,6 +85,7 @@ public class AddressDetails extends Testbase {
 			else
 			{
 				System.out.println("Address NOT Found! validateRibbon FAILED!");
+				takeScreenShot("Ribbon Bar");
 			}
 				
 		}
@@ -135,7 +136,7 @@ public class AddressDetails extends Testbase {
 		
 		
 		
-		public void validateSpecialNote() 
+		public void validateSpecialNote() throws Throwable 
 		{
 			if(specialNote.isDisplayed())
 			{
@@ -144,6 +145,7 @@ public class AddressDetails extends Testbase {
 			else 
 			{
 				System.out.println("Special-Note is NOT visible");
+				takeScreenShot("Special-Note");
 			}
 		}
 		
@@ -162,6 +164,7 @@ public class AddressDetails extends Testbase {
 			catch (ElementClickInterceptedException e) 
 				{
 					System.out.println("validateNextButton --> FAILLED!!");
+					takeScreenShot("Next Button");
 					//return null;
 				}
 			
