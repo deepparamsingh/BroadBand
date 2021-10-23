@@ -48,6 +48,8 @@ public class ConnectionAddress extends Testbase {
 				WebElement ASAP;
 				@FindBy(xpath = "//div[@class='noty_body']")				
 				WebElement holidayDate;
+				
+				
 		
 		//Billing And Delivery Address
 //		@FindBy(xpath = "//div[@id='billing_and_delivery_address_section']")
@@ -221,6 +223,7 @@ public class ConnectionAddress extends Testbase {
 //		catch (TimeoutException e) 
 		{
 			System.out.println("Select Month and year :"+monthYearVal);
+			Thread.sleep(2000);
 			System.out.println("Selected Date :"+selectedDate.getText());
 		}
 		
