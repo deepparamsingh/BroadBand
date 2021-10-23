@@ -302,7 +302,7 @@ public class HomePage extends Testbase {
 	{
 		waitForElementToBeVisible(driver, addressInputBar, 20);
 		addressInputBar.sendKeys(prop.getProperty("address"));
-		takeScreenShot("home page image");
+		//takeScreenShot("home page image");
 		waitForElementToBeVisible(driver, selectAddress, 20);
 		try 
 		{

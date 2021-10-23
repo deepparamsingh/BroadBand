@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-25T08:23:21Z" name="Default suite" finished-at="2021-09-25T08:23:55Z" duration-ms="34010">
+  <suite started-at="2021-10-23T06:48:35Z" name="Default suite" finished-at="2021-10-23T06:50:39Z" duration-ms="124254">
     <groups>
     </groups>
-    <test started-at="2021-09-25T08:23:21Z" name="Default test" finished-at="2021-09-25T08:23:55Z" duration-ms="34010">
-      <class name="com.qa.testcase.HomePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-09-25T08:23:21Z" name="setup" finished-at="2021-09-25T08:23:48Z" duration-ms="26274" status="PASS">
+    <test started-at="2021-10-23T06:48:35Z" name="Default test" finished-at="2021-10-23T06:50:39Z" duration-ms="124254">
+      <class name="com.qa.testcase.OtpTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-10-23T06:48:35Z" name="setup" finished-at="2021-10-23T06:50:26Z" duration-ms="111085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateEnterAddressTest()[pri:1, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-09-25T08:23:48Z" name="validateEnterAddressTest" finished-at="2021-09-25T08:23:55Z" duration-ms="7613" status="PASS">
+        <test-method signature="validateOTPTest()[pri:10, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-10-23T06:50:26Z" name="validateOTPTest" finished-at="2021-10-23T06:50:38Z" duration-ms="11967" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEnterAddressTest -->
-      </class> <!-- com.qa.testcase.HomePageTest -->
+        </test-method> <!-- validateOTPTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.OtpTest@398dada8]" started-at="2021-10-23T06:50:38Z" name="tearDown" finished-at="2021-10-23T06:50:39Z" duration-ms="1140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.testcase.OtpTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

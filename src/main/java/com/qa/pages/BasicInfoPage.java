@@ -277,7 +277,7 @@ public class BasicInfoPage extends Testbase {
 	//Actions
 	public void validateErrorMessages() throws Throwable
 	{
-		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
+		waitForElementToBeVisible(driver, connectionDetailsButton, 20);
 		js.executeScript("arguments[0].scrollIntoView();", connectionDetailsButton);
 		validatesubmitBasicDetailsButton();
 		
@@ -286,7 +286,7 @@ public class BasicInfoPage extends Testbase {
 	public void validateYourDetailsSection() throws Throwable 
 	{
 		try {
-		waitForElementToBeVisible(driver, yourDetailssection, 10);
+		waitForElementToBeVisible(driver, yourDetailssection, 20);
 		if(yourDetailssection.isDisplayed())
 		{
 			titleDropdown.click();
@@ -314,7 +314,7 @@ public class BasicInfoPage extends Testbase {
 	public void validateconnectionDetailsSection() throws Throwable
 	{
 		try {
-		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
+		waitForElementToBeVisible(driver, connectionDetailsSection, 20);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			alreadyaccountyes.click();
@@ -337,57 +337,57 @@ public class BasicInfoPage extends Testbase {
 	public void validateIdentificationDetailsSection() throws Throwable
 	{
 		try {
-		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 20);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			if(AustralianPassport.isDisplayed())
 			{
 			AustralianPassport.click();
-			waitForElementToBeVisible(driver, passport_number, 10);
+			waitForElementToBeVisible(driver, passport_number, 20);
 			passport_number.sendKeys("56566655515");
-			waitForElementToBeVisible(driver, passport_exp, 10);
+			waitForElementToBeVisible(driver, passport_exp, 20);
 			passport_exp.sendKeys("15 05 2025");
 			}
 			else if(MedicareCard.isDisplayed())
 			{
 				MedicareCard.click();
-				waitForElementToBeVisible(driver, MedicareCardNumber, 10);
+				waitForElementToBeVisible(driver, MedicareCardNumber, 20);
 				MedicareCardNumber.sendKeys("1234567890");
 				MedicareCardIRN.click();
-				waitForElementToBeVisible(driver, MedicareCardIRNselect, 10);
+				waitForElementToBeVisible(driver, MedicareCardIRNselect, 20);
 				MedicareCardIRNselect.click();
-				waitForElementToBeVisible(driver, MedicareCardMiddleName, 10);
+				waitForElementToBeVisible(driver, MedicareCardMiddleName, 20);
 				MedicareCardMiddleName.sendKeys("Qwerty");
 				MedicareCardColour.click();
-				waitForElementToBeVisible(driver, MedicareCardColourSelect, 10);
+				waitForElementToBeVisible(driver, MedicareCardColourSelect, 20);
 				MedicareCardColourSelect.click();
-				waitForElementToBeVisible(driver, MedicareCardExpiry, 10);
+				waitForElementToBeVisible(driver, MedicareCardExpiry, 20);
 				MedicareCardExpiry.sendKeys("15 05 2025");
 			}
 			else if(ForeignsPassport.isDisplayed())
 			{
-				waitForElementToBeVisible(driver, ForeignsPassport, 10);
+				waitForElementToBeVisible(driver, ForeignsPassport, 20);
 				ForeignsPassport.click();
-				waitForElementToBeVisible(driver, ForeignsPassportCountry, 10);
+				waitForElementToBeVisible(driver, ForeignsPassportCountry, 20);
 				ForeignsPassportCountry.click();
-				waitForElementToBeVisible(driver, ForeignsPassportCountrySelect, 10);
+				waitForElementToBeVisible(driver, ForeignsPassportCountrySelect, 20);
 				ForeignsPassportCountrySelect.click();
-				waitForElementToBeVisible(driver, ForeignsPassportNumber, 10);
+				waitForElementToBeVisible(driver, ForeignsPassportNumber, 20);
 				ForeignsPassportNumber.sendKeys("74185296");
-				waitForElementToBeVisible(driver, ForeignsPassportExpiry, 10);
+				waitForElementToBeVisible(driver, ForeignsPassportExpiry, 20);
 				ForeignsPassportExpiry.sendKeys("15 05 2025");
 			}
 			else if(DriversLicence.isDisplayed())
 			{
-				waitForElementToBeVisible(driver, DriversLicence, 10);
+				waitForElementToBeVisible(driver, DriversLicence, 20);
 				DriversLicence.click();
-				waitForElementToBeVisible(driver, DriversLicenceState, 10);
+				waitForElementToBeVisible(driver, DriversLicenceState, 20);
 				DriversLicenceState.click();
-				waitForElementToBeVisible(driver, DriversLicenceStateSelect, 10);
+				waitForElementToBeVisible(driver, DriversLicenceStateSelect, 20);
 				DriversLicenceStateSelect.click();
-				waitForElementToBeVisible(driver, DriversLicenceNumber, 10);
+				waitForElementToBeVisible(driver, DriversLicenceNumber, 20);
 				DriversLicenceNumber.sendKeys("2422535");
-				waitForElementToBeVisible(driver, DriversLicenceExpiry, 10);
+				waitForElementToBeVisible(driver, DriversLicenceExpiry, 20);
 				DriversLicenceExpiry.sendKeys("02 02 2028");
 			}
 		}
@@ -408,7 +408,7 @@ public class BasicInfoPage extends Testbase {
 		
 		//validateIdentificationDetailsSection();
 		try {
-		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 20);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			industry.click();
@@ -441,7 +441,7 @@ public class BasicInfoPage extends Testbase {
 	{
 		
 		try {
-		waitForElementToBeVisible(driver, connectionDetailsButton, 10);
+		waitForElementToBeVisible(driver, connectionDetailsButton, 20);
 		if(connectionDetailsButton.isDisplayed())
 		{
 			connectionDetailsButton.click();
@@ -461,7 +461,7 @@ public class BasicInfoPage extends Testbase {
 	public void yourDetailsEmptyValidationMessages() throws Throwable
 	{
 		try {
-		waitForElementToBeVisible(driver, yourDetailssection, 10);
+		waitForElementToBeVisible(driver, yourDetailssection, 20);
 		if(yourDetailssection.isDisplayed())
 		{
 			fName.clear();
@@ -471,7 +471,7 @@ public class BasicInfoPage extends Testbase {
 			altpNum.clear();
 			dB.clear();
 			validateErrorMessages();
-			waitForElementToBeVisible(driver, titleValidation, 10);
+			waitForElementToBeVisible(driver, titleValidation, 20);
 			System.out.println("\n"+"---Validation Messages of Your Details Section---");
 			System.out.println("Validation message for Title: "+titleValidation.getText());
 			System.out.println("Validation message for first name: "+firstNameValidation.getText());
@@ -503,13 +503,13 @@ public class BasicInfoPage extends Testbase {
 	{
 		validateErrorMessages();
 		try {
-		waitForElementToBeVisible(driver, connectionDetailsSection, 10);
+		waitForElementToBeVisible(driver, connectionDetailsSection, 20);
 		if(connectionDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
 			System.out.println("Validation message for Account provider: "+accountProviderValidation.getText());
 			System.out.println("Validation message for Existing Phone Number: "+existingPhoneNumberValidation.getText());
-			waitForElementToBeVisible(driver, alreadyaccountyes, 10);
+			waitForElementToBeVisible(driver, alreadyaccountyes, 20);
 			alreadyaccountyes.click();
 			existingphoneyes.click();
 			validateErrorMessages();
@@ -540,18 +540,18 @@ public class BasicInfoPage extends Testbase {
 		
 		validateErrorMessages();
 		try {
-		waitForElementToBeVisible(driver, IdentificationdetailsSection, 10);
+		waitForElementToBeVisible(driver, IdentificationdetailsSection, 20);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
 			System.out.println("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
-			waitForElementToBeVisible(driver, AustralianPassport, 10);
+			waitForElementToBeVisible(driver, AustralianPassport, 20);
 			AustralianPassport.click();
 			validateErrorMessages();
 			System.out.println("Validation message for Passport number: "+passportvalidation.getText());
 			System.out.println("Validation message for Passport Expiry date: "+passportExpiryValidation.getText());
 			passport_number.sendKeys("56566655515");
-			waitForElementToBeVisible(driver, passport_exp, 10);
+			waitForElementToBeVisible(driver, passport_exp, 20);
 			passport_exp.sendKeys("15 05 2025");
 		}
 		else
@@ -569,7 +569,7 @@ public class BasicInfoPage extends Testbase {
 		
 		validateErrorMessages();
 		try {
-		waitForElementToBeVisible(driver, EmploymentDetailsSection, 10);
+		waitForElementToBeVisible(driver, EmploymentDetailsSection, 20);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
 			System.out.println("\n"+"---Validation Messages of Employment Details Section---");

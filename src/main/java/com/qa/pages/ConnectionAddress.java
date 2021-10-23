@@ -54,10 +54,14 @@ public class ConnectionAddress extends Testbase {
 //		WebElement BillingAndDeliverySection;			
 		@FindBy(xpath = "//div[@id='bill_detail_opt']//div[@class='panel-body']")
 		WebElement BillingSection;	
-		@FindBy(xpath = "//span[@id='billing_email_disp']")
+		@FindBy(xpath = "//span[@id='billing_email_disp']") 
 		WebElement BillingEmail;
+		@FindBy(xpath = "//label[@for='billing_email']") 
+		WebElement selectBillingEmail;	
 		@FindBy(xpath = "//label[@for='billing_addr']//span[@class='current_complete_address']")
 		WebElement BillingAddress;
+		
+		
 		
 		//-----------other address--------------------
 		@FindBy(xpath = "//label[normalize-space()='Other address']")
@@ -75,6 +79,8 @@ public class ConnectionAddress extends Testbase {
 		WebElement deliverySection;
 		@FindBy(xpath = "//label[@for='cuurent_delivery_addr']//span[@class='current_complete_address']")
 		WebElement DeliveryAddress;
+		@FindBy(xpath = "//label[@for='cuurent_delivery_addr']")
+		WebElement selectDeliveryAddress;
 		
 		//----------------other address for delivery equipment-----------
 		@FindBy(xpath = "//label[contains(text(),\"Other address (can't be a Post Box, Locked Bag or \")]")
@@ -91,7 +97,7 @@ public class ConnectionAddress extends Testbase {
 		//Credit card Details
 		@FindBy(xpath = "//div[@class='ques-wrap dotted-area credit_card_section']")
 		WebElement debitCardSection;
-		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[4]/div[1]/div[1]/div[1]/p[1]")
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[5]/div[1]/div[1]/div[1]/p[1]")			 
 		WebElement debitCardContent;
 		@FindBy(xpath = "//input[@placeholder='Credit/Debit Card Number']")
 		WebElement debitCardNumber;
@@ -101,7 +107,7 @@ public class ConnectionAddress extends Testbase {
 		WebElement debitCardValidity;
 		@FindBy(xpath = "//input[@placeholder='CVV']")
 		WebElement debitCarCVV;
-		@FindBy(xpath = "//label[@for='106_checkbox']")
+		@FindBy(xpath = "//label[normalize-space()='checkbox 1']")
 		WebElement debitCardCheckBox1;
 		@FindBy(xpath = "//label[@for='107_checkbox']")
 		WebElement debitCardCheckBox2;
@@ -166,7 +172,7 @@ public class ConnectionAddress extends Testbase {
 			selectLivingYear.click();
 			livingMonth.click();
 			selectLivingMonth.click();
-			ASAP.click();
+			//ASAP.click();
 		}
 		else
 		{
@@ -227,9 +233,10 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, BillingSection, 30);
 		if(BillingSection.isDisplayed())
 		{
+			Thread.sleep(2000);
 			if(BillingEmail.isDisplayed()) 
 			{
-				BillingEmail.click();
+				selectBillingEmail.click();
 				String userBillemail= BillingEmail.getText();
 				System.out.println("User Bill will be sent to this email:"+userBillemail);
 			}
@@ -243,7 +250,8 @@ public class ConnectionAddress extends Testbase {
 			{
 				Thread.sleep(2000);
 				otherAddressBilling.click();
-				inputOtherAddressBilling.sendKeys("barangaroo  ");
+				inputOtherAddressBilling.sendKeys("barangaroo Alexander");
+				waitForElementToBeVisible(driver, selectOtherAddressBilling, 15);
 				selectOtherAddressBilling.click();
 				checkBoxBilling.click();
 			}
@@ -263,17 +271,19 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, deliverySection, 10);
 		if(deliverySection.isDisplayed())
 		{
+			Thread.sleep(2000);
 			if(DeliveryAddress.isDisplayed())
 			{
 			String deliveryAddress=DeliveryAddress.getText();
 			System.out.println("Equiptments will be deliver to Address :"+deliveryAddress);
-			DeliveryAddress.click();
+			selectDeliveryAddress.click();
 			}
 			else if(otherAddressDelivery.isDisplayed())
 			{
 			Thread.sleep(2000);
 			otherAddressDelivery.click();
-			inputOtherAddressDelivery.sendKeys("barangaroo  ");
+			inputOtherAddressDelivery.sendKeys("barangaroo Alexander");
+			waitForElementToBeVisible(driver, selectOtherAddressDelivery, 15);
 			selectOtherAddressDelivery.click();
 			checkBoxAddress.click();
 			}
@@ -319,15 +329,18 @@ public class ConnectionAddress extends Testbase {
 			driver.switchTo().frame("tx_iframe_cvv_CvvTextbox");
 			debitCarCVV.sendKeys("123");
 			driver.switchTo().defaultContent();
-		
+			
+			System.out.println("Secure text: "+secureText.getText());
+			secureText.click();
 			String checkBoxValue1=debitCardCheckBox1.getText();
 			System.out.println("Content Of checkBox is :"+checkBoxValue1);
 			debitCardCheckBox1.click();
-			String checkBoxValue2=debitCardCheckBox2.getText();
-			System.out.println("Content Of checkBox is :"+checkBoxValue2);
-			debitCardCheckBox2.click();
-			String securevalue=secureText.getText();
-			System.out.println("Secure text is :"+securevalue);
+			Thread.sleep(2000);
+//			String checkBoxValue2=debitCardCheckBox2.getText();
+//			System.out.println("Content Of checkBox is :"+checkBoxValue2);
+//			debitCardCheckBox2.click();
+//			String securevalue=secureText.getText();
+//			System.out.println("Secure text is :"+securevalue);
 			
 				}
 		}
