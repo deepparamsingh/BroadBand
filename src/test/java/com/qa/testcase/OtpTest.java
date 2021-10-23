@@ -56,7 +56,7 @@ public class OtpTest extends Testbase {
 		 
 	   }
 	
-	@Test(priority = 10)
+	@Test(priority = 1)
 	public void validateOTPTest() throws Throwable
 	{
 		
@@ -64,11 +64,11 @@ public class OtpTest extends Testbase {
 		
 	}
 	
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void tearDown()
+//	{
+//		driver.quit();
+//	}
 	
 
 }

@@ -1,6 +1,7 @@
 package com.qa.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -84,9 +85,9 @@ public class OtpPage extends Testbase {
 	WebElement planAck;
 	@FindBy(xpath = "//div[@id='plan_eic_div']//div[@class='discriptionp1']")
 	WebElement planAckContent;
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]")
-	WebElement providerAck;
-	@FindBy(xpath = "//div[@id='provider_acknldg_content']//div[@class='discriptionp1']")
+//	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]")
+//	WebElement providerAck;
+	@FindBy(xpath = "//div[@id='provider_acknldg_content']//div[@class='acknowledgement-inner-info togglehidden1 active']")
 	WebElement providerAckContent;
 	
 	
@@ -216,23 +217,30 @@ public class OtpPage extends Testbase {
 				{
 					System.out.println("Image is NOT Vissible !!!");
 				}
+				try {
 				waitForElementToBeVisible(driver, planAck, 10);
 				if(planAck.isDisplayed())
 				{
+					js.executeScript("arguments[0].scrollIntoView();", planAckContent);
 					System.out.println("Content of Plan Acknowledgement is :"+planAckContent.getText());
 				}
-				else
+			}
+				catch(TimeoutException e)
 				{
 					System.out.println("Plan Acknowledgement Content is MISSING !!");
 				}
-				waitForElementToBeVisible(driver, providerAck, 10);
-				if(providerAck.isDisplayed())
+				
+				try {
+				waitForElementToBeVisible(driver, providerAckContent, 10);
+				if(providerAckContent.isDisplayed())
 				{
+					js.executeScript("arguments[0].scrollIntoView();", providerAckContent);
 					System.out.println("Content of Provider Acknowledgement is :"+providerAckContent.getText());
 				}
-				else
+				}
+			catch(TimeoutException e)
 				{
-					System.out.println("Provider Acknowledgement Content is MISSING !!");
+					System.out.println("Provider Acknowledgement Content is MISSING OR Section!!");
 				}
 			}
 		}
