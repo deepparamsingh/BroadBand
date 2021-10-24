@@ -104,6 +104,11 @@ public class PopUpPage extends Testbase {
 		WebElement typicalEveningspeed;
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/p[1]/span[1]")
 		WebElement typicalEveningspeedSpecial;
+		@FindBy(xpath = "//body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/p[2]")
+		WebElement typicalEveningspeedSatellite;
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/p[2]")
+		WebElement typicalEveningspeedSatelliteSpecial;
+		
 		
 		@FindBy(xpath = "//body/div[1]/div[1]/form[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/p[1]/span[1]")
 		WebElement planCost;
@@ -292,14 +297,15 @@ public class PopUpPage extends Testbase {
 				{
 					System.out.println("Addrss is -->"+address);
 				}
-				
+				try {
 				if(typicalEveningSpeedSlider.isDisplayed()) 
 				{
 					System.out.println("Typical Evening Speed Slider is Visible");
 				}
-				else
+			}
+			catch(TimeoutException e)
 				{
-					System.out.println("Typical Evening Speed Slider is MISSING ");
+					System.out.println("Typical Evening Speed Slider is MISSING or its a satellite address ");
 				}
 				if(filter.isDisplayed())
 				{
@@ -317,260 +323,7 @@ public class PopUpPage extends Testbase {
 			}
 		}
 		
-//		public AddOnsPage validateCheckPlan() throws Throwable
-//		{
-//			
-//			waitForElementToBeVisible(driver, providerLOGO, 15);
-//			if(providerLOGO.isDisplayed())
-//			{
-//				System.out.println("LOGO of provider is visible");
-//			}
-//			else
-//			{
-//				System.out.println("LOGO of provider is NOT visible");
-//			}
-//			waitForElementToBeVisible(driver, planName, 15);
-//			if(planName.isDisplayed()) 
-//			{
-//				String planNameText=planName.getText();
-//				System.out.println("Name of plan is : --> "+planNameText);
-//			}
-//			else
-//			{
-//				System.out.println("Plan name is MISSING!!");
-//			}
-//			waitForElementToBeVisible(driver, planContractName, 15);
-//			if(planContractName.isDisplayed())
-//			{
-//				String contract=planContractName.getText();
-//				System.out.println("Contract of plan is :--->"+contract);
-//			}
-//			else
-//			{
-//				System.out.println("Contract of plan is MISSING!!");
-//			}
-//			waitForElementToBeVisible(driver, planViewDetails, 15);
-//			if(planViewDetails.isDisplayed())
-//			{
-//				System.out.println("View plan Link Displayed");
-//				planViewDetails.click();
-//				//Thread.sleep(3000);
-//				waitForElementToBeVisible(driver, viewPlanEmailButtons, 15);
-//				if(viewPlanEmailButtons.isDisplayed())
-//				{
-//					viewPlanEmailButtons.click();
-//					waitForElementToBeVisible(driver, mailSent, 15);
-//					//mailSent.isDisplayed();
-//					System.out.println("Mail Sent");
-//					//Thread.sleep(4000);
-//					crossViewDetails.click();
-//				}
-//				else
-//				{
-//					System.out.println("Send Email Button is MISSING!!!!");
-//				}
-//			}
-//			else
-//			{
-//				System.out.println("View plan Link is NOT Displayed");
-//			}
-//			waitForElementToBeVisible(driver, planKeyFacts, 15);
-//			if(planKeyFacts.isDisplayed())
-//			{
-//				System.out.println("KeyFact Link Displayed");
-//			}
-//			else
-//			{
-//				System.out.println("KeyFact Link is NOT Displayed");
-//			}
-//			waitForElementToBeVisible(driver, planInclussionSection, 15);
-//			if(planInclussionSection.isDisplayed())
-//			{
-//				System.out.println("Plan inclusion section is displayed!!");
-//				
-//			List<WebElement> planInclusionPoints = planInclusionDetails;
-//	        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-//			System.out.println("-----Below are the list of plan Inclussion points-----");
-//			
-//	        for (WebElement getPlanInclussion : planInclusionPoints) 
-//	        	{
-//	            	String name = getPlanInclussion.getText();
-//	            	System.out.println(name);
-//	        	}
-//	        System.out.println("--------------------------------");
-//			}
-//			else
-//			{
-//				System.out.println("Plan Inclusion");
-//			}
-//			waitForElementToBeVisible(driver, planCost, 15);
-//			if(planCost.isDisplayed())
-//			{
-//				String planCost1=planCost.getText();
-//				System.out.println("Cost of this plan is :"+planCost1+"/M");
-//			}
-//			else
-//			{
-//				System.out.println("Cost of plan is MISSING!!!");
-//			}
-//			waitForElementToBeVisible(driver, typicalEveningspeed, 15);
-//			if(typicalEveningspeed.isDisplayed())
-//			{
-//				String typicaleveningSpeed1=typicalEveningspeed.getText();
-//				System.out.println("Typical Evening Speed of plan is :"+typicaleveningSpeed1+"/Mbps");
-//			}
-//			else
-//			{
-//				System.out.println("Typical Evening speed of plan  is MISSING!!");
-//			}
-//			return new AddOnsPage();
-//		}
-//		
-//		
-//		
-//		public AddOnsPage validateCheckPlanSpecial() throws Throwable
-//		{
-//			//validateCredentials();
-//			//Thread.sleep(2000);
-//			waitForElementToBeVisible(driver, specialOfferBarSpecial, 15);
-//			if(specialOfferBarSpecial.isDisplayed())
-//			{
-//				System.out.println("Special Offer Bar is displayed!! (s)");
-//				
-//				List<WebElement> specialOfferBarDetailsPoints = specialOfferBarDetailsSpecial;
-//		        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-//				System.out.println("-----Below are the list of Special Offer Bar points-----");
-//				
-//		        for (WebElement getspecialOfferBarDetails : specialOfferBarDetailsPoints) 
-//		        	{
-//		            	String name = getspecialOfferBarDetails.getText();
-//		            	System.out.println(name);
-//		        	}
-//		        System.out.println("--------------------------------");
-//			}
-//			else
-//			{
-//				System.out.println("Special offer Bar is MISSING!!! (s)");
-//			}
-//			waitForElementToBeVisible(driver, providerLOGOSpecial, 15);
-//			if(providerLOGOSpecial.isDisplayed())
-//			{
-//				System.out.println("LOGO of provider is visible (s)");
-//			}
-//			else
-//			{
-//				System.out.println("LOGO of provider is NOT visible (s)");
-//			}
-//			waitForElementToBeVisible(driver, planNameSpecial, 15);
-//			if(planNameSpecial.isDisplayed()) 
-//			{
-//				String planNameText=planNameSpecial.getText();
-//				System.out.println("Name of plan is (s) : --> "+planNameText);
-//			}
-//			else
-//			{
-//				System.out.println("Plan name is MISSING!! (s)");
-//			}
-//			waitForElementToBeVisible(driver, planContractNameSpecial, 15);
-//			if(planContractNameSpecial.isDisplayed())
-//			{
-//				String contract=planContractNameSpecial.getText();
-//				System.out.println("Contract of plan is (s) :--->"+contract);
-//			}
-//			else
-//			{
-//				System.out.println("Contract of plan is MISSING!! (s)");
-//			}
-//			waitForElementToBeVisible(driver, planViewDetailsSpecial, 15);
-//			if(planViewDetailsSpecial.isDisplayed())
-//			{
-//				System.out.println("View plan Link Displayed (s)");
-//				planViewDetailsSpecial.click();
-//				//Thread.sleep(3000);
-//				waitForElementToBeVisible(driver, viewPlanEmailButtons, 15);
-//				if(viewPlanEmailButtons.isDisplayed())
-//				{
-//					//Thread.sleep(2000);
-//					viewPlanEmailButtons.click();
-//					waitForElementToBeVisible(driver, mailSent, 15);
-//					//mailSent.isDisplayed();
-//					System.out.println("Mail Sent (s)");
-//					//Thread.sleep(4000);
-//					crossViewDetails.click();
-//				}
-//				else
-//				{
-//					System.out.println("Send Email Button is MISSING!!!! (s)");
-//				}
-//			}
-//			else
-//			{
-//				System.out.println("View plan Link is NOT Displayed (s)");
-//			}
-//			waitForElementToBeVisible(driver, planKeyFactsSpecial, 15);
-//			if(planKeyFactsSpecial.isDisplayed())
-//			{
-//				System.out.println("KeyFact Link Displayed (s)");
-//			}
-//			else
-//			{
-//				System.out.println("KeyFact Link is NOT Displayed (s)");
-//			}
-//			waitForElementToBeVisible(driver, planInclussionSectionSpecial, 15);
-//			if(planInclussionSectionSpecial.isDisplayed())
-//			{
-//				System.out.println("Plan inclusion section is displayed!! (s)");
-//				
-//			List<WebElement> planInclusionPoints = planInclusionDetailsSpecial;
-//	        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-//			System.out.println("-----Below are the list of plan Inclussion points-----");
-//			
-//	        for (WebElement getPlanInclussion : planInclusionPoints) 
-//	        	{
-//	            	String name = getPlanInclussion.getText();
-//	            	System.out.println(name);
-//	        	}
-//	        System.out.println("--------------------------------");
-//			}
-//			else
-//			{
-//				System.out.println("Plan Inclusion");
-//			}	
-//			waitForElementToBeVisible(driver, planCostSpecial, 15);
-//			if(planCostSpecial.isDisplayed())
-//			{
-//				String planCost1=planCostSpecial.getText();
-//				System.out.println("Cost of this plan is  (s):"+planCost1+"/M");
-//			}
-//			else
-//			{
-//				System.out.println("Cost of plan is MISSING!!! (s)");
-//			}
-//			waitForElementToBeVisible(driver, typicalEveningspeedSpecial, 15);
-//			if(typicalEveningspeedSpecial.isDisplayed())
-//			{
-//				String typicaleveningSpeed1=typicalEveningspeedSpecial.getText();
-//				System.out.println("Typical Evening Speed of plan is (s):"+typicaleveningSpeed1+"/Mbps");
-//			}
-//			else
-//			{
-//				System.out.println("Typical Evening speed of plan  is MISSING!! (s)");
-//			}
-//			waitForElementToBeVisible(driver, planActualCostSpecial, 15);
-//			if(planActualCostSpecial.isDisplayed())
-//			{
-//				String actualCost=planActualCostSpecial.getText();
-//				System.out.println("Preview cost of this Plan is (s): "+actualCost);
-//			}
-//			else
-//			{
-//				System.out.println("Special Cost of Plan is MISSING!! (s)");
-//			}
-//			return new AddOnsPage();
-//						
-//		}
-		//--------------------------------------------------------------------
-		//--------------------------------------------------------------------
+
 		public AddOnsPage validateCheckPlan() throws Throwable
 		{
 			try {
@@ -690,15 +443,27 @@ public class PopUpPage extends Testbase {
 				{
 					System.out.println("Cost of plan is MISSING!!! (s)");
 				}
+				try {
 				waitForElementToBeVisible(driver, typicalEveningspeedSpecial, 15);
 				if(typicalEveningspeedSpecial.isDisplayed())
 				{
 					String typicaleveningSpeed1=typicalEveningspeedSpecial.getText();
 					System.out.println("Typical Evening Speed of plan is (s):"+typicaleveningSpeed1+"/Mbps");
 				}
-				else
+				}
+				catch(TimeoutException e)
 				{
-					System.out.println("Typical Evening speed of plan  is MISSING!! (s)");
+					if(typicalEveningspeedSatelliteSpecial.isDisplayed())
+					{
+					String tesSatelliteSpecial=typicalEveningspeedSatelliteSpecial.getText();
+					System.out.println("Typical Evening Speed of Satellite plan is (s):"+tesSatelliteSpecial);
+					//System.out.println("Typical Evening speed of plan  is MISSING!! (s) - or its a satellite address");
+					}
+					else 
+					{
+						String tesSatellite=typicalEveningspeedSatellite.getText();
+						System.out.println("Typical Evening Speed of Satellite plan is:"+tesSatellite);
+					}
 				}
 				waitForElementToBeVisible(driver, planActualCostSpecial, 15);
 				if(planActualCostSpecial.isDisplayed())
