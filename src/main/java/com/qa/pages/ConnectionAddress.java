@@ -50,6 +50,23 @@ public class ConnectionAddress extends Testbase {
 				WebElement holidayDate;
 				
 				
+				
+				//Satellite Question
+				@FindBy(xpath = "//div[@id='satellite_address_section']")
+				WebElement satelliteSection;
+				@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/h5[1]")
+				WebElement satelliteHeading;	
+				@FindBy(xpath = "//span[contains(text(),'POWER SOURCE TYPE')]")
+				WebElement satelliteQ1;	
+				@FindBy(xpath = "//span[contains(text(),'BUILDING HEIGHT')]") 
+				WebElement satelliteQ2;
+				@FindBy(xpath = "//span[contains(text(),'ROOF TYPE')]") 
+				WebElement satelliteQ3;	
+				@FindBy(xpath = "//span[contains(text(),'BUILDING EXTERNAL WALL MATERIALS')]")
+				WebElement satelliteQ4;
+				@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/p[1]")
+				WebElement satelliteDeclaration;
+				
 		
 		//Billing And Delivery Address
 //		@FindBy(xpath = "//div[@id='billing_and_delivery_address_section']")
