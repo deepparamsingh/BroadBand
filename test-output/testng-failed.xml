@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcase.PopUpPageTest">
+      <class name="com.qa.testcase.OtpTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="validateOTPTest"/>
           <include name="setup"/>
-          <include name="validateCheckPlanTest"/>
         </methods>
-      </class> <!-- com.qa.testcase.PopUpPageTest -->
+      </class> <!-- com.qa.testcase.OtpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

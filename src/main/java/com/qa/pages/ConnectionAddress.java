@@ -58,12 +58,20 @@ public class ConnectionAddress extends Testbase {
 				WebElement satelliteHeading;	
 				@FindBy(xpath = "//span[contains(text(),'POWER SOURCE TYPE')]")
 				WebElement satelliteQ1;	
+				@FindBy(xpath = "//span[contains(text(),'DC Power Supply')]")
+				WebElement satelliteA1;
 				@FindBy(xpath = "//span[contains(text(),'BUILDING HEIGHT')]") 
 				WebElement satelliteQ2;
+				@FindBy(xpath = "//span[contains(text(),'Two or more storeys')]")
+				WebElement satelliteA2;
 				@FindBy(xpath = "//span[contains(text(),'ROOF TYPE')]") 
 				WebElement satelliteQ3;	
+				@FindBy(xpath = "//span[contains(text(),'Tile')]")
+				WebElement satelliteA3;
 				@FindBy(xpath = "//span[contains(text(),'BUILDING EXTERNAL WALL MATERIALS')]")
 				WebElement satelliteQ4;
+				@FindBy(xpath = "//span[contains(text(),'Asbestos, Fibro')]")
+				WebElement satelliteA4;
 				@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/p[1]")
 				WebElement satelliteDeclaration;
 				
@@ -246,6 +254,29 @@ public class ConnectionAddress extends Testbase {
 		
 	}
 	
+	public void validateSatelliteSection()
+	{
+		try {
+			waitForElementToBeVisible(driver, satelliteSection, 10);
+			if(satelliteSection.isDisplayed())
+			{
+				System.out.println("Heading of satellite section"+satelliteHeading.getText());
+				satelliteQ1.click();
+				satelliteA1.click();
+				satelliteQ2.click();
+				satelliteA2.click();
+				satelliteQ3.click();
+				satelliteA3.click();
+				satelliteQ4.click();
+				satelliteA4.click();
+				System.out.println("Declaration of satellite section"+satelliteDeclaration.getText());
+			}
+		}
+		catch (TimeoutException e) {
+			System.out.println("This Address not contains Satellite Section OR  MISSING !!");
+		}
+		
+	}
 	
 	public void validateBillingdeliveryAddress() throws Throwable
 	{
@@ -494,6 +525,7 @@ public class ConnectionAddress extends Testbase {
 	{
 		validateConnectionDetailsSection();
 		validateConnectionDeliverDate();
+		validateSatelliteSection();
 		validateBillingdeliveryAddress();
 		validateDebitcardSection();
 		validateConnectionDetailsButton();
