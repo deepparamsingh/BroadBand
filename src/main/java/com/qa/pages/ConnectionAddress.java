@@ -257,7 +257,7 @@ public class ConnectionAddress extends Testbase {
 	public void validateSatelliteSection()
 	{
 		try {
-			waitForElementToBeVisible(driver, satelliteSection, 10);
+			waitForElementToBeVisible(driver, satelliteSection, 5);
 			if(satelliteSection.isDisplayed())
 			{
 				System.out.println("Heading of satellite section"+satelliteHeading.getText());

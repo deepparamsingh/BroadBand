@@ -61,20 +61,12 @@ public class SaleCreatedTest extends Testbase {
 	public void validateYourDetailsTest() throws Throwable
 	{
 		
-//		yourDetails.validateYourDetails();
-//		yourDetails.connectionDetails();
-//		yourDetails.validateidentificationDetails();
-		System.out.println("Sale created Thanks");
+		saleCreatedPage.validateFulljourney();
+		
 		
 	  
 	}
 	
-	@Test(enabled=false)
-	public void validateConnectionDetailsTest() throws Throwable
-	{
-		//yourDetails.validateYourDetails();
-	  
-	}
 		
 	@AfterMethod
 	public void tearDown()

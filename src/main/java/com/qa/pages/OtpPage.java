@@ -52,7 +52,9 @@ public class OtpPage extends Testbase {
 	WebElement providerName;
 	@FindBy(xpath = "//span[@class='plan_contract_length']")
 	WebElement contractLength;
-	@FindBy(xpath = "//span[@class='plan_download_speed']")
+//	@FindBy(xpath = "//span[@class='plan_download_speed']")
+//	WebElement downloadSpeed;
+	@FindBy(xpath = "//tbody/tr[6]/td[2]")
 	WebElement downloadSpeed;
 	@FindBy(xpath = "//span[@class='plan_upload_speed']")
 	WebElement uploadSpeed;
@@ -156,7 +158,7 @@ public class OtpPage extends Testbase {
 				System.out.println("Plan Name :"+planName.getText());				
 				System.out.println("Provider Name :"+providerName.getText());				
 				System.out.println("Plan Contract Length :"+contractLength.getText());				
-				System.out.println("Plan Download Speed :"+downloadSpeed.getText());				
+				System.out.println("Plan Speed :"+downloadSpeed.getText());				
 				System.out.println("Plan Upload Speed  :"+uploadSpeed.getText());				
 				System.out.println("Plan Connection type :"+planConnectionType.getText());				
 				System.out.println("Plan data :"+planData.getText());				
