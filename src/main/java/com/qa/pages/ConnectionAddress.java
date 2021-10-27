@@ -153,6 +153,16 @@ public class ConnectionAddress extends Testbase {
 		@FindBy(xpath = "//span[contains(text(),'Please Select Valid month.')]")
 		WebElement livingMonthValidation;
 		
+		//Validation Message for Satellite Question
+		@FindBy(xpath = "//span[contains(text(),'Please select power type from dropdown.')]")
+		WebElement satelliteQ1Validation;
+		@FindBy(xpath = "//span[contains(text(),'Please select building heights from dropdown.')]")
+		WebElement satelliteQ2Validation;
+		@FindBy(xpath = "//span[contains(text(),'Please select roof type from dropdown.')]")
+		WebElement satelliteQ3Validation;
+		@FindBy(xpath = "//span[contains(text(),'Please select wallType type from dropdown.')]")
+		WebElement satelliteQ4Validation;
+		
 		
 		//Validation Message for Billing Section
 		@FindBy(xpath = "//span[contains(text(),'Please select any option for billing.')]")
@@ -170,7 +180,7 @@ public class ConnectionAddress extends Testbase {
 		WebElement debitCardNameValidation;
 		@FindBy(xpath = "//span[contains(text(),'Please enter card expiry date')]")
 		WebElement debitCardValidityValidation;
-		@FindBy(xpath = "//span[contains(text(),'Checkbox two is required')]")
+		@FindBy(xpath = "//span[contains(text(),'please select')]")
 		WebElement chk1Validation;
 		@FindBy(xpath = "//span[contains(text(),'new data')]")
 		WebElement chk2Validation;
@@ -429,18 +439,23 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, connectionAddressSection, 30);
 		if(connectionAddressSection.isDisplayed())
 		{
+			Thread.sleep(1000);
 			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
 			System.out.println("Validation message for Connection Address : "+residentialStatusValidation.getText());
-			//waitForElementToBeVisible(driver, residentialStatus, 30);
+			waitForElementToBeVisible(driver, residentialStatus, 10);
 			residentialStatus.click();
 			System.out.println("residentialStatus Clicked");
+			Thread.sleep(1000);
 			selectResidentalStatus.click();
 			System.out.println("selectResidentalStatus Clicked");
 			validateConnectionDetailsButton();
-			waitForElementToBeVisible(driver, livingYear, 30);
+			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, livingYear, 10);
 			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
-			waitForElementToBeVisible(driver, livingMonth, 30);
+			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, livingMonth, 10);
 			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
+			Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingYear, 10);
 			livingYear.click();
 			waitForElementToBeVisible(driver, selectLivingYear, 10);
@@ -452,10 +467,6 @@ public class ConnectionAddress extends Testbase {
 			waitForElementToBeVisible(driver, ASAP, 10);
 			ASAP.click();
 		}
-		else
-		{
-			System.out.println("\n"+"---Exception Occurs -> No option selected from Connection Address!!---");
-		}
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -463,6 +474,30 @@ public class ConnectionAddress extends Testbase {
 		}
 		
 	}
+	
+	public void satelliteValidationMessages() throws Throwable
+	{
+		validateConnectionDetailsButton();
+		try {
+		waitForElementToBeVisible(driver, satelliteSection, 10);
+		if(satelliteSection.isDisplayed())
+		{
+			System.out.println("\n"+"---Validation Messages of Satellite Section---");
+			System.out.println("Validation message for satellite Q1 : "+satelliteQ1Validation.getText());
+			System.out.println("Validation message for satellite Q2 : "+satelliteQ2Validation.getText());
+			System.out.println("Validation message for satellite Q3 : "+satelliteQ3Validation.getText());
+			System.out.println("Validation message for satellite Q4 : "+satelliteQ4Validation.getText());
+			validateSatelliteSection();
+						
+		}
+		}
+		catch (TimeoutException e)
+		{
+			
+			System.out.println("\n"+"---Satellite section is Not their or Missing !!---");
+		}
+	}
+	
 	
 	public void billingDeliveryEmptyValidationMessages() throws Throwable
 	{
@@ -474,23 +509,23 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("\n"+"---Validation Messages of Billing Address Section---");
 			System.out.println("Validation message for Billing Section : "+billingValidation.getText());
 			System.out.println("Validation message for Delivery Section : "+deliveryValidation.getText());
-			waitForElementToBeVisible(driver, otherAddressBilling, 10);
+			//waitForElementToBeVisible(driver, otherAddressBilling, 10);
+			Thread.sleep(1000);
 			otherAddressBilling.click();
-			waitForElementToBeVisible(driver, otherAddressDelivery, 10);
+			System.out.println("otherAddressBilling clicked");
+			//waitForElementToBeVisible(driver, otherAddressDelivery, 10);
+			Thread.sleep(1000);
 			otherAddressDelivery.click();
+			System.out.println("otherAddressDelivery clicked");
 			validateConnectionDetailsButton();
-			System.out.println("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
-			System.out.println("Validation message for Other Address Delivery Section : "+deliveryOtherAddressValidation.getText());
+			System.out.println("validateConnectionDetailsButton hit");
+//			System.out.println("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
+//			System.out.println("Validation message for Other Address Delivery Section : "+deliveryOtherAddressValidation.getText());
 			validateBillingdeliveryAddress();
 						
 		}
-		else
-		{
-			System.out.println("\n"+"---No option selected from billing Address section !!---");
-		}
 		}
 		catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("\n"+"---Exception Occurs Billing Address section is Not their or Missing !!---");
 		}
 	}
@@ -506,13 +541,8 @@ public class ConnectionAddress extends Testbase {
 			System.out.println("Validation message for Debit Card Name : "+debitCardNameValidation.getText());
 			System.out.println("Validation message for Debit Card Expiry : "+debitCardValidityValidation.getText());
 			System.out.println("Validation message for Delivery Section : "+chk1Validation.getText());
-			System.out.println("Validation message for Delivery Section : "+chk2Validation.getText());
 			validateDebitcardSection();
 						
-		}
-		else
-		{
-			System.out.println("\n"+"---Exception Occurs No option selected from Debit card section !!---");
 		}
 		}
 		catch (TimeoutException e) {
@@ -536,6 +566,7 @@ public class ConnectionAddress extends Testbase {
 	{
 	
 		connectionAddressEmptyValidationMessages();
+		satelliteValidationMessages();
 		billingDeliveryEmptyValidationMessages();
 		debitCardEmptyValidationMessages();
 		//validateConnectionDetailsButton();

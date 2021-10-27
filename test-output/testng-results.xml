@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="10" passed="2" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-27T18:16:47Z" name="Default suite" finished-at="2021-10-27T18:17:22Z" duration-ms="34944">
+  <suite started-at="2021-10-27T19:43:48Z" name="Default suite" finished-at="2021-10-27T19:45:37Z" duration-ms="108939">
     <groups>
     </groups>
-    <test started-at="2021-10-27T18:16:47Z" name="Default test" finished-at="2021-10-27T18:17:22Z" duration-ms="34944">
-      <class name="com.qa.testcase.HomePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-10-27T18:16:47Z" name="setup" finished-at="2021-10-27T18:17:02Z" duration-ms="15238" status="PASS">
+    <test started-at="2021-10-27T19:43:48Z" name="Default test" finished-at="2021-10-27T19:45:37Z" duration-ms="108939">
+      <class name="com.qa.testcase.ConnectionAddressTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.ConnectionAddressTest@7cb502c]" started-at="2021-10-27T19:43:48Z" name="setup" finished-at="2021-10-27T19:44:53Z" duration-ms="64628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateEnterAddressTest()[pri:1, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-10-27T18:17:02Z" name="validateEnterAddressTest" finished-at="2021-10-27T18:17:08Z" duration-ms="5808" status="PASS">
+        <test-method signature="validateEmptyValidationMessageConnectionAddressPageTest()[pri:1, instance:com.qa.testcase.ConnectionAddressTest@7cb502c]" started-at="2021-10-27T19:44:53Z" name="validateEmptyValidationMessageConnectionAddressPageTest" finished-at="2021-10-27T19:45:37Z" duration-ms="44264" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEnterAddressTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-10-27T18:17:08Z" name="setup" finished-at="2021-10-27T18:17:22Z" duration-ms="13707" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="validateh1HeadingTest()[pri:1, instance:com.qa.testcase.HomePageTest@1ef6d34c]" started-at="2021-10-27T18:17:22Z" name="validateh1HeadingTest" finished-at="2021-10-27T18:17:22Z" duration-ms="139" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateh1HeadingTest -->
-      </class> <!-- com.qa.testcase.HomePageTest -->
+        </test-method> <!-- validateEmptyValidationMessageConnectionAddressPageTest -->
+      </class> <!-- com.qa.testcase.ConnectionAddressTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
