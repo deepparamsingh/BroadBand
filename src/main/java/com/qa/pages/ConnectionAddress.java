@@ -439,23 +439,23 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, connectionAddressSection, 30);
 		if(connectionAddressSection.isDisplayed())
 		{
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
 			System.out.println("Validation message for Connection Address : "+residentialStatusValidation.getText());
 			waitForElementToBeVisible(driver, residentialStatus, 10);
 			residentialStatus.click();
 			System.out.println("residentialStatus Clicked");
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			selectResidentalStatus.click();
 			System.out.println("selectResidentalStatus Clicked");
 			validateConnectionDetailsButton();
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingYear, 10);
 			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingMonth, 10);
 			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingYear, 10);
 			livingYear.click();
 			waitForElementToBeVisible(driver, selectLivingYear, 10);
@@ -569,7 +569,7 @@ public class ConnectionAddress extends Testbase {
 		satelliteValidationMessages();
 		billingDeliveryEmptyValidationMessages();
 		debitCardEmptyValidationMessages();
-		//validateConnectionDetailsButton();
+		validateConnectionDetailsButton();
 		return new OtpPage();
 	}
 	
