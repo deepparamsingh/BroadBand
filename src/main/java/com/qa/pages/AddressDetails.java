@@ -72,7 +72,7 @@ public class AddressDetails extends Testbase {
 			String actuaRibonText = ribbonBar.getText();
 			if(actuaRibonText.contains(addressFound))
 			{
-				System.out.println("Address Found!  ------>"+actuaRibonText);
+				System.out.println("Address Found!  ------>"+actuaRibonText+"\n\n");
 			}
 			else if(actuaRibonText.contains(adressNotFound))
 			{
