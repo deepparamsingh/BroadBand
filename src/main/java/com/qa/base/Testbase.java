@@ -53,7 +53,7 @@ public class Testbase {
 		
 		if(browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.silentOutput", "true");
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\paramdeep\\Downloads\\Driver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 			driver= new ChromeDriver();
 		}
 		else if(browserName.equals("firefox"))
