@@ -108,7 +108,9 @@ public class AddOnsPage extends Testbase {
 				            	String value = getHomecallingFeature.getText();
 				            	System.out.println(value);
 				        	}
-				        System.out.println("--------------------------------");						
+				        System.out.println("--------------------------------");	
+				    	String homecallingPlanCost=homecallingCost.getText();
+						System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
@@ -116,8 +118,8 @@ public class AddOnsPage extends Testbase {
 					System.out.println("Exception Occurs--> Home Calling Section MISSING");
 				}
 				
-				String homecallingPlanCost=homecallingCost.getText();
-				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
+//				String homecallingPlanCost=homecallingCost.getText();
+//				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
 //				waitForElementToBeVisible(driver, homecallingViewDetails, 10);
 //				if(homecallingViewDetails.isDisplayed())
 //				{
@@ -149,7 +151,9 @@ public class AddOnsPage extends Testbase {
 				            	String value = getModemFeature.getText();
 				            	System.out.println(value);
 				        	}
-				        System.out.println("--------------------------------");						
+				        System.out.println("--------------------------------");		
+				        String ModemCost=modemCost.getText();
+						System.out.println("Cost for modem is :"+ModemCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
@@ -157,8 +161,8 @@ public class AddOnsPage extends Testbase {
 					System.out.println("Exception Occurs--> Modem Section MISSING");
 				}
 				
-				String ModemCost=modemCost.getText();
-				System.out.println("Cost for modem is :"+ModemCost+"\n\n");
+//				String ModemCost=modemCost.getText();
+//				System.out.println("Cost for modem is :"+ModemCost+"\n\n");
 								
 			}
 			public void validateOtherAddonSection() throws Throwable
@@ -182,7 +186,9 @@ public class AddOnsPage extends Testbase {
 				            	String value = getOtherAddOnFeature.getText();
 				            	System.out.println(value);
 				        	}
-				        System.out.println("--------------------------------");						
+				        System.out.println("--------------------------------");	
+				        String otherAddOnCost=otherAddonCost.getText();
+						System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
@@ -190,8 +196,8 @@ public class AddOnsPage extends Testbase {
 					System.out.println("Exception Occurs--> Other AddOn Section MISSING");
 				}
 				
-				String otherAddOnCost=otherAddonCost.getText();
-				System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
+//				String otherAddOnCost=otherAddonCost.getText();
+//				System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
 			}
 			
 						
