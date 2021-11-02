@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Grouping in testNg]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Grouping in testNg(failed)">
+    <groups>
+      <run>
+        <include name="validations"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.qa.testcase.HomePageTest">
+        <methods>
+          <include name="validateWrongAddressTest"/>
+          <include name="validateEmptyAddressTest"/>
+          <include name="valdateValidationMessagesManualAddressTest"/>
+        </methods>
+      </class> <!-- com.qa.testcase.HomePageTest -->
+      <class name="com.qa.testcase.PopUpPageTest">
+        <methods>
+          <include name="validateValidationsTest"/>
+          <include name="validateCredentialsTest"/>
+          <include name="validateWrongCredentialsTest"/>
+        </methods>
+      </class> <!-- com.qa.testcase.PopUpPageTest -->
+    </classes>
+  </test> <!-- Grouping in testNg(failed) -->
+</suite> <!-- Failed suite [Grouping in testNg] -->

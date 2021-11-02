@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="TestNg">
-    <classes>
-    <class name="com.qa.testcase.HomePageTest"/>
+<suite name="Grouping in testNg">
+	<test name="Grouping in testNg">
+		<groups>
+			<run>
+				<include name="validations"></include>		
+			</run>	
+		</groups>
+		<classes>
+			<class name="com.qa.testcase.HomePageTest"/>
   			<class name="com.qa.testcase.AddressDetailsTest"/>
    			<class name="com.qa.testcase.PopUpPageTest"/>
 			<class name="com.qa.testcase.AddOnPageTest"></class>
 			<class name="com.qa.testcase.BasicInfoPageTest"/>
   			<class name="com.qa.testcase.OtpTest"/>
    			<class name="com.qa.testcase.SaleCreatedTest"/>
-    </classes>
-  </test> <!-- TestNg -->
+		</classes>	
+	</test>
 </suite> <!-- Suite -->

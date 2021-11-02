@@ -266,7 +266,7 @@ public class HomePage extends Testbase {
 	}
 	
 	
-	public void valdateValidationMessagesManualAddress()
+	public void validateValidationMessagesManualAddress()
 	{
 		homemannual.click();
 		waitForElementToBeVisible(driver, homeUnit, 10);

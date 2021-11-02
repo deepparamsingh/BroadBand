@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-28T19:03:11Z" name="Default suite" finished-at="2021-10-28T19:05:34Z" duration-ms="142721">
+  <suite started-at="2021-11-02T18:00:36Z" name="Default suite" finished-at="2021-11-02T18:02:36Z" duration-ms="120572">
     <groups>
     </groups>
-    <test started-at="2021-10-28T19:03:11Z" name="Default test" finished-at="2021-10-28T19:05:34Z" duration-ms="142721">
+    <test started-at="2021-11-02T18:00:36Z" name="Default test" finished-at="2021-11-02T18:02:36Z" duration-ms="120572">
       <class name="com.qa.testcase.SaleCreatedTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-10-28T19:03:11Z" name="setup" finished-at="2021-10-28T19:05:28Z" duration-ms="137144" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-11-02T18:00:36Z" name="setup" finished-at="2021-11-02T18:02:31Z" duration-ms="115030" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateYourDetailsTest()[pri:1, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-10-28T19:05:28Z" name="validateYourDetailsTest" finished-at="2021-10-28T19:05:32Z" duration-ms="3909" status="PASS">
+        <test-method signature="validateYourDetailsTest()[pri:1, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-11-02T18:02:31Z" name="validateYourDetailsTest" finished-at="2021-11-02T18:02:35Z" duration-ms="4325" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateYourDetailsTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-10-28T19:05:32Z" name="tearDown" finished-at="2021-10-28T19:05:34Z" duration-ms="1536" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcase.SaleCreatedTest@398dada8]" started-at="2021-11-02T18:02:35Z" name="tearDown" finished-at="2021-11-02T18:02:36Z" duration-ms="1170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

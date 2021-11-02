@@ -37,21 +37,21 @@ public class PopUpPageTest extends Testbase {
 		 
 	   }
 	
-	@Test(enabled = false)
+	@Test(groups= {"validations"})
 	public void validateValidationsTest() throws Throwable
 	{
 		popupPage.validateValidations();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(groups= {"validations"})
 	public void validateCredentialsTest() throws Throwable
 	{
 		popupPage.validateCredentials();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(groups= {"validations"})
 	public void validateWrongCredentialsTest() throws Throwable
 	{
 		popupPage.validateWrongCredentials();

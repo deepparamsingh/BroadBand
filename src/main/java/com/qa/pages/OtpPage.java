@@ -106,6 +106,18 @@ public class OtpPage extends Testbase {
 	@FindBy(css = "label[for='term_13']")
 	WebElement chk5;
 	
+//	//check checkBox
+//		@FindBy(css = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[2]/p[1]/p[1]/span[1]/label[1]")
+//		WebElement chk1;
+//		@FindBy(css = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[3]/p[1]/p[1]/span[1]/label[1]")
+//		WebElement chk2;
+//		@FindBy(css = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[3]/p[1]/p[2]/span[1]/label[1]")
+//		WebElement chk3;
+//		@FindBy(css = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[4]/p[1]/p[1]/span[1]/label[1]")
+//		WebElement chk4;
+//		@FindBy(css = "/html[1]/body[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[4]/div[2]/div[4]/p[1]/p[2]/span[1]/label[1]")
+//		WebElement chk5;
+	
 	
 	
 	//otp

@@ -89,14 +89,14 @@ public class HomePageTest extends Testbase {
 		
 	}
 	
-	@Test(enabled=false)
+	@Test(groups= {"validations"})
 	public void validateEmptyAddressTest() throws Throwable
 	{
 		homepage.validateEmptyAddress();
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(groups= {"validations"})
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
@@ -109,10 +109,10 @@ public class HomePageTest extends Testbase {
 		addressDetails=homepage.validateEnterAddress();
 	}
 	
-	@Test(enabled = false)
+	@Test(groups= {"validations"})
 	public void valdateValidationMessagesManualAddressTest()
 	{
-		homepage.valdateValidationMessagesManualAddress();
+		homepage.validateValidationMessagesManualAddress();
 	}
 	
 	
