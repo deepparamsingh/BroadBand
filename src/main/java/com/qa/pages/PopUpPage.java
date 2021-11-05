@@ -380,8 +380,9 @@ public class PopUpPage extends Testbase {
 				if(planViewDetailsSpecial.isDisplayed())
 				{
 					System.out.println("View plan Link Displayed (s)");
+					Thread.sleep(1000);
 					planViewDetailsSpecial.click();
-					//Thread.sleep(3000);
+					
 					try {
 					waitForElementToBeVisible(driver, viewPlanEmailButtons, 15);
 					if(viewPlanEmailButtons.isDisplayed())

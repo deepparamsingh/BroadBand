@@ -19,7 +19,7 @@ public class AddressDetails extends Testbase {
 		
 		
 		
-		
+			
 		//calendar
 		@FindBy(xpath = "//label[@for='movey']")
 		WebElement moveInYes;
