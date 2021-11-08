@@ -95,6 +95,11 @@ public class Testbase {
 		WebElement element = wait.until(ExpectedConditions.visibilityOf(webElement));
 		return element;
 	}
+	public static String getTextvalue(WebElement element)
+	{
+		String text = element.getText();
+		return text;
+	}
 
 }
  

@@ -60,7 +60,6 @@ public class SaleCreatedTest extends Testbase {
 	@Test(priority=1)
 	public void validateYourDetailsTest() throws Throwable
 	{
-		
 		saleCreatedPage.validateFulljourney();
 		
 		

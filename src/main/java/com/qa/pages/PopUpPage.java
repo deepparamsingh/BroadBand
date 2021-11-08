@@ -11,6 +11,8 @@ import com.qa.base.Testbase;
 
 public class PopUpPage extends Testbase {
 	
+	
+	public String planNameText;
 	//PageFactory
 	
 	//info POP UP
@@ -147,10 +149,7 @@ public class PopUpPage extends Testbase {
 		
 		
 		
-		
-		
-		
-		
+	
 		
 		//Intilizing The Page Objects
 		public PopUpPage()
@@ -359,8 +358,9 @@ public class PopUpPage extends Testbase {
 				waitForElementToBeVisible(driver, planNameSpecial, 15);
 				if(planNameSpecial.isDisplayed()) 
 				{
-					String planNameText=planNameSpecial.getText();
+					planNameText=planNameSpecial.getText();
 					System.out.println("Name of plan is (s) : --> "+planNameText);
+////////----------	System.out.println("Name of plan is (s) : --> "+getTextvalue(planNameSpecial));
 				}
 				else
 				{

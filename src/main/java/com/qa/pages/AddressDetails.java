@@ -28,13 +28,15 @@ public class AddressDetails extends Testbase {
 		@FindBy(xpath = "//span[contains(text(),'Next')]")
 		WebElement datePickerNext;
 		@FindBy(xpath = "//a[contains(text(),'15')]")
-		WebElement datePickerDate;		
+		WebElement datePickerDate;
+		@FindBy(xpath = "//a[contains(text(),'19')]")
+		WebElement datePickerWeekendDate;
 		@FindBy(xpath = "//label[@for='moven']")
 		WebElement moveInNo;
 		@FindBy(xpath = "//span[@id='show_date']")
 		WebElement selectedDate;
 		@FindBy(xpath = "//div[@class='noty_body']")
-		WebElement holidayDate;
+		WebElement holidayAlert;
 		//String offdaysMessage= "We'd love to get you connected as soon as possible";
 		 
 		
@@ -131,6 +133,35 @@ public class AddressDetails extends Testbase {
 			
 		}
 		
+		public void validateWeekendDate() throws Throwable
+		{
+			waitForElementToBeVisible(driver, ribbonBarCrosss, 10);
+			moveInYes.click();
+			Thread.sleep(1000);
+			waitForElementToBeVisible(driver, datePickerTitle, 10);
+			String monthYearVal=datePickerTitle.getText();
+			System.out.println("Current month and year :"+monthYearVal);
+			String month= monthYearVal.split(" ")[0].trim();
+			String year= monthYearVal.split(" ")[1].trim();
+			
+			waitForElementToBeVisible(driver, datePickerNext, 10);
+			while(!(month.equals(prop.getProperty("month")) && year.equals(prop.getProperty("year"))))
+			{				
+				datePickerNext.click();
+				waitForElementToBeVisible(driver, datePickerTitle, 10);
+				monthYearVal=datePickerTitle.getText();				
+				 month= monthYearVal.split(" ")[0].trim();
+				 year= monthYearVal.split(" ")[1].trim();
+			}
+			waitForElementToBeVisible(driver, datePickerDate, 10);
+			datePickerWeekendDate.click();	
+			waitForElementToBeVisible(driver, holidayAlert, 10);
+			String dateAlertData= holidayAlert.getText();
+			Thread.sleep(5000);
+			System.out.println(dateAlertData);
+					
+		}
+			
 		
 		
 		public void validateSpecialNote() throws Throwable 

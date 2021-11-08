@@ -1,6 +1,6 @@
 package com.qa.testcase;
 
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.qa.base.Testbase;
@@ -42,7 +42,7 @@ public class AddOnPageTest extends Testbase {
 		 
 	   }
 	
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void validateAddOntitleTest() throws Throwable
 	{
 		addOnPage.validateAddOntitle();
@@ -50,7 +50,7 @@ public class AddOnPageTest extends Testbase {
 	}
 
 
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateFullJourneyTest() throws Throwable
 	{
 	
