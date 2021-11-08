@@ -29,7 +29,7 @@ public class AddressDetails extends Testbase {
 		WebElement datePickerNext;
 		@FindBy(xpath = "//a[contains(text(),'15')]")
 		WebElement datePickerDate;
-		@FindBy(xpath = "//a[contains(text(),'19')]")
+		@FindBy(xpath = "//a[contains(text(),'28')]")  //to check calendar alert message choose date 28-December-2021
 		WebElement datePickerWeekendDate;
 		@FindBy(xpath = "//label[@for='moven']")
 		WebElement moveInNo;

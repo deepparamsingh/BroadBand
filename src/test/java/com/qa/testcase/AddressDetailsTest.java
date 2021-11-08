@@ -55,7 +55,7 @@ public class AddressDetailsTest extends Testbase {
 		addressDetails.validateSelectDate();
 	}
 	
-	@Test(priority = 2)
+	@Test(enabled = false)
 	public void validateWeekendDateTest() throws Throwable
 	{
 		addressDetails.validateWeekendDate();
