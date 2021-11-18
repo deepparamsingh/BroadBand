@@ -42,14 +42,14 @@ public class AddOnPageTest extends Testbase {
 		 
 	   }
 	
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void validateAddOntitleTest() throws Throwable
 	{
 		addOnPage.validateAddOntitle();
 		
 	}
 
-
+	
 	@Test(enabled = false)
 	public void validateFullJourneyTest() throws Throwable
 	{
@@ -58,6 +58,18 @@ public class AddOnPageTest extends Testbase {
 		
 	}
 	
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	
+	@Test(priority = 1)
+	public void validatePlanNameTest() throws Throwable
+	{
+	
+		addOnPage.ValidatePlanName();
+		
+	}
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 	
 	
 			

@@ -13,6 +13,15 @@ public class AddOnsPage extends Testbase {
 	
 	//JavascriptExecutor js = (JavascriptExecutor) driver;
 	
+	PopUpPage pp1= new PopUpPage();
+	
+	@FindBy(xpath = "//ul[@class='price-month-list dynamic_other_addon']//li[@class='dynamic_order_detail_li']//span[1]")
+	WebElement planName;
+	
+	@FindBy(xpath = "//ul[@class='price-month-list dynamic_other_addon']")
+	WebElement yourOrderList;
+	
+	
 	//All sections
 	@FindBy(xpath = "//body/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]")
 	WebElement homecallingSection;
@@ -62,8 +71,6 @@ public class AddOnsPage extends Testbase {
 	
 	
 	String actualTitle="Econnex - Mobile Comparison | Compare Mobile Plans";
-	
-	
 	
 	
 	//Intilizing The Page Objects
@@ -118,19 +125,10 @@ public class AddOnsPage extends Testbase {
 					System.out.println("Exception Occurs--> Home Calling Section MISSING");
 				}
 				
-//				String homecallingPlanCost=homecallingCost.getText();
-//				System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
-//				waitForElementToBeVisible(driver, homecallingViewDetails, 10);
-//				if(homecallingViewDetails.isDisplayed())
-//				{
-//					homecallingViewDetails.click();
-//				}
-//				else
-//				{
-//					System.out.println("Home calling View Details Link Visible");
-//				}
 				
 			}
+						
+			
 			public void validateModemSection() throws Throwable
 			{
 				try {
@@ -165,6 +163,7 @@ public class AddOnsPage extends Testbase {
 //				System.out.println("Cost for modem is :"+ModemCost+"\n\n");
 								
 			}
+			
 			public void validateOtherAddonSection() throws Throwable
 			{
 				
@@ -219,7 +218,16 @@ public class AddOnsPage extends Testbase {
 				}
 				
 			}
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS METHOD FOR GET $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				
 			
+			
+		public void ValidatePlanName()
+		{
+			System.out.println("");
+		}
+			
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$			
 			
 			
 			public BasicInfoPage validateFullJourney() throws Throwable
