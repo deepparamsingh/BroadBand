@@ -11,28 +11,10 @@ import com.qa.base.Testbase;
 
 public class PopUpPage extends Testbase {
 	
-
+public static String planNameSpecialText;
+public static String planNameText;
 	
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-	//PageFactory
-	
-	public WebElement getPlanName() {
-		return planName;
-	}
 
-	public void setPlanName(WebElement planName) {
-		this.planName = planName;
-	}
-
-	public WebElement getPlanNameSpecial() {
-		return planNameSpecial;
-	}
-
-	public void setPlanNameSpecial(WebElement planNameSpecial) {
-		this.planNameSpecial = planNameSpecial;
-	}
-
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
 		//info POP UP
 		@FindBy(xpath = "//body/div[1]/div[1]/div[2]/div[1]/div[1]")
@@ -377,12 +359,8 @@ public class PopUpPage extends Testbase {
 				waitForElementToBeVisible(driver, planNameSpecial, 15);
 				if(planNameSpecial.isDisplayed()) 
 				{
-					String planNameSpecialText=planNameSpecial.getText();
+					planNameSpecialText=planNameSpecial.getText();
 					System.out.println("Name of plan is (s) : --> "+planNameSpecialText);
-					
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS PLACE FOR SETTER $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				
-					
-////////----------	System.out.println("Name of plan is (s) : --> "+getTextvalue(planNameSpecial));
 				}
 				else
 				{
@@ -516,7 +494,7 @@ public class PopUpPage extends Testbase {
 				waitForElementToBeVisible(driver, planName, 15);
 				if(planName.isDisplayed()) 
 				{
-					 String planNameText=planName.getText();
+					planNameText=planName.getText();
 					System.out.println("Name of plan is : --> "+planNameText);
 					
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS PLACE FOR SETTER $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				

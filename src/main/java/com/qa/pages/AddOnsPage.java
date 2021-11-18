@@ -77,6 +77,7 @@ public class AddOnsPage extends Testbase {
 			public AddOnsPage() {
 				// TODO Auto-generated constructor stub
 				PageFactory.initElements(driver, this);
+				
 			}
 			
 			//Actions
@@ -219,15 +220,16 @@ public class AddOnsPage extends Testbase {
 				
 			}
 
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS METHOD FOR GET $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				
+			
 			
 			
 		public void ValidatePlanName()
 		{
-			System.out.println("");
+			System.out.println("get in method :"+PopUpPage.planNameSpecialText);
+		
 		}
 			
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$			
+		
 			
 			
 			public BasicInfoPage validateFullJourney() throws Throwable
