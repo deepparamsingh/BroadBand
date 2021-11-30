@@ -8,6 +8,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +25,8 @@ public class Testbase {
 	
 	public static WebDriver driver;
 	public static Properties prop;
+	
+	public static Logger logger;
 	
 	
 	
@@ -54,6 +58,9 @@ public class Testbase {
 			System.setProperty("webdriver.chrome.silentOutput", "true");
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 			driver= new ChromeDriver();
+			
+			logger = Logger.getLogger("Broadband");
+			PropertyConfigurator.configure("log4j.properties");
 		}
 		else if(browserName.equals("firefox"))
 		{

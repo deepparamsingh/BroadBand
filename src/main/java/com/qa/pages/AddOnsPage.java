@@ -225,7 +225,17 @@ public class AddOnsPage extends Testbase {
 			
 		public void ValidatePlanName()
 		{
-			System.out.println("get in method :"+PopUpPage.planNameSpecialText);
+			try {
+			String n= PopUpPage.planNameSpecialText;
+			System.out.println("get in method 1:"+n);
+			
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+				String m= PopUpPage.planNameText;
+				System.out.println("get in method 2:"+m);
+			}
+			
 		
 		}
 			

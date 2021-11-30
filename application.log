@@ -1,0 +1,6 @@
+2021-11-30 23:49:12,561  INFO [main] Broadband:77 - testing logging 1
+2021-11-30 23:49:13,194  INFO [main] Broadband:98 - testing logging 2
+2021-11-30 23:49:20,269  INFO [main] Broadband:173 - testing logging 3
+2021-11-30 23:49:20,495  INFO [main] Broadband:189 - testing logging 4
+2021-11-30 23:49:27,975  WARN [main] Broadband:252 - testing logging 5
+2021-11-30 23:49:29,590 ERROR [main] Broadband:257 - testing logging 6

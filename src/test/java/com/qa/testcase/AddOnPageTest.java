@@ -58,7 +58,7 @@ public class AddOnPageTest extends Testbase {
 		
 	}
 	
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 	
 	@Test(priority = 1)
 	public void validatePlanNameTest() throws Throwable
