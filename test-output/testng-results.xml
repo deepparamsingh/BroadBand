@@ -2,16 +2,16 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-30T18:18:42Z" name="Default suite" finished-at="2021-11-30T18:19:41Z" duration-ms="59116">
+  <suite started-at="2021-11-30T18:50:30Z" name="Default suite" finished-at="2021-11-30T18:51:27Z" duration-ms="56704">
     <groups>
     </groups>
-    <test started-at="2021-11-30T18:18:42Z" name="Default test" finished-at="2021-11-30T18:19:41Z" duration-ms="59116">
+    <test started-at="2021-11-30T18:50:30Z" name="Default test" finished-at="2021-11-30T18:51:27Z" duration-ms="56704">
       <class name="com.qa.testcase.AddOnPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.AddOnPageTest@275bf9b3]" started-at="2021-11-30T18:18:42Z" name="setup" finished-at="2021-11-30T18:19:41Z" duration-ms="58946" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.AddOnPageTest@275bf9b3]" started-at="2021-11-30T18:50:30Z" name="setup" finished-at="2021-11-30T18:51:27Z" duration-ms="56542" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validatePlanNameTest()[pri:1, instance:com.qa.testcase.AddOnPageTest@275bf9b3]" started-at="2021-11-30T18:19:41Z" name="validatePlanNameTest" finished-at="2021-11-30T18:19:41Z" duration-ms="24" status="PASS">
+        <test-method signature="validatePlanNameTest()[pri:1, instance:com.qa.testcase.AddOnPageTest@275bf9b3]" started-at="2021-11-30T18:51:27Z" name="validatePlanNameTest" finished-at="2021-11-30T18:51:27Z" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatePlanNameTest -->

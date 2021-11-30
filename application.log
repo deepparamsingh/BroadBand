@@ -1,6 +1,31 @@
-2021-11-30 23:49:12,561  INFO [main] Broadband:77 - testing logging 1
-2021-11-30 23:49:13,194  INFO [main] Broadband:98 - testing logging 2
-2021-11-30 23:49:20,269  INFO [main] Broadband:173 - testing logging 3
-2021-11-30 23:49:20,495  INFO [main] Broadband:189 - testing logging 4
-2021-11-30 23:49:27,975  WARN [main] Broadband:252 - testing logging 5
-2021-11-30 23:49:29,590 ERROR [main] Broadband:257 - testing logging 6
+2021-12-01 00:20:57,775  INFO [main] Broadband:77 - Address Found!  ------>Congratulations! You can get NBN™ FTTB at your address!
+2021-12-01 00:20:59,641  INFO [main] Broadband:100 - Current month and year :December 2021
+2021-12-01 00:21:05,533  INFO [main] Broadband:115 - Select Month and year :November 2022
+2021-12-01 00:21:05,818  INFO [main] Broadband:129 - Selected Date :15/11/2022
+2021-12-01 00:21:05,964  INFO [main] Broadband:171 - Special-Note VISIBLE
+2021-12-01 00:21:06,414  INFO [main] Broadband:187 - validateNextButton-->PASSED!!-->Next Button Clicked
+2021-12-01 00:21:17,220  INFO [main] Broadband:333 - Special Offer Bar is displayed!! (s)
+2021-12-01 00:21:17,223  INFO [main] Broadband:337 - -----Below are the list of Special Offer Bar points-----
+2021-12-01 00:21:17,360  INFO [main] Broadband:342 - SPECIAL OFFER
+Special Offer Information 1
+Special Offer Information 2
+Special Offer Information 3
+Special Offer Information 4
+2021-12-01 00:21:17,361  INFO [main] Broadband:344 - --------------------------------
+2021-12-01 00:21:17,574  INFO [main] Broadband:353 - LOGO of provider is visible (s)
+2021-12-01 00:21:17,862  INFO [main] Broadband:363 - Name of plan is (s) : --> Test Plan
+2021-12-01 00:21:18,146  INFO [main] Broadband:373 - Contract of plan is (s) :--->Month to Month Contract | NBN Connection
+2021-12-01 00:21:18,348  INFO [main] Broadband:382 - View plan Link Displayed (s)
+2021-12-01 00:21:23,718  INFO [main] Broadband:392 - Mail Sent (s)
+2021-12-01 00:21:24,366  INFO [main] Broadband:411 - KeyFact Link Displayed (s)
+2021-12-01 00:21:24,673  INFO [main] Broadband:420 - Plan inclusion section is displayed!! (s)
+2021-12-01 00:21:24,675  INFO [main] Broadband:424 - -----Below are the list of plan Inclussion points-----
+2021-12-01 00:21:24,863  INFO [main] Broadband:429 - Plan Inclusion 1
+Plan Inclusion 2
+Plan Inclusion 3
+Plan Inclusion 4
+2021-12-01 00:21:24,864  INFO [main] Broadband:431 - --------------------------------
+2021-12-01 00:21:25,599  INFO [main] Broadband:441 - Cost of this plan is  (s):$1.10/M
+2021-12-01 00:21:26,159  INFO [main] Broadband:452 - Typical Evening Speed of plan is (s):1/Mbps
+2021-12-01 00:21:26,510  INFO [main] Broadband:473 - Preview cost of this Plan is (s): $6.00
+2021-12-01 00:21:27,070  INFO [main] Broadband:611 - Plan Applied !! (s)

@@ -102,11 +102,11 @@ public class HomePage extends Testbase {
 		String actuaTitle = driver.getTitle();
 		if(actuaTitle.contentEquals(expectedTitle))
 		{
-			System.out.println("Title Matched!  ------>"+actuaTitle);
+			logger.info("Title Matched!  ------>"+actuaTitle);
 		}
 		else
 		{
-			System.out.println("validateHomePageTitle FAILED!");
+			logger.info("validateHomePageTitle FAILED!");
 		}
 			
 	}
@@ -117,11 +117,11 @@ public class HomePage extends Testbase {
 		String actualH1heading= h1Heading.getText();
 		if(actualH1heading.contentEquals(h1Title))
 		{
-			System.out.println("Heading Matched!  ------>"+actualH1heading);
+			logger.info("Heading Matched!  ------>"+actualH1heading);
 		}
 		else
 		{
-			System.out.println("validateh1Heading FAILED!");
+			logger.info("validateh1Heading FAILED!");
 			takeScreenShot("H1 heading");
 		}
 	}
@@ -133,11 +133,11 @@ public class HomePage extends Testbase {
 		String actualBelowH1heading= belowh1Headng.getText();
 		if(actualBelowH1heading.contentEquals(belowh1Title))
 		{
-			System.out.println("Below H1 Heading Matched!  ------>"+actualBelowH1heading);
+			logger.info("Below H1 Heading Matched!  ------>"+actualBelowH1heading);
 		}
 		else
 		{
-			System.out.println("validateBelowh1Heading FAILED!");
+			logger.info("validateBelowh1Heading FAILED!");
 			takeScreenShot("Below H1 heading");
 		}
 	}
@@ -147,11 +147,11 @@ public class HomePage extends Testbase {
 		waitForElementToBeVisible(driver, homePageNavBar, 10);
 		if(homePageNavBar.isDisplayed())
 		{
-			System.out.println("Navigation Bar Displayed");
+			logger.info("Navigation Bar Displayed");
 		}
 		else
 		{
-			System.out.println("validateNavBar FAILED!");
+			logger.info("validateNavBar FAILED!");
 			takeScreenShot("Nav bar Home");
 		}
 		
@@ -165,15 +165,15 @@ public class HomePage extends Testbase {
 		waitForElementToBeVisible(driver, homePageFirstImg, 10);
 		if(homePageFirstImg.isDisplayed())
 			{
-			System.out.println("HomePage Image Displayed ");
+			logger.info("HomePage Image Displayed ");
 			}
 //		else 
 //			{
-//				System.out.println("HomePage Image NOT Displayed ");
+//				logger.info("HomePage Image NOT Displayed ");
 //			}
 		}
 		catch (TimeoutException e) {
-			System.out.println("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
+			logger.info("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
 			takeScreenShot("Home Page Image");
 		}
 	}
@@ -184,16 +184,16 @@ public class HomePage extends Testbase {
 		waitForElementToBeVisible(driver, homePageLogo, 10);
 		if(homePageLogo.isDisplayed())
 			{
-			System.out.println("HomePage LOGO Displayed ");
+			logger.info("HomePage LOGO Displayed ");
 			}
 //		else 
 //		{
-//				System.out.println("HomePage LOGO NOT Displayed ");
+//				logger.info("HomePage LOGO NOT Displayed ");
 //			}
 		
 		}
 		catch (TimeoutException e) {
-			System.out.println("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
+			logger.info("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
 			takeScreenShot("Home Page LOGO");
 		}
 		
@@ -208,16 +208,16 @@ public class HomePage extends Testbase {
 		String emptyAddres= withOutAndWrongAddress.getText();
 		if(emptyAddres.contentEquals(withOutAdress))
 		{
-			System.out.println("Validation for empty address: "+emptyAddres);
+			logger.info("Validation for empty address: "+emptyAddres);
 			
 		}
 		else
 		{
-			System.out.println("validateEmptyAddress --> FAILED Message didn't match!!");			
+			logger.info("validateEmptyAddress --> FAILED Message didn't match!!");			
 		}
 		}
 		catch (NoSuchElementException e) {
-			System.out.println("Exception Occurs-->validation Message is Missing!!");
+			logger.info("Exception Occurs-->validation Message is Missing!!");
 			takeScreenShot("Empty address validation");
 		}
 	}
@@ -233,7 +233,7 @@ public class HomePage extends Testbase {
 		String wrongValueEntered= withOutAndWrongAddress.getText();
 		if(wrongValueEntered.contentEquals(wrongAddress))
 		{
-			System.out.println("Validation for Wrong address: "+wrongValueEntered);
+			logger.info("Validation for Wrong address: "+wrongValueEntered);
 			homemannual.click();
 			waitForElementToBeVisible(driver, homeUnit, 10);
 			homeUnit.sendKeys("1");
@@ -256,11 +256,11 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			System.out.println("validateWrongAddress --> FAILED!! as validation Message failed!");
+			logger.info("validateWrongAddress --> FAILED!! as validation Message failed!");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("Exception occurs ->validateWrongAddress --> FAILED!!");
+			logger.info("Exception occurs ->validateWrongAddress --> FAILED!!");
 			takeScreenShot("Wrong address validation");
 		}
 	}
@@ -276,25 +276,25 @@ public class HomePage extends Testbase {
 		homeCompare.click();
 		waitForElementToBeVisible(driver, validationUnitNumber, 10);
 		String unitVal= validationUnitNumber.getText();
-		System.out.println("unit validation message :"+unitVal);
+		logger.info("unit validation message :"+unitVal);
 		waitForElementToBeVisible(driver, validationLotNumber, 10);
 		String lotVal= validationLotNumber.getText();
-		System.out.println("Lot number validation message :"+lotVal);
+		logger.info("Lot number validation message :"+lotVal);
 		waitForElementToBeVisible(driver, validationStreetNumber, 10);
 		String streetNumberVal= validationStreetNumber.getText();
-		System.out.println("Street Number validation message :"+streetNumberVal);
+		logger.info("Street Number validation message :"+streetNumberVal);
 		waitForElementToBeVisible(driver, validationStreetName, 10);
 		String streetNameVal= validationStreetName.getText();
-		System.out.println("Street name validation message :"+streetNameVal);
+		logger.info("Street name validation message :"+streetNameVal);
 		waitForElementToBeVisible(driver, validationSuburb, 10);
 		String suburbVal= validationSuburb.getText();
-		System.out.println("Suburb validation message :"+suburbVal);
+		logger.info("Suburb validation message :"+suburbVal);
 		waitForElementToBeVisible(driver, validationState, 10);
 		String stateVal=validationState.getText();
-		System.out.println("state validation message :"+stateVal);
+		logger.info("state validation message :"+stateVal);
 		waitForElementToBeVisible(driver, validationPostCode, 10);
 		String postCodeVal=validationPostCode.getText();
-		System.out.println("postcode validation message :"+postCodeVal);
+		logger.info("postcode validation message :"+postCodeVal);
 		
 	}
 	
@@ -319,7 +319,7 @@ public class HomePage extends Testbase {
 		}
 		catch (TimeoutException e) {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
-			System.out.println(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
+			logger.info(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
 			takeScreenShot("Enter address validation");
 			return null;
 		}

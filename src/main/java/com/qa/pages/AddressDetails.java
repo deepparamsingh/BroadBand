@@ -74,7 +74,7 @@ public class AddressDetails extends Testbase {
 			String actuaRibonText = ribbonBar.getText();
 			if(actuaRibonText.contains(addressFound))
 			{
-				System.out.println("Address Found!  ------>"+actuaRibonText+"\n\n");
+				logger.info("Address Found!  ------>"+actuaRibonText);
 			}
 			else if(actuaRibonText.contains(adressNotFound))
 			{
@@ -83,7 +83,7 @@ public class AddressDetails extends Testbase {
 			}
 			else
 			{
-				System.out.println("Address NOT Found! validateRibbon FAILED!");
+				logger.info("Address NOT Found! validateRibbon FAILED!");
 				takeScreenShot("Ribbon Bar");
 			}
 				
@@ -97,7 +97,7 @@ public class AddressDetails extends Testbase {
 			Thread.sleep(1000);
 			waitForElementToBeVisible(driver, datePickerTitle, 10);
 			String monthYearVal=datePickerTitle.getText();
-			System.out.println("Current month and year :"+monthYearVal);
+			logger.info("Current month and year :"+monthYearVal);
 			String month= monthYearVal.split(" ")[0].trim();
 			String year= monthYearVal.split(" ")[1].trim();
 			
@@ -112,21 +112,21 @@ public class AddressDetails extends Testbase {
 			}
 			waitForElementToBeVisible(driver, datePickerDate, 10);
 			datePickerDate.click();	
-			System.out.println("Select Month and year :"+monthYearVal);
+			logger.info("Select Month and year :"+monthYearVal);
 //			try {
 //			if(holidayDate.isDisplayed())
 //			{
-//				System.out.println("1");
+//				logger.info("1");
 //				String holidayDetails = holidayDate.getText();
-//				System.out.println(holidayDetails);	
+//				logger.info(holidayDetails);	
 //							
 //			}
 //			}
 //			catch (Exception e)
 			{		
-				//System.out.println("2");
+				//logger.info("2");
 				waitForElementToBeVisible(driver, selectedDate, 10);
-				System.out.println("Selected Date :"+selectedDate.getText());		
+				logger.info("Selected Date :"+selectedDate.getText());		
 			}
 			
 			
@@ -140,7 +140,7 @@ public class AddressDetails extends Testbase {
 			Thread.sleep(1000);
 			waitForElementToBeVisible(driver, datePickerTitle, 10);
 			String monthYearVal=datePickerTitle.getText();
-			System.out.println("Current month and year :"+monthYearVal);
+			logger.info("Current month and year :"+monthYearVal);
 			String month= monthYearVal.split(" ")[0].trim();
 			String year= monthYearVal.split(" ")[1].trim();
 			
@@ -158,7 +158,7 @@ public class AddressDetails extends Testbase {
 			waitForElementToBeVisible(driver, holidayAlert, 10);
 			String dateAlertData= holidayAlert.getText();
 			Thread.sleep(5000);
-			System.out.println(dateAlertData);
+			logger.info(dateAlertData);
 					
 		}
 			
@@ -168,11 +168,11 @@ public class AddressDetails extends Testbase {
 		{
 			if(specialNote.isDisplayed())
 			{
-				System.out.println("Special-Note VISIBLE");
+				logger.info("Special-Note VISIBLE");
 			}
 			else 
 			{
-				System.out.println("Special-Note is NOT visible");
+				logger.info("Special-Note is NOT visible");
 				takeScreenShot("Special-Note");
 			}
 		}
@@ -184,14 +184,14 @@ public class AddressDetails extends Testbase {
 			if(nextButton.isDisplayed())
 			{
 				nextButton.click();
-				System.out.println("validateNextButton-->PASSED!!-->Next Button Clicked");
+				logger.info("validateNextButton-->PASSED!!-->Next Button Clicked");
 				//return new PopUpPage();
 			}
 			
 			}
 			catch (ElementClickInterceptedException e) 
 				{
-					System.out.println("validateNextButton --> FAILLED!!");
+					logger.info("validateNextButton --> FAILLED!!");
 					takeScreenShot("Next Button");
 					//return null;
 				}

@@ -165,11 +165,11 @@ public static String planNameText;
 			waitForElementToBeVisible(driver, infoPopUp, 10);
 			if(infoPopUp.isDisplayed())
 			{
-				System.out.println("validateinfoPopup ---> Passed");
+				logger.info("validateinfoPopup ---> Passed");
 			}
 			else
 			{
-				System.out.println("validateinfoPopup ---> Failled");
+				logger.info("validateinfoPopup ---> Failled");
 				takeScreenShot("Info Pop-Up");
 			}
 		}
@@ -187,29 +187,29 @@ public static String planNameText;
 			String phoneValidation = phoneValidateMsg.getText();
 			if(nameValidation.contains(nameValidationMessage))
 			{
-				System.out.println("Validation message for name is visible: "+nameValidation);
+				logger.info("Validation message for name is visible: "+nameValidation);
 			}
 			else
 			{
-				System.out.println("Validation message for name is NOT- visible");
+				logger.info("Validation message for name is NOT- visible");
 				takeScreenShot("Name validation");
 			}
 			if(emailValidation.contains(emailValidationMessage))
 			{
-				System.out.println("Validation message for email is visible: "+emailValidation);
+				logger.info("Validation message for email is visible: "+emailValidation);
 			}
 			else
 			{
-				System.out.println("Validation message for email is NOT-visible");
+				logger.info("Validation message for email is NOT-visible");
 				takeScreenShot("email validation");
 			}
 			if(phoneValidation.contains(phoneValidationMessage))
 			{
-				System.out.println("Validation message for phone is visible: "+phoneValidation);
+				logger.info("Validation message for phone is visible: "+phoneValidation);
 			}
 			else
 			{
-				System.out.println("Validation message for phone is NOT-visible");
+				logger.info("Validation message for phone is NOT-visible");
 				takeScreenShot("phone validation");
 			}
 			
@@ -223,19 +223,19 @@ public static String planNameText;
 			cust_name.sendKeys("12234%%");
 			submitButton.click();
 			String s1=nameValidateMsg.getText();
-			System.out.println("Enetred name as 12234%% -->"+s1);
+			logger.info("Enetred name as 12234%% -->"+s1);
 			
 			waitForElementToBeVisible(driver, cust_email, 10);
 			cust_email.sendKeys("paramdeeps/cimet.com.au");
 			submitButton.click();
 			String s2=emailValidateMsg.getText();
-			System.out.println("Enetred email as paramdeeps/cimet.com.au -->"+s2);
+			logger.info("Enetred email as paramdeeps/cimet.com.au -->"+s2);
 			
 			waitForElementToBeVisible(driver, cust_phone, 10);
 			cust_phone.sendKeys("qwerty");
 			submitButton.click();
 			String s3=phoneValidateMsg.getText();
-			System.out.println("Enetred phone as qwerty -->"+s3);
+			logger.info("Enetred phone as qwerty -->"+s3);
 			
 		    submitButton.click();
 		    return new PopUpPage();
@@ -273,52 +273,52 @@ public static String planNameText;
 				String serviceName=serviceTabName.getText();
 				if(serviceName.isEmpty())
 				{
-					System.out.println("Service Name Broadband is missing.");	
+					logger.info("Service Name Broadband is missing.");	
 				}
 				else {
-				System.out.println("Service Name is: -->"+serviceName);
+				logger.info("Service Name is: -->"+serviceName);
 				}
 
 				String totalPlan=planCount.getText();
 				if(totalPlan.isEmpty())
 				{
-				System.out.println("Count of total Plan is missing");
+				logger.info("Count of total Plan is missing");
 				}
 				else
 				{
-					System.out.println("Count of Total is--> "+totalPlan);
+					logger.info("Count of Total is--> "+totalPlan);
 				}
 				String address= topAddress.getText();
 				if(address.isEmpty())
 				{
-					System.out.println("Address on top is missing");
+					logger.info("Address on top is missing");
 				}
 				else
 				{
-					System.out.println("Addrss is -->"+address);
+					logger.info("Addrss is -->"+address);
 				}
 				try {
 				if(typicalEveningSpeedSlider.isDisplayed()) 
 				{
-					System.out.println("Typical Evening Speed Slider is Visible");
+					logger.info("Typical Evening Speed Slider is Visible");
 				}
 			}
 			catch(TimeoutException e)
 				{
-					System.out.println("Typical Evening Speed Slider is MISSING or its a satellite address ");
+					logger.info("Typical Evening Speed Slider is MISSING or its a satellite address ");
 				}
 				if(filter.isDisplayed())
 				{
-					System.out.println("Filter is visible");
+					logger.info("Filter is visible");
 				}
 				else
 				{
-					System.out.println("Filter is MISSING");
+					logger.info("Filter is MISSING");
 				}
 			}
 			else
 			{
-				System.out.println("Top Bar Features is MISSING!!!");
+				logger.info("Top Bar Features is MISSING!!!");
 				takeScreenShot("Nav Bar plan listing");
 			}
 		}
@@ -330,56 +330,56 @@ public static String planNameText;
 				waitForElementToBeVisible(driver, specialOfferBarSpecial, 15);
 				if(specialOfferBarSpecial.isDisplayed())
 				{
-					System.out.println("Special Offer Bar is displayed!! (s)");
+					logger.info("Special Offer Bar is displayed!! (s)");
 					
 					List<WebElement> specialOfferBarDetailsPoints = specialOfferBarDetailsSpecial;
-			        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-					System.out.println("-----Below are the list of Special Offer Bar points-----");
+			        //logger.info("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
+					logger.info("-----Below are the list of Special Offer Bar points-----");
 					
 			        for (WebElement getspecialOfferBarDetails : specialOfferBarDetailsPoints) 
 			        	{
 			            	String name = getspecialOfferBarDetails.getText();
-			            	System.out.println(name);
+			            	logger.info(name);
 			        	}
-			        System.out.println("--------------------------------");
+			        logger.info("--------------------------------");
 				}
 				else
 				{
-					System.out.println("Special offer Bar is MISSING!!! (s)");
+					logger.info("Special offer Bar is MISSING!!! (s)");
 				}
 				waitForElementToBeVisible(driver, providerLOGOSpecial, 15);
 				if(providerLOGOSpecial.isDisplayed())
 				{
-					System.out.println("LOGO of provider is visible (s)");
+					logger.info("LOGO of provider is visible (s)");
 				}
 				else
 				{
-					System.out.println("LOGO of provider is NOT visible (s)");
+					logger.info("LOGO of provider is NOT visible (s)");
 				}
 				waitForElementToBeVisible(driver, planNameSpecial, 15);
 				if(planNameSpecial.isDisplayed()) 
 				{
 					planNameSpecialText=planNameSpecial.getText();
-					System.out.println("Name of plan is (s) : --> "+planNameSpecialText);
+					logger.info("Name of plan is (s) : --> "+planNameSpecialText);
 				}
 				else
 				{
-					System.out.println("Plan name is MISSING!! (s)");
+					logger.info("Plan name is MISSING!! (s)");
 				}
 				waitForElementToBeVisible(driver, planContractNameSpecial, 15);
 				if(planContractNameSpecial.isDisplayed())
 				{
 					String contract=planContractNameSpecial.getText();
-					System.out.println("Contract of plan is (s) :--->"+contract);
+					logger.info("Contract of plan is (s) :--->"+contract);
 				}
 				else
 				{
-					System.out.println("Contract of plan is MISSING!! (s)");
+					logger.info("Contract of plan is MISSING!! (s)");
 				}
 				waitForElementToBeVisible(driver, planViewDetailsSpecial, 15);
 				if(planViewDetailsSpecial.isDisplayed())
 				{
-					System.out.println("View plan Link Displayed (s)");
+					logger.info("View plan Link Displayed (s)");
 					Thread.sleep(1000);
 					planViewDetailsSpecial.click();
 					
@@ -389,67 +389,67 @@ public static String planNameText;
 					{
 						viewPlanEmailButtons.click();
 						waitForElementToBeVisible(driver, mailSent, 10);
-						System.out.println("Mail Sent (s)");						
+						logger.info("Mail Sent (s)");						
 						crossViewDetails.click();
 					}
 					}
 					catch (TimeoutException e) 
 					{
-						System.out.println("Email Template is DISABLE or Send Email Button is MISSING!!!! (s)");
-						System.out.println("Mail NOT Sent (s)");						
+						logger.info("Email Template is DISABLE or Send Email Button is MISSING!!!! (s)");
+						logger.info("Mail NOT Sent (s)");						
 						crossViewDetails.click();
 					}
 		
 				}
 				else
 				{
-					System.out.println("View plan Link is NOT Displayed (s)");
+					logger.info("View plan Link is NOT Displayed (s)");
 				}
 				waitForElementToBeVisible(driver, planKeyFactsSpecial, 15);
 				if(planKeyFactsSpecial.isDisplayed())
 				{
-					System.out.println("KeyFact Link Displayed (s)");
+					logger.info("KeyFact Link Displayed (s)");
 				}
 				else
 				{
-					System.out.println("KeyFact Link is NOT Displayed (s)");
+					logger.info("KeyFact Link is NOT Displayed (s)");
 				}
 				waitForElementToBeVisible(driver, planInclussionSectionSpecial, 15);
 				if(planInclussionSectionSpecial.isDisplayed())
 				{
-					System.out.println("Plan inclusion section is displayed!! (s)");
+					logger.info("Plan inclusion section is displayed!! (s)");
 					
 				List<WebElement> planInclusionPoints = planInclusionDetailsSpecial;
-		        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-				System.out.println("-----Below are the list of plan Inclussion points-----");
+		        //logger.info("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
+				logger.info("-----Below are the list of plan Inclussion points-----");
 				
 		        for (WebElement getPlanInclussion : planInclusionPoints) 
 		        	{
 		            	String name = getPlanInclussion.getText();
-		            	System.out.println(name);
+		            	logger.info(name);
 		        	}
-		        System.out.println("--------------------------------");
+		        logger.info("--------------------------------");
 				}
 				else
 				{
-					System.out.println("Plan Inclusion");
+					logger.info("Plan Inclusion");
 				}	
 				waitForElementToBeVisible(driver, planCostSpecial, 15);
 				if(planCostSpecial.isDisplayed())
 				{
 					String planCost1=planCostSpecial.getText();
-					System.out.println("Cost of this plan is  (s):"+planCost1+"/M");
+					logger.info("Cost of this plan is  (s):"+planCost1+"/M");
 				}
 				else
 				{
-					System.out.println("Cost of plan is MISSING!!! (s)");
+					logger.info("Cost of plan is MISSING!!! (s)");
 				}
 				try {
 				waitForElementToBeVisible(driver, typicalEveningspeedSpecial, 15);
 				if(typicalEveningspeedSpecial.isDisplayed())
 				{
 					String typicaleveningSpeed1=typicalEveningspeedSpecial.getText();
-					System.out.println("Typical Evening Speed of plan is (s):"+typicaleveningSpeed1+"/Mbps");
+					logger.info("Typical Evening Speed of plan is (s):"+typicaleveningSpeed1+"/Mbps");
 				}
 				}
 				catch(TimeoutException e)
@@ -457,24 +457,24 @@ public static String planNameText;
 					if(typicalEveningspeedSatelliteSpecial.isDisplayed())
 					{
 					String tesSatelliteSpecial=typicalEveningspeedSatelliteSpecial.getText();
-					System.out.println("Typical Evening Speed of Satellite plan is (s):"+tesSatelliteSpecial);
-					//System.out.println("Typical Evening speed of plan  is MISSING!! (s) - or its a satellite address");
+					logger.info("Typical Evening Speed of Satellite plan is (s):"+tesSatelliteSpecial);
+					//logger.info("Typical Evening speed of plan  is MISSING!! (s) - or its a satellite address");
 					}
 					else 
 					{
 						String tesSatellite=typicalEveningspeedSatellite.getText();
-						System.out.println("Typical Evening Speed of Satellite plan is:"+tesSatellite);
+						logger.info("Typical Evening Speed of Satellite plan is:"+tesSatellite);
 					}
 				}
 				waitForElementToBeVisible(driver, planActualCostSpecial, 15);
 				if(planActualCostSpecial.isDisplayed())
 				{
 					String actualCost=planActualCostSpecial.getText();
-					System.out.println("Preview cost of this Plan is (s): "+actualCost);
+					logger.info("Preview cost of this Plan is (s): "+actualCost);
 				}
 				else
 				{
-					System.out.println("Special Cost of Plan is MISSING!! (s)");
+					logger.info("Special Cost of Plan is MISSING!! (s)");
 				}
 				return new AddOnsPage();		
 			
@@ -485,17 +485,17 @@ public static String planNameText;
 				waitForElementToBeVisible(driver, providerLOGO, 15);
 				if(providerLOGO.isDisplayed())
 				{
-					System.out.println("LOGO of provider is visible");
+					logger.info("LOGO of provider is visible");
 				}
 				else
 				{
-					System.out.println("LOGO of provider is NOT visible");
+					logger.info("LOGO of provider is NOT visible");
 				}
 				waitForElementToBeVisible(driver, planName, 15);
 				if(planName.isDisplayed()) 
 				{
 					planNameText=planName.getText();
-					System.out.println("Name of plan is : --> "+planNameText);
+					logger.info("Name of plan is : --> "+planNameText);
 					
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS PLACE FOR SETTER $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				
 
@@ -503,92 +503,92 @@ public static String planNameText;
 				}
 				else
 				{
-					System.out.println("Plan name is MISSING!!");
+					logger.info("Plan name is MISSING!!");
 				}
 				waitForElementToBeVisible(driver, planContractName, 15);
 				if(planContractName.isDisplayed())
 				{
 					String contract=planContractName.getText();
-					System.out.println("Contract of plan is :--->"+contract);
+					logger.info("Contract of plan is :--->"+contract);
 				}
 				else
 				{
-					System.out.println("Contract of plan is MISSING!!");
+					logger.info("Contract of plan is MISSING!!");
 				}
 				waitForElementToBeVisible(driver, planViewDetails, 15);
 				if(planViewDetails.isDisplayed())
 				{
-					System.out.println("View plan Link Displayed");
+					logger.info("View plan Link Displayed");
 					planViewDetails.click();
 					//Thread.sleep(3000);
 					waitForElementToBeVisible(driver, viewPlanEmailButtons, 15);
 					if(viewPlanEmailButtons.isDisplayed())
 					{
 						viewPlanEmailButtons.click();
-						System.out.println("Send Plan button clicked");
+						logger.info("Send Plan button clicked");
 						waitForElementToBeVisible(driver, mailSent, 15);
 						//mailSent.isDisplayed();
-						System.out.println("Mail Sent");
+						logger.info("Mail Sent");
 						//Thread.sleep(4000);
 						crossViewDetails.click();
 					}
 					else
 					{
-						System.out.println("Send Email Button is MISSING!!!!");
+						logger.info("Send Email Button is MISSING!!!!");
 					}
 				}
 				else
 				{
-					System.out.println("View plan Link is NOT Displayed");
+					logger.info("View plan Link is NOT Displayed");
 				}
 				waitForElementToBeVisible(driver, planKeyFacts, 15);
 				if(planKeyFacts.isDisplayed())
 				{
-					System.out.println("KeyFact Link Displayed");
+					logger.info("KeyFact Link Displayed");
 				}
 				else
 				{
-					System.out.println("KeyFact Link is NOT Displayed");
+					logger.info("KeyFact Link is NOT Displayed");
 				}
 				waitForElementToBeVisible(driver, planInclussionSection, 15);
 				if(planInclussionSection.isDisplayed())
 				{
-					System.out.println("Plan inclusion section is displayed!!");
+					logger.info("Plan inclusion section is displayed!!");
 					
 				List<WebElement> planInclusionPoints = planInclusionDetails;
-		        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-				System.out.println("-----Below are the list of plan Inclussion points-----");
+		        //logger.info("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
+				logger.info("-----Below are the list of plan Inclussion points-----");
 				
 		        for (WebElement getPlanInclussion : planInclusionPoints) 
 		        	{
 		            	String name = getPlanInclussion.getText();
-		            	System.out.println(name);
+		            	logger.info(name);
 		        	}
-		        System.out.println("--------------------------------");
+		        logger.info("--------------------------------");
 				}
 				else
 				{
-					System.out.println("Plan Inclusion");
+					logger.info("Plan Inclusion");
 				}
 				waitForElementToBeVisible(driver, planCost, 15);
 				if(planCost.isDisplayed())
 				{
 					String planCost1=planCost.getText();
-					System.out.println("Cost of this plan is :"+planCost1+"/M");
+					logger.info("Cost of this plan is :"+planCost1+"/M");
 				}
 				else
 				{
-					System.out.println("Cost of plan is MISSING!!!");
+					logger.info("Cost of plan is MISSING!!!");
 				}
 				waitForElementToBeVisible(driver, typicalEveningspeed, 15);
 				if(typicalEveningspeed.isDisplayed())
 				{
 					String typicaleveningSpeed1=typicalEveningspeed.getText();
-					System.out.println("Typical Evening Speed of plan is :"+typicaleveningSpeed1+"/Mbps");
+					logger.info("Typical Evening Speed of plan is :"+typicaleveningSpeed1+"/Mbps");
 				}
 				else
 				{
-					System.out.println("Typical Evening speed of plan  is MISSING!!");
+					logger.info("Typical Evening speed of plan  is MISSING!!");
 				}
 				return new AddOnsPage();				
 				
@@ -608,12 +608,12 @@ public static String planNameText;
 				if(applyPlanSpecial.isDisplayed())
 				{
 					applyPlanSpecial.click();
-					System.out.println("Plan Applied !! (s)");
+					logger.info("Plan Applied !! (s)");
 					return new AddOnsPage();
 				}
 				else
 				{
-					System.out.println("Apply button Is MISSING!!! (s)");
+					logger.info("Apply button Is MISSING!!! (s)");
 					takeScreenShot("Plan Apply button(S)");
 					return null;
 				}
@@ -625,12 +625,12 @@ public static String planNameText;
 				if(applyPlan.isDisplayed())
 				{
 					applyPlan.click();
-					System.out.println("Plan Applied (T)!!");
+					logger.info("Plan Applied (T)!!");
 					return new AddOnsPage();
 				}
 				else
 				{
-					System.out.println("Apply button Is MISSING!!!");
+					logger.info("Apply button Is MISSING!!!");
 					takeScreenShot("Plan Apply button");
 					return null;
 				}
