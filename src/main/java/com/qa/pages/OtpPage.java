@@ -146,42 +146,42 @@ public class OtpPage extends Testbase {
 			if(personalDetailsSection.isDisplayed())
 			{
 				Thread.sleep(3000);
-				System.out.println("Customer details are:--------------");
-				System.out.println("customer Name :"+custName.getText());				
-				System.out.println("customer Email :"+custEmail.getText());				
-				System.out.println("customer Phone :"+custPhone.getText());				
-				System.out.println("customer DOB :"+custDOB.getText());				
-				System.out.println("customer Delivery Address :"+custDeliveryAddress.getText());				
-				System.out.println("customer Connection Address :"+custConnectionAddress.getText());				
-				System.out.println("customer Card ID :"+custCardID.getText());				
-				System.out.println("customer Card Expiry :"+custCardExpdate.getText());				
-				System.out.println("customer Billing  Address :"+custBilling.getText());				
-				System.out.println("customer Alter Name :"+custAltphone.getText());				
+				logger.info("Customer details are:--------------");
+				logger.info("customer Name :"+custName.getText());				
+				logger.info("customer Email :"+custEmail.getText());				
+				logger.info("customer Phone :"+custPhone.getText());				
+				logger.info("customer DOB :"+custDOB.getText());				
+				logger.info("customer Delivery Address :"+custDeliveryAddress.getText());				
+				logger.info("customer Connection Address :"+custConnectionAddress.getText());				
+				logger.info("customer Card ID :"+custCardID.getText());				
+				logger.info("customer Card Expiry :"+custCardExpdate.getText());				
+				logger.info("customer Billing  Address :"+custBilling.getText());				
+				logger.info("customer Alter Name :"+custAltphone.getText());				
 			}
 			else
 			{
 				
-				System.out.println("Personal Details Section is MISSING !!");
+				logger.error("Personal Details Section is MISSING !!");
 			}
 			waitForElementToBeVisible(driver, yourPlansection, 10);
 			if(yourPlansection.isDisplayed())
 			{
-				System.out.println("Plan details are:--------------");
-				System.out.println("Plan Name :"+planName.getText());				
-				System.out.println("Provider Name :"+providerName.getText());				
-				System.out.println("Plan Contract Length :"+contractLength.getText());				
-				System.out.println("Plan Speed :"+downloadSpeed.getText());				
-				System.out.println("Plan Upload Speed  :"+uploadSpeed.getText());				
-				System.out.println("Plan Connection type :"+planConnectionType.getText());				
-				System.out.println("Plan data :"+planData.getText());				
-				System.out.println("Plan Home Calling Plan :"+homeCallingPlan.getText());				
-				System.out.println("Plan Modem Name:"+modemName.getText());				
-				System.out.println("Plan Ad on's Name :"+addOnName.getText());				
-				System.out.println("Connection Delivery Date :"+connectionDeliveryDate.getText());				
+				logger.info("Plan details are:--------------");
+				logger.info("Plan Name :"+planName.getText());				
+				logger.info("Provider Name :"+providerName.getText());				
+				logger.info("Plan Contract Length :"+contractLength.getText());				
+				logger.info("Plan Speed :"+downloadSpeed.getText());				
+				logger.info("Plan Upload Speed  :"+uploadSpeed.getText());				
+				logger.info("Plan Connection type :"+planConnectionType.getText());				
+				logger.info("Plan data :"+planData.getText());				
+				logger.info("Plan Home Calling Plan :"+homeCallingPlan.getText());				
+				logger.info("Plan Modem Name:"+modemName.getText());				
+				logger.info("Plan Ad on's Name :"+addOnName.getText());				
+				logger.info("Connection Delivery Date :"+connectionDeliveryDate.getText());				
 			}
 			else
 			{
-				System.out.println("Your Plan Section is MISSING !!");
+				logger.error("Your Plan Section is MISSING !!");
 			}
 			waitForElementToBeVisible(driver, termConditionsection, 10);
 			if(termConditionsection.isDisplayed())
@@ -189,35 +189,35 @@ public class OtpPage extends Testbase {
 				
 				if(TandCimage.isDisplayed())
 				{
-					System.out.println("Provider Image is Visible");
+					logger.info("Provider Image is Visible");
 				}
 				else 
 				{
-					System.out.println("Provider Image is NOT Visible");
+					logger.error("Provider Image is NOT Visible");
 				}
 				waitForElementToBeVisible(driver, TandCproviderLink, 10);
 				if(TandCproviderLink.isDisplayed())
 				{
-					System.out.println("Provider Link :"+TandCproviderLink.getText());
+					logger.info("Provider Link :"+TandCproviderLink.getText());
 				}
 				else
 				{
-					System.out.println("Term and condition provider Link is MISSING !!");
+					logger.error("Term and condition provider Link is MISSING !!");
 				}
 				waitForElementToBeVisible(driver, TandCplanLink, 10);
 				if(TandCplanLink.isDisplayed())
 				{
-					System.out.println("Provider Link :"+TandCplanLink.getText());
+					logger.info("Provider Link :"+TandCplanLink.getText());
 				}
 				else
 				{
-					System.out.println("Term and condition plan Link is MISSING !!");
+					logger.error("Term and condition plan Link is MISSING !!");
 				}
 				
 			}
 			else
 			{
-				System.out.println("Term and Condition Section is MISSING !!");
+				logger.error("Term and Condition Section is MISSING !!");
 			}
 			waitForElementToBeVisible(driver, acknowledgementsection, 10);
 			if(acknowledgementsection.isDisplayed())
@@ -225,23 +225,23 @@ public class OtpPage extends Testbase {
 		
 				if(ackImage.isDisplayed())
 				{
-					System.out.println("Image is Vissible !!!");
+					logger.info("Image is Vissible !!!");
 				}
 				else
 				{
-					System.out.println("Image is NOT Vissible !!!");
+					logger.error("Image is NOT Vissible !!!");
 				}
 				try {
 				waitForElementToBeVisible(driver, planAck, 10);
 				if(planAck.isDisplayed())
 				{
 					js.executeScript("arguments[0].scrollIntoView();", planAckContent);
-					System.out.println("Content of Plan Acknowledgement is :"+planAckContent.getText());
+					logger.info("Content of Plan Acknowledgement is :"+planAckContent.getText());
 				}
 			}
 				catch(TimeoutException e)
 				{
-					System.out.println("Plan Acknowledgement Content is MISSING !!");
+					logger.error("Plan Acknowledgement Content is MISSING !!");
 				}
 				
 				try {
@@ -249,12 +249,12 @@ public class OtpPage extends Testbase {
 				if(providerAckContent.isDisplayed())
 				{
 					js.executeScript("arguments[0].scrollIntoView();", providerAckContent);
-					System.out.println("Content of Provider Acknowledgement is :"+providerAckContent.getText());
+					logger.info("Content of Provider Acknowledgement is :"+providerAckContent.getText());
 				}
 				}
 			catch(TimeoutException e)
 				{
-					System.out.println("Provider Acknowledgement Content is MISSING OR Section!!");
+				logger.error("Provider Acknowledgement Content is MISSING OR Section!!");
 				}
 			}
 		}

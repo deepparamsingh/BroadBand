@@ -169,7 +169,7 @@ public static String planNameText;
 			}
 			else
 			{
-				logger.info("validateinfoPopup ---> Failled");
+				logger.error("validateinfoPopup ---> Failled");
 				takeScreenShot("Info Pop-Up");
 			}
 		}
@@ -191,7 +191,7 @@ public static String planNameText;
 			}
 			else
 			{
-				logger.info("Validation message for name is NOT- visible");
+				logger.error("Validation message for name is NOT- visible");
 				takeScreenShot("Name validation");
 			}
 			if(emailValidation.contains(emailValidationMessage))
@@ -200,7 +200,7 @@ public static String planNameText;
 			}
 			else
 			{
-				logger.info("Validation message for email is NOT-visible");
+				logger.error("Validation message for email is NOT-visible");
 				takeScreenShot("email validation");
 			}
 			if(phoneValidation.contains(phoneValidationMessage))
@@ -209,7 +209,7 @@ public static String planNameText;
 			}
 			else
 			{
-				logger.info("Validation message for phone is NOT-visible");
+				logger.error("Validation message for phone is NOT-visible");
 				takeScreenShot("phone validation");
 			}
 			
@@ -273,7 +273,7 @@ public static String planNameText;
 				String serviceName=serviceTabName.getText();
 				if(serviceName.isEmpty())
 				{
-					logger.info("Service Name Broadband is missing.");	
+					logger.error("Service Name Broadband is missing.");	
 				}
 				else {
 				logger.info("Service Name is: -->"+serviceName);
@@ -282,7 +282,7 @@ public static String planNameText;
 				String totalPlan=planCount.getText();
 				if(totalPlan.isEmpty())
 				{
-				logger.info("Count of total Plan is missing");
+					logger.error("Count of total Plan is missing");
 				}
 				else
 				{
@@ -291,7 +291,7 @@ public static String planNameText;
 				String address= topAddress.getText();
 				if(address.isEmpty())
 				{
-					logger.info("Address on top is missing");
+					logger.error("Address on top is missing");
 				}
 				else
 				{
@@ -305,7 +305,7 @@ public static String planNameText;
 			}
 			catch(TimeoutException e)
 				{
-					logger.info("Typical Evening Speed Slider is MISSING or its a satellite address ");
+				logger.error("Typical Evening Speed Slider is MISSING or its a satellite address ");
 				}
 				if(filter.isDisplayed())
 				{
@@ -313,12 +313,12 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Filter is MISSING");
+					logger.error("Filter is MISSING");
 				}
 			}
 			else
 			{
-				logger.info("Top Bar Features is MISSING!!!");
+				logger.error("Top Bar Features is MISSING!!!");
 				takeScreenShot("Nav Bar plan listing");
 			}
 		}
@@ -345,7 +345,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Special offer Bar is MISSING!!! (s)");
+					logger.error("Special offer Bar is MISSING!!! (s)");
 				}
 				waitForElementToBeVisible(driver, providerLOGOSpecial, 15);
 				if(providerLOGOSpecial.isDisplayed())
@@ -354,7 +354,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("LOGO of provider is NOT visible (s)");
+					logger.error("LOGO of provider is NOT visible (s)");
 				}
 				waitForElementToBeVisible(driver, planNameSpecial, 15);
 				if(planNameSpecial.isDisplayed()) 
@@ -364,7 +364,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Plan name is MISSING!! (s)");
+					logger.error("Plan name is MISSING!! (s)");
 				}
 				waitForElementToBeVisible(driver, planContractNameSpecial, 15);
 				if(planContractNameSpecial.isDisplayed())
@@ -374,7 +374,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Contract of plan is MISSING!! (s)");
+					logger.error("Contract of plan is MISSING!! (s)");
 				}
 				waitForElementToBeVisible(driver, planViewDetailsSpecial, 15);
 				if(planViewDetailsSpecial.isDisplayed())
@@ -395,15 +395,15 @@ public static String planNameText;
 					}
 					catch (TimeoutException e) 
 					{
-						logger.info("Email Template is DISABLE or Send Email Button is MISSING!!!! (s)");
-						logger.info("Mail NOT Sent (s)");						
+						logger.error("Email Template is DISABLE or Send Email Button is MISSING!!!! (s)");
+						logger.error("Mail NOT Sent (s)");						
 						crossViewDetails.click();
 					}
 		
 				}
 				else
 				{
-					logger.info("View plan Link is NOT Displayed (s)");
+					logger.error("View plan Link is NOT Displayed (s)");
 				}
 				waitForElementToBeVisible(driver, planKeyFactsSpecial, 15);
 				if(planKeyFactsSpecial.isDisplayed())
@@ -412,7 +412,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("KeyFact Link is NOT Displayed (s)");
+					logger.error("KeyFact Link is NOT Displayed (s)");
 				}
 				waitForElementToBeVisible(driver, planInclussionSectionSpecial, 15);
 				if(planInclussionSectionSpecial.isDisplayed())
@@ -442,7 +442,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Cost of plan is MISSING!!! (s)");
+					logger.error("Cost of plan is MISSING!!! (s)");
 				}
 				try {
 				waitForElementToBeVisible(driver, typicalEveningspeedSpecial, 15);
@@ -474,7 +474,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Special Cost of Plan is MISSING!! (s)");
+					logger.error("Special Cost of Plan is MISSING!! (s)");
 				}
 				return new AddOnsPage();		
 			
@@ -489,7 +489,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("LOGO of provider is NOT visible");
+					logger.error("LOGO of provider is NOT visible");
 				}
 				waitForElementToBeVisible(driver, planName, 15);
 				if(planName.isDisplayed()) 
@@ -497,13 +497,10 @@ public static String planNameText;
 					planNameText=planName.getText();
 					logger.info("Name of plan is : --> "+planNameText);
 					
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  USE THIS PLACE FOR SETTER $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$				
-
-					
 				}
 				else
 				{
-					logger.info("Plan name is MISSING!!");
+					logger.error("Plan name is MISSING!!");
 				}
 				waitForElementToBeVisible(driver, planContractName, 15);
 				if(planContractName.isDisplayed())
@@ -513,7 +510,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Contract of plan is MISSING!!");
+					logger.error("Contract of plan is MISSING!!");
 				}
 				waitForElementToBeVisible(driver, planViewDetails, 15);
 				if(planViewDetails.isDisplayed())
@@ -534,12 +531,12 @@ public static String planNameText;
 					}
 					else
 					{
-						logger.info("Send Email Button is MISSING!!!!");
+						logger.error("Send Email Button is MISSING!!!!");
 					}
 				}
 				else
 				{
-					logger.info("View plan Link is NOT Displayed");
+					logger.error("View plan Link is NOT Displayed");
 				}
 				waitForElementToBeVisible(driver, planKeyFacts, 15);
 				if(planKeyFacts.isDisplayed())
@@ -548,7 +545,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("KeyFact Link is NOT Displayed");
+					logger.error("KeyFact Link is NOT Displayed");
 				}
 				waitForElementToBeVisible(driver, planInclussionSection, 15);
 				if(planInclussionSection.isDisplayed())
@@ -578,7 +575,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Cost of plan is MISSING!!!");
+					logger.error("Cost of plan is MISSING!!!");
 				}
 				waitForElementToBeVisible(driver, typicalEveningspeed, 15);
 				if(typicalEveningspeed.isDisplayed())
@@ -588,7 +585,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Typical Evening speed of plan  is MISSING!!");
+					logger.error("Typical Evening speed of plan  is MISSING!!");
 				}
 				return new AddOnsPage();				
 				
@@ -613,7 +610,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Apply button Is MISSING!!! (s)");
+					logger.error("Apply button Is MISSING!!! (s)");
 					takeScreenShot("Plan Apply button(S)");
 					return null;
 				}
@@ -630,7 +627,7 @@ public static String planNameText;
 				}
 				else
 				{
-					logger.info("Apply button Is MISSING!!!");
+					logger.error("Apply button Is MISSING!!!");
 					takeScreenShot("Plan Apply button");
 					return null;
 				}

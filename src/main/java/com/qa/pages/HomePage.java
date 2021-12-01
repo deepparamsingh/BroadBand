@@ -106,7 +106,7 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateHomePageTitle FAILED!");
+			logger.error("validateHomePageTitle FAILED!");
 		}
 			
 	}
@@ -121,7 +121,7 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateh1Heading FAILED!");
+			logger.error("validateh1Heading FAILED!");
 			takeScreenShot("H1 heading");
 		}
 	}
@@ -137,7 +137,7 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateBelowh1Heading FAILED!");
+			logger.error("validateBelowh1Heading FAILED!");
 			takeScreenShot("Below H1 heading");
 		}
 	}
@@ -151,7 +151,7 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateNavBar FAILED!");
+			logger.error("validateNavBar FAILED!");
 			takeScreenShot("Nav bar Home");
 		}
 		
@@ -169,11 +169,11 @@ public class HomePage extends Testbase {
 			}
 //		else 
 //			{
-//				logger.info("HomePage Image NOT Displayed ");
+//				logger.error("HomePage Image NOT Displayed ");
 //			}
 		}
 		catch (TimeoutException e) {
-			logger.info("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
+			logger.error("HomePage Image NOT Displayed -->validate Home Page IMG. failed!! ");
 			takeScreenShot("Home Page Image");
 		}
 	}
@@ -188,12 +188,12 @@ public class HomePage extends Testbase {
 			}
 //		else 
 //		{
-//				logger.info("HomePage LOGO NOT Displayed ");
+//				logger.error("HomePage LOGO NOT Displayed ");
 //			}
 		
 		}
 		catch (TimeoutException e) {
-			logger.info("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
+			logger.error("HomePage LOGO NOT Displayed -- Validate Home Logo failed!! ");
 			takeScreenShot("Home Page LOGO");
 		}
 		
@@ -213,11 +213,11 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateEmptyAddress --> FAILED Message didn't match!!");			
+			logger.error("validateEmptyAddress --> FAILED Message didn't match!!");			
 		}
 		}
 		catch (NoSuchElementException e) {
-			logger.info("Exception Occurs-->validation Message is Missing!!");
+			logger.error("Exception Occurs-->validation Message is Missing!!");
 			takeScreenShot("Empty address validation");
 		}
 	}
@@ -256,11 +256,11 @@ public class HomePage extends Testbase {
 		}
 		else
 		{
-			logger.info("validateWrongAddress --> FAILED!! as validation Message failed!");
+			logger.error("validateWrongAddress --> FAILED!! as validation Message failed!");
 		}
 		}
 		catch (TimeoutException e) {
-			logger.info("Exception occurs ->validateWrongAddress --> FAILED!!");
+			logger.error("Exception occurs ->validateWrongAddress --> FAILED!!");
 			takeScreenShot("Wrong address validation");
 		}
 	}
@@ -319,7 +319,7 @@ public class HomePage extends Testbase {
 		}
 		catch (TimeoutException e) {
 			String wrongValueEntered= withOutAndWrongAddress.getText();
-			logger.info(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
+			logger.error(wrongValueEntered+"--> validateEnterAddress  FAILED!!");
 			takeScreenShot("Enter address validation");
 			return null;
 		}

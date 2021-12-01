@@ -23,7 +23,7 @@ public class AddOnPageTest extends Testbase {
 
 	public AddOnPageTest()
 	{
-		super();=
+		super();
 	}
 	
 	@BeforeMethod

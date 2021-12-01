@@ -83,7 +83,7 @@ public class AddressDetails extends Testbase {
 			}
 			else
 			{
-				logger.info("Address NOT Found! validateRibbon FAILED!");
+				logger.error("Address NOT Found! validateRibbon FAILED!");
 				takeScreenShot("Ribbon Bar");
 			}
 				
@@ -172,7 +172,7 @@ public class AddressDetails extends Testbase {
 			}
 			else 
 			{
-				logger.info("Special-Note is NOT visible");
+				logger.error("Special-Note is NOT visible");
 				takeScreenShot("Special-Note");
 			}
 		}
@@ -191,7 +191,7 @@ public class AddressDetails extends Testbase {
 			}
 			catch (ElementClickInterceptedException e) 
 				{
-					logger.info("validateNextButton --> FAILLED!!");
+				logger.error("validateNextButton --> FAILLED!!");
 					takeScreenShot("Next Button");
 					//return null;
 				}

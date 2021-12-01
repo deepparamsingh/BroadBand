@@ -292,22 +292,22 @@ public class BasicInfoPage extends Testbase {
 			titleDropdown.click();
 			selectTitle.click();
 			String FirstName=fName.getText();
-			System.out.println("Name of User is :"+FirstName);
+			logger.info("Name of User is :"+FirstName);
 			lName.sendKeys("Script");
 			String userEmail=email.getText();
-			System.out.println("Email of User is :"+userEmail);
+			logger.info("Email of User is :"+userEmail);
 			String userPhon=pNum.getText();
-			System.out.println("User Phone Number is :"+userPhon);
+			logger.info("User Phone Number is :"+userPhon);
 			altpNum.sendKeys(prop.getProperty("altnumber"));
 			dB.sendKeys("02 02 1995");
 		}
 		else
 		{
-			System.out.println("\n"+"Exception Occurs ->No option selected from YourDetails Section!!---");
+			logger.error("\n"+"Exception Occurs ->No option selected from YourDetails Section!!---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"Your Details section is Not their or Missing !!");
+			logger.error("\n"+"Your Details section is Not their or Missing !!");
 		}
 		
 	}
@@ -326,11 +326,11 @@ public class BasicInfoPage extends Testbase {
 			
 		}
 		else {
-			System.out.println("\n"+"Exception Occurs ->No option selected from Connection Address!!---");
+			logger.error("\n"+"Exception Occurs ->No option selected from Connection Address!!---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"Connection Details section is Not their or Missing !!");
+			logger.error("\n"+"Connection Details section is Not their or Missing !!");
 		}
 	}
 	
@@ -393,12 +393,12 @@ public class BasicInfoPage extends Testbase {
 		}
 
 		else {
-			System.out.println("\n"+"Exception Occurs ->No option selected from Identification Details!!---");
+			logger.error("\n"+"Exception Occurs ->No option selected from Identification Details!!---");
 		}
 		}
 		catch (TimeoutException e) {
 			// TODO: handle exception
-			System.out.println("\n"+"Identification Details section is Not their or Missing !!");
+			logger.error("\n"+"Identification Details section is Not their or Missing !!");
 		}
 		
 	}
@@ -427,12 +427,12 @@ public class BasicInfoPage extends Testbase {
 			//return new ConnectionAddress();			
 		}
 		else {
-			System.out.println("\n"+"Exception Occurs ->No option selected from Employment Details!!---");
+			logger.error("\n"+"Exception Occurs ->No option selected from Employment Details!!---");
 			//return null;
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"Employment Details section is Not their or  Missing !!");
+			logger.error("\n"+"Employment Details section is Not their or  Missing !!");
 		}
 		
 	}
@@ -448,11 +448,11 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("\n"+"Exception Occurs -> Basic details submit button is not Clicked---");
+			logger.error("\n"+"Exception Occurs -> Basic details submit button is not Clicked---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"Basic details submit button is MISSING");
+			logger.error("\n"+"Basic details submit button is MISSING");
 		}
 	}
 	
@@ -472,13 +472,13 @@ public class BasicInfoPage extends Testbase {
 			dB.clear();
 			validateErrorMessages();
 			waitForElementToBeVisible(driver, titleValidation, 20);
-			System.out.println("\n"+"---Validation Messages of Your Details Section---");
-			System.out.println("Validation message for Title: "+titleValidation.getText());
-			System.out.println("Validation message for first name: "+firstNameValidation.getText());
-			System.out.println("Validation message for last name: "+lastNameValidation.getText());
-			System.out.println("Validation message for email: "+emailValidation.getText());
-			System.out.println("Validation message for phone: "+phoneNumberValidation.getText());
-			System.out.println("Validation message for DOB: "+dBValidation.getText());
+			logger.info("\n"+"---Validation Messages of Your Details Section---");
+			logger.info("Validation message for Title: "+titleValidation.getText());
+			logger.info("Validation message for first name: "+firstNameValidation.getText());
+			logger.info("Validation message for last name: "+lastNameValidation.getText());
+			logger.info("Validation message for email: "+emailValidation.getText());
+			logger.info("Validation message for phone: "+phoneNumberValidation.getText());
+			logger.info("Validation message for DOB: "+dBValidation.getText());
 			
 			titleDropdown.click();
 			selectTitle.click();
@@ -491,11 +491,11 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("\n"+"Exception Occurs-->No option selected from YourDetails!!---");
+			logger.error("\n"+"Exception Occurs-->No option selected from YourDetails!!---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"Your Details section is Not their or Missing !!");
+			logger.error("\n"+"Your Details section is Not their or Missing !!");
 		}
 	}
 	
@@ -506,18 +506,18 @@ public class BasicInfoPage extends Testbase {
 		waitForElementToBeVisible(driver, connectionDetailsSection, 20);
 		if(connectionDetailsSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Connection Details Section---");
-			System.out.println("Validation message for Account provider: "+accountProviderValidation.getText());
-			System.out.println("Validation message for Existing Phone Number: "+existingPhoneNumberValidation.getText());
+			logger.info("\n"+"---Validation Messages of Connection Details Section---");
+			logger.info("Validation message for Account provider: "+accountProviderValidation.getText());
+			logger.info("Validation message for Existing Phone Number: "+existingPhoneNumberValidation.getText());
 			waitForElementToBeVisible(driver, alreadyaccountyes, 20);
 			alreadyaccountyes.click();
 			existingphoneyes.click();
 			validateErrorMessages();
-			System.out.println("Validation message for Account number: "+accountNumberValidation.getText());
+			logger.info("Validation message for Account number: "+accountNumberValidation.getText());
 			EnterAccountno.sendKeys("1478961289");
-			System.out.println("Validation message for Existing Home Number: "+existingHomeNumberValidation.getText());
-			System.out.println("Validation message for Provider Account Number: "+providerAccountNumberValidation.getText());
-			System.out.println("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());			
+			logger.info("Validation message for Existing Home Number: "+existingHomeNumberValidation.getText());
+			logger.info("Validation message for Provider Account Number: "+providerAccountNumberValidation.getText());
+			logger.info("Validation message for CheckBox: "+connectionCheckBoxValidation.getText());			
 			Enterhomeno.sendKeys("0244564645");
 			Entercurrentacount.sendKeys("7418529636");
 			existingphoneyes.click();
@@ -527,11 +527,11 @@ public class BasicInfoPage extends Testbase {
 		}
 		else
 		{
-			System.out.println("\n"+"Exception Occurs-->No option selected from Connection Details!!---");
+			logger.error("\n"+"Exception Occurs-->No option selected from Connection Details!!---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"---Connection Details section is Not their or Missing !!---");
+			logger.error("\n"+"---Connection Details section is Not their or Missing !!---");
 		}
 	}
 	
@@ -543,24 +543,24 @@ public class BasicInfoPage extends Testbase {
 		waitForElementToBeVisible(driver, IdentificationdetailsSection, 20);
 		if(IdentificationdetailsSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Identification Details Section---");
-			System.out.println("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
+			logger.info("\n"+"---Validation Messages of Identification Details Section---");
+			logger.info("Validation message for Select Any one identification tab: "+selectIdentificationIdvalidation.getText());
 			waitForElementToBeVisible(driver, AustralianPassport, 20);
 			AustralianPassport.click();
 			validateErrorMessages();
-			System.out.println("Validation message for Passport number: "+passportvalidation.getText());
-			System.out.println("Validation message for Passport Expiry date: "+passportExpiryValidation.getText());
+			logger.info("Validation message for Passport number: "+passportvalidation.getText());
+			logger.info("Validation message for Passport Expiry date: "+passportExpiryValidation.getText());
 			passport_number.sendKeys("56566655515");
 			waitForElementToBeVisible(driver, passport_exp, 20);
 			passport_exp.sendKeys("15 05 2025");
 		}
 		else
 		{
-			System.out.println("\n"+"---Exception Occurs-->No option selected from Identification Details!!--");
+			logger.error("\n"+"---Exception Occurs-->No option selected from Identification Details!!--");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"---Identification Details section is Not their or Missing !!---");
+			logger.error("\n"+"---Identification Details section is Not their or Missing !!---");
 		}
 	}
 	
@@ -572,13 +572,13 @@ public class BasicInfoPage extends Testbase {
 		waitForElementToBeVisible(driver, EmploymentDetailsSection, 20);
 		if(EmploymentDetailsSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Employment Details Section---");
-			System.out.println("Validation message for Industry dropdown: "+industryValidation.getText());
-			System.out.println("Validation message for Occupation dropdown: "+occupationValidation.getText());
-			System.out.println("Validation message for Job title: "+enterOccupationValueValidation.getText());
-			System.out.println("Validation message for Employment status: "+employmentStatusValidation.getText());
-			System.out.println("Validation message for Curent Time Year: "+yearEmploymentValidation.getText());
-			System.out.println("Validation message for Curent Time Month: "+monthEmploymentValidation.getText());
+			logger.info("\n"+"---Validation Messages of Employment Details Section---");
+			logger.info("Validation message for Industry dropdown: "+industryValidation.getText());
+			logger.info("Validation message for Occupation dropdown: "+occupationValidation.getText());
+			logger.info("Validation message for Job title: "+enterOccupationValueValidation.getText());
+			logger.info("Validation message for Employment status: "+employmentStatusValidation.getText());
+			logger.info("Validation message for Curent Time Year: "+yearEmploymentValidation.getText());
+			logger.info("Validation message for Curent Time Month: "+monthEmploymentValidation.getText());
 			industry.click();
 			selectindustry.click();
 			occupationType.click();
@@ -596,11 +596,11 @@ public class BasicInfoPage extends Testbase {
 			
 		else
 		{
-			System.out.println("\n"+"---Exception Occurs-->No option selected from Employment Details!!---");
+			logger.error("\n"+"---Exception Occurs-->No option selected from Employment Details!!---");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("\n"+"---Employment Details section is Not their or Missing !!---");
+			logger.error("\n"+"---Employment Details section is Not their or Missing !!---");
 		}
 	}
 	

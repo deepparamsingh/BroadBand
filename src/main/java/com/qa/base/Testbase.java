@@ -57,6 +57,7 @@ public class Testbase {
 		if(browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.silentOutput", "true");
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+			System.setProperty("webdriver.chrome.logfile","./Chromelog.txt");
 			driver= new ChromeDriver();
 			
 			logger = Logger.getLogger("Broadband");

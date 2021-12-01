@@ -47,11 +47,11 @@ public class SaleCreatedPage extends Testbase {
 				waitForElementToBeVisible(driver, congratulations, 10);
 				if(congratulations.isDisplayed())
 				{
-				System.out.println(congratulations.getText());
+				logger.info(congratulations.getText());
 				}
 				}
 				catch (TimeoutException e) {
-					System.out.println("Congratulations Line MISSING!!!!");
+					logger.error("Congratulations Line MISSING!!!!");
 				}
 			}
 			
@@ -61,11 +61,11 @@ public class SaleCreatedPage extends Testbase {
 				waitForElementToBeVisible(driver, referenceNo, 10);
 				if(referenceNo.isDisplayed())
 				{
-				System.out.println("Your Reference Number is :"+referenceNo.getText());
+				logger.info("Your Reference Number is :"+referenceNo.getText());
 				}
 				}
 				catch (TimeoutException e) {
-					System.out.println("Reference Number is MISSING!!!!");
+					logger.error("Reference Number is MISSING!!!!");
 				}
 			}
 			
@@ -75,19 +75,19 @@ public class SaleCreatedPage extends Testbase {
 				if(WHNcontentSection.isDisplayed())
 				{
 					List<WebElement> WHNcontentPoints = WHNcontent;
-			        //System.out.println("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
-					System.out.println("-----Below are the list of What happen Next points-----");
+			        //logger.info("Total points in This Plan Inclusion are: "+planInclusionPoints.size());
+					logger.info("-----Below are the list of What happen Next points-----");
 					
 			        for (WebElement getWHNcontentPoints : WHNcontentPoints) 
 			        	{
 			            	String WHNPoints = getWHNcontentPoints.getText();
-			            	System.out.println(WHNPoints);
+			            	logger.info(WHNPoints);
 			        	}
-			        System.out.println("--------------------------------");
+			        logger.info("--------------------------------");
 				}
 				}
 				catch (TimeoutException e) {
-					System.out.println("Content of What Happen Next is MISSING!!!!");
+					logger.error("Content of What Happen Next is MISSING!!!!");
 				}
 			}
 			
@@ -97,11 +97,11 @@ public class SaleCreatedPage extends Testbase {
 				waitForElementToBeVisible(driver, belowReferencenumber, 10);
 				if(belowReferencenumber.isDisplayed())
 				{
-				System.out.println(belowReferencenumber.getText());
+				logger.info(belowReferencenumber.getText());
 				}
 				}
 				catch (TimeoutException e) {
-					System.out.println("Below Reference content is MISSING!!!");
+					logger.error("Below Reference content is MISSING!!!");
 				}
 			}
 			

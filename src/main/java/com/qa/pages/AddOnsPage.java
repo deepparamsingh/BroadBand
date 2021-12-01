@@ -87,11 +87,11 @@ public class AddOnsPage extends Testbase {
 				String Title=driver.getTitle();
 				if(Title.contentEquals(actualTitle))
 				{
-					System.out.println("Title of addOn Page is -->"+Title);
+					logger.info("Title of addOn Page is -->"+Title);
 				}
 				else
 				{
-					System.out.println("Title MISS-Match");
+					logger.error("Title MISS-Match");
 				}
 				
 			}
@@ -103,27 +103,27 @@ public class AddOnsPage extends Testbase {
 				if(homecallingSection.isDisplayed())
 				{
 					String HCplanName=homecallingName.getText();
-					System.out.println("Name of Home Calling Plan is ->"+HCplanName);
+					logger.info("Name of Home Calling Plan is ->"+HCplanName);
 					homecallingSelectButton.click();
-					System.out.println("Home calling Modem Selected!!");
+					logger.info("Home calling Modem Selected!!");
 							
 						List<WebElement> homeCallingFeaturePoints = homecallingFeatures;
 				       
-						System.out.println("-----Below are the list of home calling features points-----");
+						logger.info("-----Below are the list of home calling features points-----");
 						
 				        for (WebElement getHomecallingFeature : homeCallingFeaturePoints) 
 				        	{
 				            	String value = getHomecallingFeature.getText();
-				            	System.out.println(value);
+				            	logger.info(value);
 				        	}
-				        System.out.println("--------------------------------");	
+				        logger.info("--------------------------------");	
 				    	String homecallingPlanCost=homecallingCost.getText();
-						System.out.println("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
+						logger.info("Cost for home Calling Plan modem is :"+homecallingPlanCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
 				{
-					System.out.println("Exception Occurs--> Home Calling Section MISSING");
+					logger.error("Exception Occurs--> Home Calling Section MISSING");
 				}
 				
 				
@@ -137,31 +137,31 @@ public class AddOnsPage extends Testbase {
 				if(modemSection.isDisplayed())
 				{
 					String ModemName=modemName.getText();
-					System.out.println("Name of Modem is ->"+ModemName);
+					logger.info("Name of Modem is ->"+ModemName);
 					modemSelectButton.click();
-					System.out.println("Modem Selected!!");
+					logger.info("Modem Selected!!");
 							
 						List<WebElement> modemFeaturePoints = modemFeatures;
 				       
-						System.out.println("-----Below are the list of Modem features points-----");
+						logger.info("-----Below are the list of Modem features points-----");
 						
 				        for (WebElement getModemFeature : modemFeaturePoints) 
 				        	{
 				            	String value = getModemFeature.getText();
-				            	System.out.println(value);
+				            	logger.info(value);
 				        	}
-				        System.out.println("--------------------------------");		
+				        logger.info("--------------------------------");		
 				        String ModemCost=modemCost.getText();
-						System.out.println("Cost for modem is :"+ModemCost+"\n\n");
+						logger.info("Cost for modem is :"+ModemCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
 				{
-					System.out.println("Exception Occurs--> Modem Section MISSING");
+					logger.error("Exception Occurs--> Modem Section MISSING");
 				}
 				
 //				String ModemCost=modemCost.getText();
-//				System.out.println("Cost for modem is :"+ModemCost+"\n\n");
+//				logger.info("Cost for modem is :"+ModemCost+"\n\n");
 								
 			}
 			
@@ -173,31 +173,31 @@ public class AddOnsPage extends Testbase {
 				if(otherAddonSection.isDisplayed())
 				{
 					String otherAddOnName=otherAddonName.getText();
-					System.out.println("Name of Other AddOn is ->"+otherAddOnName);
+					logger.info("Name of Other AddOn is ->"+otherAddOnName);
 					otherAddonSelectButton.click();
-					System.out.println("Other Addon Selected!!");
+					logger.info("Other Addon Selected!!");
 							
 						List<WebElement> otherAddonFeaturePoints = otherAddonFeatures;
 				       
-						System.out.println("-----Below are the list of Other AddOn features points-----");
+						logger.info("-----Below are the list of Other AddOn features points-----");
 						
 				        for (WebElement getOtherAddOnFeature : otherAddonFeaturePoints) 
 				        	{
 				            	String value = getOtherAddOnFeature.getText();
-				            	System.out.println(value);
+				            	logger.info(value);
 				        	}
-				        System.out.println("--------------------------------");	
+				        logger.info("--------------------------------");	
 				        String otherAddOnCost=otherAddonCost.getText();
-						System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
+						logger.info("Cost for modem is :"+otherAddOnCost+"\n\n");
 				}
 					}
 				catch (NoSuchElementException e)
 				{
-					System.out.println("Exception Occurs--> Other AddOn Section MISSING");
+					logger.error("Exception Occurs--> Other AddOn Section MISSING");
 				}
 				
 //				String otherAddOnCost=otherAddonCost.getText();
-//				System.out.println("Cost for modem is :"+otherAddOnCost+"\n\n");
+//				logger.info("Cost for modem is :"+otherAddOnCost+"\n\n");
 			}
 			
 						
@@ -209,13 +209,13 @@ public class AddOnsPage extends Testbase {
 				if(identificationSubmitButton.isDisplayed())
 				{
 					identificationSubmitButton.click();
-					System.out.println("Identification Button Clicked !!");
+					logger.info("Identification Button Clicked !!");
 					
 				}
 				}
 				catch (NoSuchElementException e)
 				{
-					System.out.println("Exception Occurs--> Identification Button MISSING");
+					logger.error("Exception Occurs--> Identification Button MISSING");
 				}
 				
 			}
@@ -227,13 +227,13 @@ public class AddOnsPage extends Testbase {
 		{
 			try {
 			String n= PopUpPage.planNameSpecialText;
-			System.out.println("get in method 1:"+n);
+			logger.info("get in method 1:"+n);
 			
 			}
 			catch (Exception e) {
 				// TODO: handle exception
 				String m= PopUpPage.planNameText;
-				System.out.println("get in method 2:"+m);
+				logger.info("get in method 2:"+m);
 			}
 			
 		

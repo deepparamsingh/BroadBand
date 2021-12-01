@@ -202,7 +202,7 @@ public class ConnectionAddress extends Testbase {
 		if(connectionAddressSection.isDisplayed())
 		{
 			String existingAddress= fetchaddess.getText();
-			System.out.println("User existing Address is: "+existingAddress);
+			logger.info("User existing Address is: "+existingAddress);
 			residentialStatus.click();
 			selectResidentalStatus.click();
 			livingYear.click();
@@ -213,11 +213,11 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
-			System.out.println("---Exception Occurs-->Connection Address Section is not their OR  MISSING!!");
+			logger.error("---Exception Occurs-->Connection Address Section is not their OR  MISSING!!");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("Connection Address Section is not their OR  MISSING!!");
+			logger.error("Connection Address Section is not their OR  MISSING!!");
 		}
 		
 	}
@@ -229,7 +229,7 @@ public class ConnectionAddress extends Testbase {
 		selectConnectionDate.click();
 		waitForElementToBeVisible(driver, datePickerTitle, 10);
 		String monthYearVal=datePickerTitle.getText();
-		System.out.println("Current month and year :"+monthYearVal);
+		logger.info("Current month and year :"+monthYearVal);
 		String month= monthYearVal.split(" ")[0].trim();
 		String year= monthYearVal.split(" ")[1].trim();
 		
@@ -252,14 +252,14 @@ public class ConnectionAddress extends Testbase {
 //		{
 //			
 //			String holidayDetails = holidayDate.getText();
-//			System.out.println(holidayDetails);
+//			logger.info(holidayDetails);
 //		}			
 //		}
 //		catch (TimeoutException e) 
 		{
-			System.out.println("Select Month and year :"+monthYearVal);
+			logger.info("Select Month and year :"+monthYearVal);
 			Thread.sleep(2000);
-			System.out.println("Selected Date :"+selectedDate.getText());
+			logger.info("Selected Date :"+selectedDate.getText());
 		}
 		
 	}
@@ -270,7 +270,7 @@ public class ConnectionAddress extends Testbase {
 			waitForElementToBeVisible(driver, satelliteSection, 5);
 			if(satelliteSection.isDisplayed())
 			{
-				System.out.println("Heading of satellite section"+satelliteHeading.getText());
+				logger.info("Heading of satellite section"+satelliteHeading.getText());
 				satelliteQ1.click();
 				satelliteA1.click();
 				satelliteQ2.click();
@@ -279,11 +279,11 @@ public class ConnectionAddress extends Testbase {
 				satelliteA3.click();
 				satelliteQ4.click();
 				satelliteA4.click();
-				System.out.println("Declaration of satellite section"+satelliteDeclaration.getText());
+				logger.info("Declaration of satellite section"+satelliteDeclaration.getText());
 			}
 		}
 		catch (TimeoutException e) {
-			System.out.println("This Address not contains Satellite Section OR  MISSING !!");
+			logger.error("This Address not contains Satellite Section OR  MISSING !!");
 		}
 		
 	}
@@ -299,13 +299,13 @@ public class ConnectionAddress extends Testbase {
 			{
 				selectBillingEmail.click();
 				String userBillemail= BillingEmail.getText();
-				System.out.println("User Bill will be sent to this email:"+userBillemail);
+				logger.info("User Bill will be sent to this email:"+userBillemail);
 			}
 			else if(BillingAddress.isDisplayed())
 			{
 				BillingAddress.click();
 				String userbillAddress=BillingAddress.getText();
-				System.out.println("User Bill will be deliver to this address: "+userbillAddress);
+				logger.info("User Bill will be deliver to this address: "+userbillAddress);
 			}
 			else if(otherAddressBilling.isDisplayed())
 			{
@@ -318,14 +318,14 @@ public class ConnectionAddress extends Testbase {
 			}
 			else
 			{
-				System.out.println("No Option Selected from Billing Address Section");
+				logger.error("No Option Selected from Billing Address Section");
 			}
 									
 		}
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Billing Section is not their OR  MISSING !!");
+			logger.error("Billing Section is not their OR  MISSING !!");
 		}
 		
 		try {
@@ -336,7 +336,7 @@ public class ConnectionAddress extends Testbase {
 			if(DeliveryAddress.isDisplayed())
 			{
 			String deliveryAddress=DeliveryAddress.getText();
-			System.out.println("Equiptments will be deliver to Address :"+deliveryAddress);
+			logger.info("Equiptments will be deliver to Address :"+deliveryAddress);
 			selectDeliveryAddress.click();
 			}
 			else if(otherAddressDelivery.isDisplayed())
@@ -350,13 +350,13 @@ public class ConnectionAddress extends Testbase {
 			}
 			else
 			{
-				System.out.println("No Option Selected from Delivery Address Section");
+				logger.error("No Option Selected from Delivery Address Section");
 			}
 		}
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Delivery Section is not their OR  MISSING!!");
+			logger.error("Delivery Section is not their OR  MISSING!!");
 		}
 		
 	}
@@ -373,12 +373,12 @@ public class ConnectionAddress extends Testbase {
 			try {
 			if(debitCardContent.isDisplayed())
 			{
-				System.out.println("Content of Debit card is: "+debitCardContent.getText());
+				logger.info("Content of Debit card is: "+debitCardContent.getText());
 			}
 			}
 			catch (Exception e) {
 				// TODO: handle exception
-				System.out.println("Content of Debit card is not their or missing");
+				logger.error("Content of Debit card is not their or missing");
 			}
 			
 			
@@ -391,23 +391,23 @@ public class ConnectionAddress extends Testbase {
 			debitCarCVV.sendKeys("123");
 			driver.switchTo().defaultContent();
 			
-			System.out.println("Secure text: "+secureText.getText());
+			logger.info("Secure text: "+secureText.getText());
 			secureText.click();
 			String checkBoxValue1=debitCardCheckBox1.getText();
-			System.out.println("Content Of checkBox is :"+checkBoxValue1);
+			logger.info("Content Of checkBox is :"+checkBoxValue1);
 			debitCardCheckBox1.click();
 			Thread.sleep(2000);
 //			String checkBoxValue2=debitCardCheckBox2.getText();
-//			System.out.println("Content Of checkBox is :"+checkBoxValue2);
+//			logger.info("Content Of checkBox is :"+checkBoxValue2);
 //			debitCardCheckBox2.click();
 //			String securevalue=secureText.getText();
-//			System.out.println("Secure text is :"+securevalue);
+//			logger.info("Secure text is :"+securevalue);
 			
 				}
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Debit Card session is not their OR MISSING !!");
+			logger.error("Debit Card session is not their OR MISSING !!");
 		}			
 		
 	}
@@ -422,11 +422,11 @@ public class ConnectionAddress extends Testbase {
 		}
 		else
 		{
-			System.out.println("--Exception Occurs -->Review connection details button is MISSING !! ");
+			logger.error("--Exception Occurs -->Review connection details button is MISSING !! ");
 		}
 		}
 		catch (TimeoutException e) {
-			System.out.println("Review connection details button is MISSING !! ");
+			logger.error("Review connection details button is MISSING !! ");
 		}
 			
 	}
@@ -440,21 +440,21 @@ public class ConnectionAddress extends Testbase {
 		if(connectionAddressSection.isDisplayed())
 		{
 			//Thread.sleep(1000);
-			System.out.println("\n"+"---Validation Messages of Connection Address Section---");
-			System.out.println("Validation message for Connection Address : "+residentialStatusValidation.getText());
+			logger.info("\n"+"---Validation Messages of Connection Address Section---");
+			logger.info("Validation message for Connection Address : "+residentialStatusValidation.getText());
 			waitForElementToBeVisible(driver, residentialStatus, 10);
 			residentialStatus.click();
-			System.out.println("residentialStatus Clicked");
+			logger.info("residentialStatus Clicked");
 			//Thread.sleep(1000);
 			selectResidentalStatus.click();
-			System.out.println("selectResidentalStatus Clicked");
+			logger.info("selectResidentalStatus Clicked");
 			validateConnectionDetailsButton();
 			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingYear, 10);
-			System.out.println("Validation message for Living Year: "+livingYearValidation.getText());
+			logger.info("Validation message for Living Year: "+livingYearValidation.getText());
 			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingMonth, 10);
-			System.out.println("Validation message for Living Month: "+livingMonthValidation.getText());
+			logger.info("Validation message for Living Month: "+livingMonthValidation.getText());
 			//Thread.sleep(1000);
 			waitForElementToBeVisible(driver, livingYear, 10);
 			livingYear.click();
@@ -470,7 +470,7 @@ public class ConnectionAddress extends Testbase {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("\n"+"---Connection Address section is Not their or Missing !!---");
+			logger.error("\n"+"---Connection Address section is Not their or Missing !!---");
 		}
 		
 	}
@@ -482,11 +482,11 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, satelliteSection, 10);
 		if(satelliteSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Satellite Section---");
-			System.out.println("Validation message for satellite Q1 : "+satelliteQ1Validation.getText());
-			System.out.println("Validation message for satellite Q2 : "+satelliteQ2Validation.getText());
-			System.out.println("Validation message for satellite Q3 : "+satelliteQ3Validation.getText());
-			System.out.println("Validation message for satellite Q4 : "+satelliteQ4Validation.getText());
+			logger.info("\n"+"---Validation Messages of Satellite Section---");
+			logger.info("Validation message for satellite Q1 : "+satelliteQ1Validation.getText());
+			logger.info("Validation message for satellite Q2 : "+satelliteQ2Validation.getText());
+			logger.info("Validation message for satellite Q3 : "+satelliteQ3Validation.getText());
+			logger.info("Validation message for satellite Q4 : "+satelliteQ4Validation.getText());
 			validateSatelliteSection();
 						
 		}
@@ -494,7 +494,7 @@ public class ConnectionAddress extends Testbase {
 		catch (TimeoutException e)
 		{
 			
-			System.out.println("\n"+"---Satellite section is Not their or Missing !!---");
+			logger.error("\n"+"---Satellite section is Not their or Missing !!---");
 		}
 	}
 	
@@ -506,27 +506,27 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, BillingSection, 30);
 		if(BillingSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Billing Address Section---");
-			System.out.println("Validation message for Billing Section : "+billingValidation.getText());
-			System.out.println("Validation message for Delivery Section : "+deliveryValidation.getText());
+			logger.info("\n"+"---Validation Messages of Billing Address Section---");
+			logger.info("Validation message for Billing Section : "+billingValidation.getText());
+			logger.info("Validation message for Delivery Section : "+deliveryValidation.getText());
 			//waitForElementToBeVisible(driver, otherAddressBilling, 10);
 			Thread.sleep(1000);
 			otherAddressBilling.click();
-			System.out.println("otherAddressBilling clicked");
+			logger.info("otherAddressBilling clicked");
 			//waitForElementToBeVisible(driver, otherAddressDelivery, 10);
 			Thread.sleep(1000);
 			otherAddressDelivery.click();
-			System.out.println("otherAddressDelivery clicked");
+			logger.info("otherAddressDelivery clicked");
 			validateConnectionDetailsButton();
-			System.out.println("validateConnectionDetailsButton hit");
-//			System.out.println("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
-//			System.out.println("Validation message for Other Address Delivery Section : "+deliveryOtherAddressValidation.getText());
+			logger.info("validateConnectionDetailsButton hit");
+//			logger.info("Validation message for Other Address Billing Section : "+billingOtherAddressValidation.getText());
+//			logger.info("Validation message for Other Address Delivery Section : "+deliveryOtherAddressValidation.getText());
 			validateBillingdeliveryAddress();
 						
 		}
 		}
 		catch (Exception e) {
-			System.out.println("\n"+"---Exception Occurs Billing Address section is Not their or Missing !!---");
+			logger.error("\n"+"---Exception Occurs Billing Address section is Not their or Missing !!---");
 		}
 	}
 	
@@ -537,17 +537,17 @@ public class ConnectionAddress extends Testbase {
 		waitForElementToBeVisible(driver, debitCardSection, 10);
 		if(debitCardSection.isDisplayed())
 		{
-			System.out.println("\n"+"---Validation Messages of Debit Card Section---");
-			System.out.println("Validation message for Debit Card Name : "+debitCardNameValidation.getText());
-			System.out.println("Validation message for Debit Card Expiry : "+debitCardValidityValidation.getText());
-			System.out.println("Validation message for Delivery Section : "+chk1Validation.getText());
+			logger.info("\n"+"---Validation Messages of Debit Card Section---");
+			logger.info("Validation message for Debit Card Name : "+debitCardNameValidation.getText());
+			logger.info("Validation message for Debit Card Expiry : "+debitCardValidityValidation.getText());
+			logger.info("Validation message for Delivery Section : "+chk1Validation.getText());
 			validateDebitcardSection();
 						
 		}
 		}
 		catch (TimeoutException e) {
 			
-			System.out.println("\n"+"---Debit Card section is Not their or Missing !!---");
+			logger.error("\n"+"---Debit Card section is Not their or Missing !!---");
 		}
 	}
 	
