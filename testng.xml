@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="TestNg">
     <classes>
-    <class name="com.qa.testcase.HomePageTest"/>
+    		<class name="com.qa.testcase.HomePageTest"/>
   			<class name="com.qa.testcase.AddressDetailsTest"/>
    			<class name="com.qa.testcase.PopUpPageTest"/>
 			<class name="com.qa.testcase.AddOnPageTest"></class>

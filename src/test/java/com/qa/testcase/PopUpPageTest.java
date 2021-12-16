@@ -79,7 +79,7 @@ public class PopUpPageTest extends Testbase {
 //		}	
 //	}
 	
-	@Test(priority = 1)
+	@Test(invocationCount = 5)
 	public void validateCheckPlanTest() throws Throwable
 	{
 		addOnPage = popupPage.fullJourney();

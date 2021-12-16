@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileLockInterruptionException;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -58,7 +60,10 @@ public class Testbase {
 			System.setProperty("webdriver.chrome.silentOutput", "true");
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 			System.setProperty("webdriver.chrome.logfile","./Chromelog.txt");
-			driver= new ChromeDriver();
+			
+			ChromeOptions opt = new ChromeOptions();
+			opt.setExperimentalOption("excludeSwitches",Arrays.asList("disable-popup-blocking","enable-automation")); 
+			driver= new ChromeDriver(opt);
 			
 			logger = Logger.getLogger("Broadband");
 			PropertyConfigurator.configure("log4j.properties");

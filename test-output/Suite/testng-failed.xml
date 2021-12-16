@@ -3,9 +3,40 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="TestNg(failed)">
     <classes>
-      <class name="com.qa.testcase.OtpTest">
+      <class name="com.qa.testcase.HomePageTest">
+        <methods>
+          <include name="valdateValidationMessagesManualAddressTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.qa.testcase.HomePageTest -->
+      <class name="com.qa.testcase.AddOnPageTest">
+        <methods>
+          <include name="validatePlanNameTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.qa.testcase.AddOnPageTest -->
+      <class name="com.qa.testcase.SaleCreatedTest">
         <methods>
           <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="validateYourDetailsTest"/>
+        </methods>
+      </class> <!-- com.qa.testcase.SaleCreatedTest -->
+      <class name="com.qa.testcase.BasicInfoPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="validateAllSectionTest"/>
+        </methods>
+      </class> <!-- com.qa.testcase.BasicInfoPageTest -->
+      <class name="com.qa.testcase.PopUpPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="validateCheckPlanTest"/>
+        </methods>
+      </class> <!-- com.qa.testcase.PopUpPageTest -->
+      <class name="com.qa.testcase.OtpTest">
+        <methods>
           <include name="validateOTPTest"/>
           <include name="setup"/>
         </methods>
