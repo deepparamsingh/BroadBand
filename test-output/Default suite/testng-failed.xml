@@ -5,10 +5,7 @@
     <classes>
       <class name="com.qa.testcase.HomePageTest">
         <methods>
-          <include name="validateWrongAddressTest"/>
-          <include name="validateEmptyAddressTest"/>
           <include name="validateEnterAddressTest"/>
-          <include name="valdateValidationMessagesManualAddressTest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.qa.testcase.HomePageTest -->

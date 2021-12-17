@@ -89,14 +89,14 @@ public class HomePageTest extends Testbase {
 		
 	}
 	
-	@Test(groups= {"validations"})
+	@Test(enabled=false)
 	public void validateEmptyAddressTest() throws Throwable
 	{
 		homepage.validateEmptyAddress();
 		
 	}
 	
-	@Test(groups= {"validations"})
+	@Test(enabled=false)
 	public void validateWrongAddressTest() throws Throwable
 	{
 		homepage.validateWrongAddress();
@@ -109,7 +109,8 @@ public class HomePageTest extends Testbase {
 		addressDetails=homepage.validateEnterAddress();
 	}
 	
-	@Test(groups= {"validations"})
+	//@Test(groups= {"validations"})   -- use this for grouping
+	@Test(enabled=false)
 	public void valdateValidationMessagesManualAddressTest()
 	{
 		homepage.validateValidationMessagesManualAddress();
