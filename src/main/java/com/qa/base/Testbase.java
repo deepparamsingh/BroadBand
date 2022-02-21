@@ -17,10 +17,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.util.TestUtil;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 //import org.openqa.selenium.firefox.FirefoxDriver;    ----------- unable to get firefox driver
 
 public class Testbase {
@@ -57,9 +60,12 @@ public class Testbase {
 		String browserName= prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.silentOutput", "true");
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
-			System.setProperty("webdriver.chrome.logfile","./Chromelog.txt");
+			//System.setProperty("webdriver.chrome.silentOutput", "true");
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+			//System.setProperty("webdriver.chrome.logfile","./Chromelog.txt");
+			
+			WebDriverManager.chromedriver().setup();
+			//driver= new ChromeDriver();
 			
 			ChromeOptions opt = new ChromeOptions();
 			opt.setExperimentalOption("excludeSwitches",Arrays.asList("disable-popup-blocking","enable-automation")); 
@@ -70,8 +76,9 @@ public class Testbase {
 		}
 		else if(browserName.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","C:\\Users\\paramdeep\\Downloads\\Driver\\chromedriver.exe" );
-			//driver= new FirefoxDriver();    ---- unable to get firefox webdriver
+			//System.setProperty("webdriver.gecko.driver","C:\\Users\\paramdeep\\Downloads\\Driver\\chromedriver.exe" );
+			WebDriverManager.firefoxdriver().setup();
+			driver= new FirefoxDriver();    //---- unable to get firefox webdriver
 		}
 		
 		driver.manage().window().maximize();
