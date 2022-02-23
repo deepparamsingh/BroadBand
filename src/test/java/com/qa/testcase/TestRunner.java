@@ -11,7 +11,7 @@ public class TestRunner {
 		// TODO Auto-generated method stub
 	//	ExtentReportListner ext= new ExtentReportListner();
 	testNg = new TestNG();
-	testNg.setTestClasses(new Class[] {OtpTest.class});
+	testNg.setTestClasses(new Class[] {SaleCreatedTest.class});
 	//testNg.addListener(ext);
 	testNg.run();
 
