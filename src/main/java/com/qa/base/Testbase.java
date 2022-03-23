@@ -40,8 +40,10 @@ public class Testbase {
 	{
 		try {
 			prop = new Properties();
-			
-			FileInputStream ip= new FileInputStream("C:\\Users\\paramdeep\\git\\eyenus_BroadBand\\eyenus\\src\\main\\java\\com\\qa\\config\\config.properties");
+			//String property_file="C:/Users/paramdeep/git/eyenus_BroadBand/eyenus/src/main/java/com/qa/config/config.properties";
+			String property_file="/src/main/java/com/qa/config/config.properties";
+			String currentPath = System. getProperty("user.dir");
+			FileInputStream ip= new FileInputStream(currentPath + property_file);
 			prop.load(ip);
 		}
 		catch (FileLockInterruptionException e) {

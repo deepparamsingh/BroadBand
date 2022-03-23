@@ -1,35 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="9" total="10" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-23T17:36:13Z" name="Command line suite" finished-at="2022-02-23T17:40:35Z" duration-ms="261994">
+  <suite started-at="2022-03-22T10:03:28Z" name="Default suite" finished-at="2022-03-22T10:03:28Z" duration-ms="83">
     <groups>
     </groups>
-    <test started-at="2022-02-23T17:36:13Z" name="Command line test" finished-at="2022-02-23T17:40:35Z" duration-ms="261994">
-      <class name="com.qa.testcase.OtpTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.OtpTest@516be40f]" started-at="2022-02-23T17:36:13Z" name="setup" finished-at="2022-02-23T17:40:35Z" duration-ms="261854" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (d75aa28c037a64d2a218f586200bfd76)] -> xpath: //label[contains(text(),'Select Date')]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PARAMDEEP-QA', ip: '172.27.245.194', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\PARAMD~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50245}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d75aa28c037a64d2a218f586200bfd76]]>
-            </message>
+    <test started-at="2022-03-22T10:03:28Z" name="Default test" finished-at="2022-03-22T10:03:28Z" duration-ms="83">
+      <class name="com.qa.testcase.HomePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testcase.HomePageTest@5117dd67]" started-at="2022-03-22T10:03:28Z" name="setup" finished-at="2022-03-22T10:03:28Z" duration-ms="12" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (d75aa28c037a64d2a218f586200bfd76)] -> xpath: //label[contains(text(),'Select Date')]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PARAMDEEP-QA', ip: '172.27.245.194', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\PARAMD~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50245}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d75aa28c037a64d2a218f586200bfd76
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com.qa.base.Testbase.waitForElementToBeVisible(Testbase.java:115)
-at com.qa.pages.ConnectionAddress.validateConnectionDeliverDate(ConnectionAddress.java:228)
-at com.qa.pages.ConnectionAddress.validateAllSectionConnectionAddressPage(ConnectionAddress.java:557)
-at com.qa.testcase.OtpTest.setup(OtpTest.java:55)
+              <![CDATA[java.lang.NullPointerException
+at com.qa.base.Testbase.initialization(Testbase.java:68)
+at com.qa.testcase.HomePageTest.setup(HomePageTest.java:24)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,36 +38,21 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at com.qa.testcase.TestRunner.main(TestRunner.java:16)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateOTPTest()[pri:1, instance:com.qa.testcase.OtpTest@516be40f]" started-at="2022-02-23T17:40:35Z" name="validateOTPTest" finished-at="2022-02-23T17:40:35Z" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (d75aa28c037a64d2a218f586200bfd76)] -> xpath: //label[contains(text(),'Select Date')]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PARAMDEEP-QA', ip: '172.27.245.194', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\PARAMD~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50245}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d75aa28c037a64d2a218f586200bfd76]]>
-            </message>
+        <test-method signature="validateEnterAddressTest()[pri:1, instance:com.qa.testcase.HomePageTest@5117dd67]" started-at="2022-03-22T10:03:28Z" name="validateEnterAddressTest" finished-at="2022-03-22T10:03:28Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (d75aa28c037a64d2a218f586200bfd76)] -> xpath: //label[contains(text(),'Select Date')]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PARAMDEEP-QA', ip: '172.27.245.194', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\PARAMD~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50245}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d75aa28c037a64d2a218f586200bfd76
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com.qa.base.Testbase.waitForElementToBeVisible(Testbase.java:115)
-at com.qa.pages.ConnectionAddress.validateConnectionDeliverDate(ConnectionAddress.java:228)
-at com.qa.pages.ConnectionAddress.validateAllSectionConnectionAddressPage(ConnectionAddress.java:557)
-at com.qa.testcase.OtpTest.setup(OtpTest.java:55)
+              <![CDATA[java.lang.NullPointerException
+at com.qa.base.Testbase.initialization(Testbase.java:68)
+at com.qa.testcase.HomePageTest.setup(HomePageTest.java:24)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,14 +78,16 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at com.qa.testcase.TestRunner.main(TestRunner.java:16)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateOTPTest -->
-      </class> <!-- com.qa.testcase.OtpTest -->
-    </test> <!-- Command line test -->
-  </suite> <!-- Command line suite -->
+        </test-method> <!-- validateEnterAddressTest -->
+      </class> <!-- com.qa.testcase.HomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
