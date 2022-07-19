@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-skipped">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\paramdeep\AppData\Local\Temp\testng-eclipse--322400557\testng-customsuite.xml</span>
+                    <span>C:\Users\paramdeep\AppData\Local\Temp\testng-eclipse-1967357792\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.qa.testcase.HomePageTest" class="method navigator-link" hash-for-method="validateEnterAddressTest">validateEnterAddressTest</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.qa.testcase.OtpTest" class="method navigator-link" hash-for-method="validateOTPTest">validateOTPTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,29 +117,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-skipped">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.qa.testcase.HomePageTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.testcase.OtpTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validateEnterAddressTest">
-                  </a> <!-- validateEnterAddressTest -->
-                  <span class="method-name">validateEnterAddressTest</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at com.qa.base.Testbase.initialization(Testbase.java:68)
-	at com.qa.testcase.HomePageTest.setup(HomePageTest.java:24)
+                  <a name="validateOTPTest">
+                  </a> <!-- validateOTPTest -->
+                  <span class="method-name">validateOTPTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;label[for=&apos;term_12&apos;]&quot;}
+  (Session info: chrome=100.0.4896.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;PARAMDEEP-QA&apos;, ip: &apos;192.168.1.9&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.88, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\PARAMD~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64003}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 83bd93033ef43e4c829835239c77627a
+*** Element info: {Using=css selector, value=label[for=&apos;term_12&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.click(Unknown Source)
+	at com.qa.pages.OtpPage.validateCheckBox(OtpPage.java:269)
+	at com.qa.pages.OtpPage.validateFullJourney(OtpPage.java:293)
+	at com.qa.testcase.OtpTest.validateOTPTest(OtpTest.java:63)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -164,11 +187,11 @@
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\paramdeep\AppData\Local\Temp\testng-eclipse--322400557\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\paramdeep\AppData\Local\Temp\testng-eclipse-1967357792\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -177,7 +200,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.qa.testcase.HomePageTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.testcase.OtpTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -219,14 +242,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validateEnterAddressTest')
-data.setCell(0, 2, 'com.qa.testcase.HomePageTest')
-data.setCell(0, 3, 0);
+data.setCell(0, 1, 'validateOTPTest')
+data.setCell(0, 2, 'com.qa.testcase.OtpTest')
+data.setCell(0, 3, 41295);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 41 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -241,32 +264,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">9 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.qa.testcase.HomePageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">validatehomePageImageTest</span>
-                <br/>
-                <span class="ignored-method-name">validateWrongAddressTest</span>
-                <br/>
-                <span class="ignored-method-name">validatehomeLOGOTest</span>
-                <br/>
-                <span class="ignored-method-name">validateBeowh1HeadingTest</span>
-                <br/>
-                <span class="ignored-method-name">validateEmptyAddressTest</span>
-                <br/>
-                <span class="ignored-method-name">validateNavBarTest</span>
-                <br/>
-                <span class="ignored-method-name">validateh1HeadingTest</span>
-                <br/>
-                <span class="ignored-method-name">valdateValidationMessagesManualAddressTest</span>
-                <br/>
-                <span class="ignored-method-name">validateHomePageTitleTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -275,16 +275,16 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.qa.testcase.HomePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.qa.testcase.OtpTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validateEnterAddressTest</span>
-                <span class="method-start">-1647943408171 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateOTPTest</span>
+                <span class="method-start">118908 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

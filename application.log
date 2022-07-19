@@ -1,0 +1,100 @@
+2022-04-17 21:10:51,447  INFO [main] Broadband:77 - Address Found!  ------>Congratulations! You can get NBN™ FTTB at your address!
+2022-04-17 21:10:52,773  INFO [main] Broadband:100 - Current month and year :April 2022
+2022-04-17 21:10:54,142  INFO [main] Broadband:115 - Select Month and year :November 2022
+2022-04-17 21:10:54,250  INFO [main] Broadband:129 - Selected Date :15/11/2022
+2022-04-17 21:10:54,315  INFO [main] Broadband:171 - Special-Note VISIBLE
+2022-04-17 21:10:54,557  INFO [main] Broadband:187 - validateNextButton-->PASSED!!-->Next Button Clicked
+2022-04-17 21:11:02,695  INFO [main] Broadband:333 - Special Offer Bar is displayed!! (s)
+2022-04-17 21:11:02,696  INFO [main] Broadband:337 - -----Below are the list of Special Offer Bar points-----
+2022-04-17 21:11:02,772  INFO [main] Broadband:342 - SPECIAL OFFER
+Special Offer Information 1
+Special Offer Information 2
+Special Offer Information 3
+Special Offer Information 4
+2022-04-17 21:11:02,772  INFO [main] Broadband:344 - --------------------------------
+2022-04-17 21:11:03,461  INFO [main] Broadband:353 - LOGO of provider is visible (s)
+2022-04-17 21:11:03,590  INFO [main] Broadband:363 - Name of plan is (s) : --> Test Plan
+2022-04-17 21:11:03,713  INFO [main] Broadband:373 - Contract of plan is (s) :--->Month to Month Contract | NBN Connection
+2022-04-17 21:11:03,806  INFO [main] Broadband:382 - View plan Link Displayed (s)
+2022-04-17 21:11:08,803  INFO [main] Broadband:392 - Mail Sent (s)
+2022-04-17 21:11:09,045  INFO [main] Broadband:411 - KeyFact Link Displayed (s)
+2022-04-17 21:11:09,183  INFO [main] Broadband:420 - Plan inclusion section is displayed!! (s)
+2022-04-17 21:11:09,183  INFO [main] Broadband:424 - -----Below are the list of plan Inclussion points-----
+2022-04-17 21:11:09,252  INFO [main] Broadband:429 - Plan Inclusion 1
+Plan Inclusion 2
+Plan Inclusion 3
+Plan Inclusion 4
+2022-04-17 21:11:09,253  INFO [main] Broadband:431 - --------------------------------
+2022-04-17 21:11:09,442  INFO [main] Broadband:441 - Cost of this plan is  (s):$1.10/M
+2022-04-17 21:11:09,621  INFO [main] Broadband:452 - Typical Evening Speed of plan is (s):1/Mbps
+2022-04-17 21:11:09,768  INFO [main] Broadband:473 - Preview cost of this Plan is (s): $6.00
+2022-04-17 21:11:10,051  INFO [main] Broadband:608 - Plan Applied !! (s)
+2022-04-17 21:11:15,258  INFO [main] Broadband:106 - Name of Home Calling Plan is ->Home Connection 6
+2022-04-17 21:11:15,408  INFO [main] Broadband:108 - Home calling Modem Selected!!
+2022-04-17 21:11:15,409  INFO [main] Broadband:112 - -----Below are the list of home calling features points-----
+2022-04-17 21:11:15,489  INFO [main] Broadband:117 - Call plan Inclusions 
+2022-04-17 21:11:15,489  INFO [main] Broadband:119 - --------------------------------
+2022-04-17 21:11:15,532  INFO [main] Broadband:121 - Cost for home Calling Plan modem is :$6 month
+
+
+2022-04-17 21:11:15,679  INFO [main] Broadband:140 - Name of Modem is ->Dodo Modem
+2022-04-17 21:11:15,849  INFO [main] Broadband:142 - Modem Selected!!
+2022-04-17 21:11:15,849  INFO [main] Broadband:146 - -----Below are the list of Modem features points-----
+2022-04-17 21:11:15,907  INFO [main] Broadband:151 - For your internet service, you may need a nbn™ connection box, (plus a nbn™ outdoor antenna for Fixed Wireless services) and a compatible modem. Modem may be refurbished. 
+2022-04-17 21:11:15,908  INFO [main] Broadband:153 - --------------------------------
+2022-04-17 21:11:15,950  INFO [main] Broadband:155 - Cost for modem is :$0.00 upfront
+
+
+2022-04-17 21:11:16,105  INFO [main] Broadband:176 - Name of Other AddOn is ->Fetch Mighty
+2022-04-17 21:11:16,305  INFO [main] Broadband:178 - Other Addon Selected!!
+2022-04-17 21:11:16,305  INFO [main] Broadband:182 - -----Below are the list of Other AddOn features points-----
+2022-04-17 21:11:16,369  INFO [main] Broadband:187 - When size matters, the Fetch Mighty is bigger than the rest. With a 1TB hard drive, you can record up to 585 hours of TV, neatly organised by series and episode, as well as everything you get from the Mini. Requires 15+ Mbps broadband, 4K content and a 4K TV
+2022-04-17 21:11:16,369  INFO [main] Broadband:189 - --------------------------------
+2022-04-17 21:11:16,447  INFO [main] Broadband:191 - Cost for modem is :$10.00 month
+
+
+2022-04-17 21:11:16,656  INFO [main] Broadband:212 - Identification Button Clicked !!
+2022-04-17 21:11:21,367  INFO [main] Broadband:295 - Name of User is :
+2022-04-17 21:11:21,808  INFO [main] Broadband:298 - Email of User is :
+2022-04-17 21:11:21,873  INFO [main] Broadband:300 - User Phone Number is :
+2022-04-17 21:11:54,794 ERROR [main] Broadband:401 - 
+Identification Details section is Not their or Missing !!
+2022-04-17 21:11:58,506  INFO [main] Broadband:205 - User existing Address is: Unit 30 50 Walker St, RHODES NSW, 2138
+2022-04-17 21:12:00,337  INFO [main] Broadband:232 - Current month and year :April 2022
+2022-04-17 21:12:01,867  INFO [main] Broadband:260 - Select Month and year :November 2022
+2022-04-17 21:12:03,928  INFO [main] Broadband:262 - Selected Date :15/11/2022
+2022-04-17 21:12:09,035 ERROR [main] Broadband:286 - This Address not contains Satellite Section OR  MISSING !!
+2022-04-17 21:12:11,373  INFO [main] Broadband:302 - User Bill will be sent to this email:paramdeepscript@cimet.com.au
+2022-04-17 21:12:13,583  INFO [main] Broadband:339 - Equiptments will be deliver to Address :Unit 30 50 Walker St, RHODES NSW, 2138
+2022-04-17 21:12:13,947  INFO [main] Broadband:376 - Content of Debit card is: Card Content jaydfdyadga ahjgyatyau jyygf shfyf .... Card Content jaydfdyadga ahjgyatyau jyygf shfyf ....Card Content jaydfdyadga ahjgyatyau jyygf shfyf ....Card Content jaydfdyadga ahjgyatyau jyygf shfyf ....
+2022-04-17 21:12:14,881  INFO [main] Broadband:394 - Secure text: This is secure 256-bit SSL encrypted Payment
+2022-04-17 21:12:15,022  INFO [main] Broadband:397 - Content Of checkBox is :checkbox 1
+2022-04-17 21:12:24,554  INFO [main] Broadband:149 - Customer details are:--------------
+2022-04-17 21:12:24,607  INFO [main] Broadband:150 - customer Name :paramdeep script
+2022-04-17 21:12:24,657  INFO [main] Broadband:151 - customer Email :paramdeepscript@cimet.com.au
+2022-04-17 21:12:24,706  INFO [main] Broadband:152 - customer Phone :0420580919
+2022-04-17 21:12:24,753  INFO [main] Broadband:153 - customer DOB :02/02/1995
+2022-04-17 21:12:24,793  INFO [main] Broadband:154 - customer Delivery Address :Unit 30 50 Walker St, RHODES NSW
+2022-04-17 21:12:24,842  INFO [main] Broadband:155 - customer Connection Address :Unit 30 50 Walker St, RHODES NSW
+2022-04-17 21:12:24,916  INFO [main] Broadband:156 - customer Card ID :N/A
+2022-04-17 21:12:25,059  INFO [main] Broadband:157 - customer Card Expiry :N/A
+2022-04-17 21:12:25,130  INFO [main] Broadband:158 - customer Billing  Address :paramdeepscript@cimet.com.au
+2022-04-17 21:12:25,277  INFO [main] Broadband:159 - customer Alter Name :0498980317
+2022-04-17 21:12:25,410  INFO [main] Broadband:169 - Plan details are:--------------
+2022-04-17 21:12:25,473  INFO [main] Broadband:170 - Plan Name :Test Plan
+2022-04-17 21:12:25,536  INFO [main] Broadband:171 - Provider Name :TEST PROVIDER
+2022-04-17 21:12:25,605  INFO [main] Broadband:172 - Plan Contract Length :1 months
+2022-04-17 21:12:25,661  INFO [main] Broadband:173 - Plan Speed :1 mbps
+2022-04-17 21:12:25,711  INFO [main] Broadband:174 - Plan Upload Speed  :1 mbps
+2022-04-17 21:12:25,763  INFO [main] Broadband:175 - Plan Connection type :NBN
+2022-04-17 21:12:25,810  INFO [main] Broadband:176 - Plan data :1
+2022-04-17 21:12:25,854  INFO [main] Broadband:177 - Plan Home Calling Plan :Home Connection 6
+2022-04-17 21:12:25,899  INFO [main] Broadband:178 - Plan Modem Name:N/A
+2022-04-17 21:12:26,005  INFO [main] Broadband:179 - Plan Ad on's Name :Fetch Mighty
+2022-04-17 21:12:26,098  INFO [main] Broadband:180 - Connection Delivery Date :15/11/2022
+2022-04-17 21:12:26,308  INFO [main] Broadband:192 - Provider Image is Visible
+2022-04-17 21:12:26,487  INFO [main] Broadband:201 - Provider Link :Click here for important providers contract information including terms and conditions
+2022-04-17 21:12:26,642  INFO [main] Broadband:210 - Provider Link :Click here to view plan terms and conditions
+2022-04-17 21:12:26,876  INFO [main] Broadband:228 - Image is Vissible !!!
+2022-04-17 21:12:27,101  INFO [main] Broadband:239 - Content of Plan Acknowledgement is :Plan Acknowledgement content editor box test HTTPS
+2022-04-17 21:12:47,176 ERROR [main] Broadband:257 - Provider Acknowledgement Content is MISSING OR Section!!

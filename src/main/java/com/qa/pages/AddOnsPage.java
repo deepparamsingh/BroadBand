@@ -236,7 +236,6 @@ public class AddOnsPage extends Testbase {
 				logger.info("get in method 2:"+m);
 			}
 			
-		
 		}
 			
 		
